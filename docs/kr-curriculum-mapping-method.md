@@ -2,94 +2,121 @@
 
 ## Scope
 
-This method describes how to map Korea 2022 revised elementary curriculum standards into Korean Marble Taxonomy seed records. It applies to `data/kr/curriculum-standards.seed.json`.
+This method governs staged mapping from Korea's 2022 revised elementary curriculum into Korean Marble Taxonomy records. The public curriculum documents are the governing source; the seed records provenance and verification status so staged work is honest about what has and has not been checked.
 
-The method is optimized for a license-cautious seed:
+## General Record Rules
 
-- Use official standard codes and source URLs.
-- Use short original paraphrases, not copied standard text.
-- Keep every mapping reviewable by subject, grade band, domain, and source reference.
+Each standard anchor should include:
 
-## Source Handling
+- `key`: `<curriculum-id>:<achievement-standard-code>`.
+- `code`: Korean achievement-standard code such as `[2국02-01]` or `[4영01-01]`.
+- `gradeBand`: `1-2`, `3-4`, or `5-6`.
+- `subject` / `subjectKorean`.
+- `domain` / `domainKorean`.
+- `summary`: concise original summary or source-derived paraphrase.
+- `sourceRefs`: official public source references.
+- `verificationStatus`: `official-source-checked`, `public-doc-derived`, or `needs-official-code-check`.
+- `sourceBasis`: one-sentence explanation of how the anchor was derived.
 
-Official source lookup should start with:
+Use `needs-official-code-check` when the subject/domain shape is reliable but exact code verification is pending.
 
-- NCIC domestic curriculum inventory: https://ncic.re.kr/inv/org/list.do
-- NCIC 2022 revised curriculum notices: https://ncic.re.kr/bbs/eduNotice2022/list.do
-- NCIC copyright policy: https://ncic.re.kr/mbr/policy.do
-- Ministry of Education: https://www.moe.go.kr/
+## Subject-specific Rules
 
-For each source, record:
+### 국어
 
-- URL.
-- Access date.
-- Whether full standard text has been cleared for redistribution.
-- Whether the source has a KOGL or other explicit reuse marking.
-- Any non-commercial, attribution, no-derivatives, or transformation constraints.
+Do not treat Korean Language as English Language Arts translated into Korean. Model:
 
-If clearance is uncertain, set `textIncluded: false` and do not add verbatim text.
+- Hangul decoding, syllable blocks, sound-letter correspondence.
+- Korean vocabulary, sentence awareness, and grammar.
+- Listening/speaking discourse routines in Korean classrooms.
+- Reading fluency and meaning-making in Korean texts.
+- Writing for Korean audiences and genres.
+- Literature response and media literacy.
 
-## Standard Record Rules
+### 영어 / EFL
 
-Each standard record must contain:
+Elementary English is an EFL curriculum for Korean learners. Do not use native-speaker ELA assumptions. Model:
 
-- `key`: `<curriculum-id>:<official-code>`.
-- `code`: official Korean achievement standard code, such as `[2국02-01]`.
-- `gradeBand`: elementary grade band represented by the leading code number.
-- `subject` and `subjectKorean`.
-- `domain` and `domainKorean`.
-- `summary`: one short original paraphrase.
-- `sourceTextIncluded: false` until license clearance is confirmed.
-- `sourceRefs`: references to source objects in the same seed file.
+- Oral exposure before heavy print production.
+- English sound recognition under Korean phonological transfer constraints.
+- Classroom greetings, formulaic chunks, and simple interaction.
+- Alphabet/phonics as foreign-language literacy.
+- Listening and speaking confidence before extended reading/writing.
+- Grade 5–6 information exchange, short reading, and short writing.
 
-Do not store:
+### 수학
 
-- Full standard text.
-- Long copied explanations from official documents.
-- Tables or source excerpts that recreate the official curriculum.
+Use Korean 2022 elementary sequencing and domains. Anchors should reflect:
 
-## Micro-Topic Rules
+- 수와 연산.
+- 변화와 관계.
+- 도형과 측정.
+- 자료와 가능성.
+- Grade-band progression from concrete representation to symbolic/general reasoning.
 
-Micro-topics should be teachable units, not broad subject headers. A good KR micro-topic has:
+### 과학
 
-- A stable `kr.mt.` ID.
-- One subject and one domain.
-- A grade-band range.
-- A short Korean title and an English title for interoperability.
-- A brief original summary.
-- Coverage notes that explain what is intentionally included and excluded.
+Use Korean elementary science as inquiry plus domains. Anchors should reflect:
 
-Korean language micro-topics must reflect Korean-specific literacy. They should include Hangul decoding, syllable block awareness, Korean grammar, discourse, writing, literature, and media literacy where applicable. Do not map Korean language by translating Common Core ELA strands.
+- Observation, classification, measurement, communication, and model use.
+- 운동과 에너지.
+- 물질.
+- 생명.
+- 지구와 우주.
+- Investigation evidence rather than vocabulary memorization alone.
+
+### 사회 / 역사 / 지리 / 시민성
+
+Do not reuse US/UK history as the default. Korean social studies should begin from:
+
+- Local community, maps, places, and regions of Korea.
+- Changes in local life and Korean historical time.
+- Korean geography and regional diversity.
+- Democratic participation, public institutions, rights and responsibilities.
+- Korean culture, economy, and civic life.
+
+### 도덕
+
+Model moral education around:
+
+- Self-understanding and moral agency.
+- Empathy, relationships, and respectful communication.
+- Fairness, responsibility, community life.
+- Peace, ecological responsibility, and coexistence.
+
+### 실과 / 정보
+
+Model practical arts as Korean elementary life-and-technology learning:
+
+- Self-care, growth, family and household participation.
+- Resource use and practical problem solving.
+- Making, technology, and tool use.
+- Digital/information problem solving at the elementary level.
+
+### 통합교과
+
+Model grades 1–2 integrated subjects as first-school-life anchors:
+
+- 바른 생활: habits, routines, safe participation.
+- 슬기로운 생활: inquiry into self, school, community, seasons.
+- 즐거운 생활: expression, play, cooperation, arts-integrated experience.
 
 ## Mapping Rules
 
-Use `standardMappings` to connect standards to micro-topics:
+`standardMappings` connect achievement-standard anchors to micro-topics:
 
-- `standardKey` must resolve to a standard in `curricula[].standards`.
-- `microTopicId` must resolve to `microTopics[]`.
-- `relationship` should describe the mapping role: `introduces`, `supports`, `extends`, or `assesses`.
-- `confidence` should be `seed`, `reviewed`, or `verified`.
-- `note` should explain the mapping in one short original sentence.
+- `standardKey` must resolve to a standard.
+- `microTopicId` must resolve to a micro-topic.
+- `relationship` should be one of `introduces`, `supports`, `extends`, `assesses`.
+- `confidence` should remain `seed` until a reviewer checks the mapping.
+- `note` should explain why the mapping exists.
 
-Use `seed` confidence for v0.1 records unless the mapping has been checked against the official source by a reviewer.
+## Expansion Workflow
 
-## Review Gates
-
-Before expanding beyond v0.1:
-
-1. Confirm official source URLs and downloadable source artifacts.
-2. Confirm license and KOGL markings for each source artifact.
-3. Verify all standard codes against official source records.
-4. Review paraphrase summaries for accidental source-text copying.
-5. Add subject-matter review for Korean language so it remains language-specific rather than ELA-derived.
-6. Add prerequisite relationships only after standard-to-topic mappings are reviewed.
-
-## Change Control
-
-When editing the KR seed:
-
-- Update all count fields.
-- Run `npm run validate:kr`.
-- Update `data/kr/manifest.json` checksums.
-- Run `npm run validate` to confirm the original dataset path still passes.
-- Keep any full-text import in a separate pull request after licensing is resolved.
+1. Source official curriculum PDF/NCIC record.
+2. Extract subject/domain/grade-band/code inventory.
+3. Create or update standards with provenance and verification status.
+4. Decompose each standard into teachable micro-topics.
+5. Review Korean subject fit; reject imported English/US/UK assumptions.
+6. Run `npm run validate:kr` and update `data/kr/manifest.json`.
+7. Run `npm run validate` to protect the upstream dataset path.

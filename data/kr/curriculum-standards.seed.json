@@ -1,54 +1,185 @@
 {
   "$schema": "../../schema/kr-curriculum-standards.schema.json",
-  "dataset": "Korean Marble Taxonomy v0.1 seed",
-  "taxonomyVersion": "kr-localization-v0.1",
+  "dataset": "Korean Marble Taxonomy staged redesign seed",
+  "taxonomyVersion": "kr-redesign-v0.2",
   "locale": "ko-KR",
   "country": "KR",
-  "status": "seed",
-  "createdAt": "2026-07-09",
+  "status": "staged-seed",
+  "verificationStatus": "needs-official-code-check",
+  "sourceBasis": "Staged representative anchors derived from public Korean 2022 revised curriculum structure; exact official codes remain queued for full NCIC/PDF verification.",
   "textPolicy": {
     "standardTextIncluded": false,
-    "summaryPolicy": "Short original paraphrases only; do not copy Korean curriculum source text until redistribution rights are confirmed.",
-    "licensingStatus": "not-cleared",
-    "licenseCaution": "Official curriculum source text may have KOGL or other reuse conditions. Treat source text as codes-only until reviewed."
+    "summaryPolicy": "Short original paraphrases only; do not copy Korean curriculum source text into this staged seed.",
+    "licensingStatus": "public-government-documents",
+    "licenseCaution": "Korean national curriculum documents are public government documents. This seed still stores source refs, metadata, and original paraphrases rather than verbatim source text so staged mappings remain reviewable and low-risk."
   },
-  "sourceCount": 4,
+  "sourceCount": 5,
   "sources": [
     {
       "id": "kr-ncic",
       "name": "NCIC National Curriculum Information Center",
       "url": "https://ncic.re.kr/",
       "accessDate": "2026-07-09",
-      "usage": "Official curriculum portal reference only."
+      "usage": "Official curriculum portal; homepage exposes 2022 revised curriculum and elementary achievement-standard inventory entry points."
     },
     {
       "id": "kr-ncic-inventory",
       "name": "NCIC domestic curriculum inventory",
       "url": "https://ncic.re.kr/inv/org/list.do",
       "accessDate": "2026-07-09",
-      "usage": "Source for official curriculum inventory lookup and standard-code verification."
+      "usage": "Primary lookup surface for official curriculum inventory and later standard-code verification."
     },
     {
       "id": "kr-ncic-2022-notices",
       "name": "NCIC 2022 revised curriculum notices",
       "url": "https://ncic.re.kr/bbs/eduNotice2022/list.do",
       "accessDate": "2026-07-09",
-      "usage": "Source for 2022 revised curriculum publication context."
+      "usage": "Publication and update context for 2022 revised elementary curriculum materials."
     },
     {
       "id": "kr-ncic-copyright",
       "name": "NCIC copyright policy",
       "url": "https://ncic.re.kr/mbr/policy.do",
       "accessDate": "2026-07-09",
-      "usage": "License caution reference; verify KOGL markings before importing source text."
+      "usage": "Reuse-condition reference for any future full-text import."
+    },
+    {
+      "id": "kr-moe",
+      "name": "Ministry of Education, Republic of Korea",
+      "url": "https://www.moe.go.kr/",
+      "accessDate": "2026-07-09",
+      "usage": "Ministry provenance for the Korean national curriculum policy frame."
     }
   ],
-  "curriculumCount": 3,
-  "standardCount": 18,
-  "microTopicCount": 18,
-  "mappingCount": 18,
-  "coverageNoteCount": 3,
+  "curriculumCount": 8,
+  "standardCount": 44,
+  "microTopicCount": 44,
+  "mappingCount": 44,
+  "coverageNoteCount": 8,
   "curricula": [
+    {
+      "id": "kr-2022-elem-korean",
+      "slug": "kr-2022-elem-korean",
+      "country": "KR",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "schoolLevel": "elementary",
+      "version": "2022 revised national curriculum",
+      "sourceUrls": [
+        "https://ncic.re.kr/",
+        "https://ncic.re.kr/inv/org/list.do",
+        "https://ncic.re.kr/bbs/eduNotice2022/list.do",
+        "https://www.moe.go.kr/"
+      ],
+      "sourceRefs": [
+        "kr-ncic",
+        "kr-ncic-inventory",
+        "kr-ncic-2022-notices",
+        "kr-moe"
+      ],
+      "textIncluded": false,
+      "license": "Public government curriculum source; staged seed stores official-style codes, metadata, source refs, and original paraphrases only.",
+      "verificationStatus": "needs-official-code-check",
+      "standardCount": 6,
+      "standards": [
+        {
+          "key": "kr-2022-elem-korean:[2국01-01]",
+          "code": "[2국01-01]",
+          "gradeBand": "1-2",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Listening & Speaking",
+          "domainKorean": "듣기·말하기",
+          "summary": "Participate in simple classroom talk by listening, taking turns, and responding.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary Korean achievement-standard frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-korean:[2국02-01]",
+          "code": "[2국02-01]",
+          "gradeBand": "1-2",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Reading",
+          "domainKorean": "읽기",
+          "summary": "Decode Hangul syllable blocks and read short familiar texts with meaning.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary Korean achievement-standard frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-korean:[2국03-01]",
+          "code": "[2국03-01]",
+          "gradeBand": "1-2",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Writing",
+          "domainKorean": "쓰기",
+          "summary": "Compose words and short sentences for a familiar purpose or audience.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary Korean achievement-standard frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-korean:[2국04-01]",
+          "code": "[2국04-01]",
+          "gradeBand": "1-2",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Grammar",
+          "domainKorean": "문법",
+          "summary": "Notice Hangul sound-letter relationships and basic word or sentence forms.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary Korean achievement-standard frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-korean:[4국05-01]",
+          "code": "[4국05-01]",
+          "gradeBand": "3-4",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Literature",
+          "domainKorean": "문학",
+          "summary": "Respond to poems, stories, and drama through personal interpretation and discussion.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary Korean achievement-standard frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-korean:[6국06-01]",
+          "code": "[6국06-01]",
+          "gradeBand": "5-6",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Media",
+          "domainKorean": "매체",
+          "summary": "Interpret media messages by noticing purpose, audience, mode, and credibility.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary Korean achievement-standard frame; code requires official NCIC check."
+        }
+      ]
+    },
     {
       "id": "kr-2022-elem-math",
       "slug": "kr-2022-elem-math",
@@ -59,10 +190,19 @@
       "version": "2022 revised national curriculum",
       "sourceUrls": [
         "https://ncic.re.kr/",
-        "https://ncic.re.kr/inv/org/list.do"
+        "https://ncic.re.kr/inv/org/list.do",
+        "https://ncic.re.kr/bbs/eduNotice2022/list.do",
+        "https://www.moe.go.kr/"
+      ],
+      "sourceRefs": [
+        "kr-ncic",
+        "kr-ncic-inventory",
+        "kr-ncic-2022-notices",
+        "kr-moe"
       ],
       "textIncluded": false,
-      "license": "Codes, metadata, and original paraphrases only. Official source text redistribution is not cleared.",
+      "license": "Public government curriculum source; staged seed stores official-style codes, metadata, source refs, and original paraphrases only.",
+      "verificationStatus": "needs-official-code-check",
       "standardCount": 6,
       "standards": [
         {
@@ -73,9 +213,13 @@
           "subjectKorean": "수학",
           "domain": "Number & Operations",
           "domainKorean": "수와 연산",
-          "summary": "Early whole-number reading, place-value structure, and ordered counting.",
+          "summary": "Build early whole-number reading, place-value structure, and ordered counting.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary mathematics achievement-standard frame; code requires official NCIC check."
         },
         {
           "key": "kr-2022-elem-math:[2수01-02]",
@@ -87,7 +231,11 @@
           "domainKorean": "수와 연산",
           "summary": "Compare and order early whole numbers using concrete and symbolic representations.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary mathematics achievement-standard frame; code requires official NCIC check."
         },
         {
           "key": "kr-2022-elem-math:[2수01-05]",
@@ -99,7 +247,11 @@
           "domainKorean": "수와 연산",
           "summary": "Represent and solve addition and subtraction situations with small whole numbers.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary mathematics achievement-standard frame; code requires official NCIC check."
         },
         {
           "key": "kr-2022-elem-math:[4수02-01]",
@@ -111,7 +263,11 @@
           "domainKorean": "변화와 관계",
           "summary": "Notice repeating or growing patterns and describe relationships in multiple ways.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary mathematics achievement-standard frame; code requires official NCIC check."
         },
         {
           "key": "kr-2022-elem-math:[4수03-01]",
@@ -123,7 +279,11 @@
           "domainKorean": "도형과 측정",
           "summary": "Classify plane figures and reason about their observable properties.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary mathematics achievement-standard frame; code requires official NCIC check."
         },
         {
           "key": "kr-2022-elem-math:[6수04-01]",
@@ -135,7 +295,11 @@
           "domainKorean": "자료와 가능성",
           "summary": "Collect, organize, and interpret data with grade-appropriate representations.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary mathematics achievement-standard frame; code requires official NCIC check."
         }
       ]
     },
@@ -149,10 +313,19 @@
       "version": "2022 revised national curriculum",
       "sourceUrls": [
         "https://ncic.re.kr/",
-        "https://ncic.re.kr/inv/org/list.do"
+        "https://ncic.re.kr/inv/org/list.do",
+        "https://ncic.re.kr/bbs/eduNotice2022/list.do",
+        "https://www.moe.go.kr/"
+      ],
+      "sourceRefs": [
+        "kr-ncic",
+        "kr-ncic-inventory",
+        "kr-ncic-2022-notices",
+        "kr-moe"
       ],
       "textIncluded": false,
-      "license": "Codes, metadata, and original paraphrases only. Official source text redistribution is not cleared.",
+      "license": "Public government curriculum source; staged seed stores official-style codes, metadata, source refs, and original paraphrases only.",
+      "verificationStatus": "needs-official-code-check",
       "standardCount": 6,
       "standards": [
         {
@@ -165,7 +338,11 @@
           "domainKorean": "과학 탐구",
           "summary": "Observe, classify, and communicate patterns from familiar natural phenomena.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary science achievement-standard frame; code requires official NCIC check."
         },
         {
           "key": "kr-2022-elem-science:[4과02-01]",
@@ -177,7 +354,11 @@
           "domainKorean": "운동과 에너지",
           "summary": "Explore push-pull interactions and simple changes in motion through investigation.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary science achievement-standard frame; code requires official NCIC check."
         },
         {
           "key": "kr-2022-elem-science:[4과03-01]",
@@ -189,7 +370,11 @@
           "domainKorean": "물질",
           "summary": "Compare material properties and connect observations to everyday uses.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary science achievement-standard frame; code requires official NCIC check."
         },
         {
           "key": "kr-2022-elem-science:[4과04-01]",
@@ -201,7 +386,11 @@
           "domainKorean": "생명",
           "summary": "Observe living things and describe basic structures, needs, and life changes.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary science achievement-standard frame; code requires official NCIC check."
         },
         {
           "key": "kr-2022-elem-science:[6과03-01]",
@@ -213,7 +402,11 @@
           "domainKorean": "물질",
           "summary": "Investigate matter changes and explain observations with particle-aware language.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary science achievement-standard frame; code requires official NCIC check."
         },
         {
           "key": "kr-2022-elem-science:[6과04-01]",
@@ -225,102 +418,639 @@
           "domainKorean": "지구와 우주",
           "summary": "Use observations and models to reason about Earth, weather, and space systems.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative anchor from the 2022 revised elementary science achievement-standard frame; code requires official NCIC check."
         }
       ]
     },
     {
-      "id": "kr-2022-elem-korean",
-      "slug": "kr-2022-elem-korean",
+      "id": "kr-2022-elem-social-studies",
+      "slug": "kr-2022-elem-social-studies",
       "country": "KR",
-      "subject": "Korean Language",
-      "subjectKorean": "국어",
+      "subject": "Social Studies",
+      "subjectKorean": "사회",
       "schoolLevel": "elementary",
       "version": "2022 revised national curriculum",
       "sourceUrls": [
         "https://ncic.re.kr/",
-        "https://ncic.re.kr/inv/org/list.do"
+        "https://ncic.re.kr/inv/org/list.do",
+        "https://ncic.re.kr/bbs/eduNotice2022/list.do",
+        "https://www.moe.go.kr/"
+      ],
+      "sourceRefs": [
+        "kr-ncic",
+        "kr-ncic-inventory",
+        "kr-ncic-2022-notices",
+        "kr-moe"
       ],
       "textIncluded": false,
-      "license": "Codes, metadata, and original paraphrases only. Official source text redistribution is not cleared.",
+      "license": "Public government curriculum source; staged seed stores official-style codes, metadata, source refs, and original paraphrases only.",
+      "verificationStatus": "needs-official-code-check",
       "standardCount": 6,
       "standards": [
         {
-          "key": "kr-2022-elem-korean:[2국01-01]",
-          "code": "[2국01-01]",
-          "gradeBand": "1-2",
-          "subject": "Korean Language",
-          "subjectKorean": "국어",
-          "domain": "Listening & Speaking",
-          "domainKorean": "듣기·말하기",
-          "summary": "Participate in simple classroom talk by listening, taking turns, and responding.",
+          "key": "kr-2022-elem-social-studies:[4사01-01]",
+          "code": "[4사01-01]",
+          "gradeBand": "3-4",
+          "subject": "Social Studies",
+          "subjectKorean": "사회",
+          "domain": "Local Geography",
+          "domainKorean": "지역 지리",
+          "summary": "Use maps and place language to describe the school's local community in Korea.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Korean local-community social studies anchor derived from the 2022 revised elementary social studies frame; code requires official NCIC check."
         },
         {
-          "key": "kr-2022-elem-korean:[2국02-01]",
-          "code": "[2국02-01]",
-          "gradeBand": "1-2",
-          "subject": "Korean Language",
-          "subjectKorean": "국어",
+          "key": "kr-2022-elem-social-studies:[4사02-01]",
+          "code": "[4사02-01]",
+          "gradeBand": "3-4",
+          "subject": "Social Studies",
+          "subjectKorean": "사회",
+          "domain": "Local History",
+          "domainKorean": "지역의 역사",
+          "summary": "Investigate changes in local life, places, and community memory over time.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Korean local-history social studies anchor derived from the 2022 revised elementary social studies frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-social-studies:[4사03-01]",
+          "code": "[4사03-01]",
+          "gradeBand": "3-4",
+          "subject": "Social Studies",
+          "subjectKorean": "사회",
+          "domain": "Community & Civics",
+          "domainKorean": "공동체와 시민성",
+          "summary": "Explain how local public institutions and community rules support shared life.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Korean local-civics social studies anchor derived from the 2022 revised elementary social studies frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-social-studies:[4사04-01]",
+          "code": "[4사04-01]",
+          "gradeBand": "3-4",
+          "subject": "Social Studies",
+          "subjectKorean": "사회",
+          "domain": "Regions of Korea",
+          "domainKorean": "우리 국토와 지역",
+          "summary": "Compare Korean regions using location, landscape, transportation, and daily-life evidence.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Korean geography anchor derived from the 2022 revised elementary social studies frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-social-studies:[6사03-01]",
+          "code": "[6사03-01]",
+          "gradeBand": "5-6",
+          "subject": "Social Studies",
+          "subjectKorean": "사회",
+          "domain": "Korean History",
+          "domainKorean": "한국사",
+          "summary": "Place key Korean historical periods, people, events, and cultural heritage in chronological context.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Korean-history anchor derived from the 2022 revised elementary social studies frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-social-studies:[6사05-01]",
+          "code": "[6사05-01]",
+          "gradeBand": "5-6",
+          "subject": "Social Studies",
+          "subjectKorean": "사회",
+          "domain": "Democratic Citizenship",
+          "domainKorean": "민주시민과 사회",
+          "summary": "Reason about democratic participation, rights, responsibilities, and public issues in Korean society.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Korean democratic-citizenship anchor derived from the 2022 revised elementary social studies frame; code requires official NCIC check."
+        }
+      ]
+    },
+    {
+      "id": "kr-2022-elem-english-efl",
+      "slug": "kr-2022-elem-english-efl",
+      "country": "KR",
+      "subject": "English as a Foreign Language",
+      "subjectKorean": "영어",
+      "schoolLevel": "elementary",
+      "version": "2022 revised national curriculum",
+      "sourceUrls": [
+        "https://ncic.re.kr/",
+        "https://ncic.re.kr/inv/org/list.do",
+        "https://ncic.re.kr/bbs/eduNotice2022/list.do",
+        "https://www.moe.go.kr/"
+      ],
+      "sourceRefs": [
+        "kr-ncic",
+        "kr-ncic-inventory",
+        "kr-ncic-2022-notices",
+        "kr-moe"
+      ],
+      "textIncluded": false,
+      "license": "Public government curriculum source; staged seed stores official-style codes, metadata, source refs, and original paraphrases only.",
+      "verificationStatus": "needs-official-code-check",
+      "standardCount": 6,
+      "standards": [
+        {
+          "key": "kr-2022-elem-english-efl:[4영01-01]",
+          "code": "[4영01-01]",
+          "gradeBand": "3-4",
+          "subject": "English as a Foreign Language",
+          "subjectKorean": "영어",
+          "domain": "Listening",
+          "domainKorean": "듣기",
+          "summary": "Recognize familiar English sounds, words, and short phrases in Korean elementary EFL contexts.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Elementary English is modeled as EFL for Korean learners under the 2022 revised frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-english-efl:[4영02-01]",
+          "code": "[4영02-01]",
+          "gradeBand": "3-4",
+          "subject": "English as a Foreign Language",
+          "subjectKorean": "영어",
+          "domain": "Speaking",
+          "domainKorean": "말하기",
+          "summary": "Use greetings, classroom expressions, and short rehearsed exchanges with support.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Elementary English is modeled as EFL for Korean learners under the 2022 revised frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-english-efl:[4영03-01]",
+          "code": "[4영03-01]",
+          "gradeBand": "3-4",
+          "subject": "English as a Foreign Language",
+          "subjectKorean": "영어",
           "domain": "Reading",
           "domainKorean": "읽기",
-          "summary": "Decode Hangul syllable blocks and read short familiar texts with meaning.",
+          "summary": "Connect the Roman alphabet, basic phonics, and high-frequency English words.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Elementary English is modeled as EFL for Korean learners under the 2022 revised frame; code requires official NCIC check."
         },
         {
-          "key": "kr-2022-elem-korean:[2국03-01]",
-          "code": "[2국03-01]",
-          "gradeBand": "1-2",
-          "subject": "Korean Language",
-          "subjectKorean": "국어",
+          "key": "kr-2022-elem-english-efl:[4영04-01]",
+          "code": "[4영04-01]",
+          "gradeBand": "3-4",
+          "subject": "English as a Foreign Language",
+          "subjectKorean": "영어",
           "domain": "Writing",
           "domainKorean": "쓰기",
-          "summary": "Compose words and short sentences for a familiar purpose or audience.",
+          "summary": "Copy and write alphabet letters, words, and short familiar phrases accurately.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Elementary English is modeled as EFL for Korean learners under the 2022 revised frame; code requires official NCIC check."
         },
         {
-          "key": "kr-2022-elem-korean:[2국04-01]",
-          "code": "[2국04-01]",
-          "gradeBand": "1-2",
-          "subject": "Korean Language",
-          "subjectKorean": "국어",
-          "domain": "Grammar",
-          "domainKorean": "문법",
-          "summary": "Notice Hangul sound-letter relationships and basic word or sentence forms.",
-          "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
-        },
-        {
-          "key": "kr-2022-elem-korean:[4국05-01]",
-          "code": "[4국05-01]",
-          "gradeBand": "3-4",
-          "subject": "Korean Language",
-          "subjectKorean": "국어",
-          "domain": "Literature",
-          "domainKorean": "문학",
-          "summary": "Respond to poems, stories, and drama through personal interpretation and discussion.",
-          "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
-        },
-        {
-          "key": "kr-2022-elem-korean:[6국06-01]",
-          "code": "[6국06-01]",
+          "key": "kr-2022-elem-english-efl:[6영01-01]",
+          "code": "[6영01-01]",
           "gradeBand": "5-6",
-          "subject": "Korean Language",
-          "subjectKorean": "국어",
-          "domain": "Media",
-          "domainKorean": "매체",
-          "summary": "Interpret media messages by noticing purpose, audience, mode, and credibility.",
+          "subject": "English as a Foreign Language",
+          "subjectKorean": "영어",
+          "domain": "Listening",
+          "domainKorean": "듣기",
+          "summary": "Understand main ideas and simple details in short spoken English about familiar topics.",
           "sourceTextIncluded": false,
-          "sourceRefs": ["kr-ncic-inventory"]
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Elementary English is modeled as EFL for Korean learners under the 2022 revised frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-english-efl:[6영02-01]",
+          "code": "[6영02-01]",
+          "gradeBand": "5-6",
+          "subject": "English as a Foreign Language",
+          "subjectKorean": "영어",
+          "domain": "Speaking",
+          "domainKorean": "말하기",
+          "summary": "Ask, answer, and present simple information in supported EFL interaction.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Elementary English is modeled as EFL for Korean learners under the 2022 revised frame; code requires official NCIC check."
+        }
+      ]
+    },
+    {
+      "id": "kr-2022-elem-moral",
+      "slug": "kr-2022-elem-moral",
+      "country": "KR",
+      "subject": "Moral Education",
+      "subjectKorean": "도덕",
+      "schoolLevel": "elementary",
+      "version": "2022 revised national curriculum",
+      "sourceUrls": [
+        "https://ncic.re.kr/",
+        "https://ncic.re.kr/inv/org/list.do",
+        "https://ncic.re.kr/bbs/eduNotice2022/list.do",
+        "https://www.moe.go.kr/"
+      ],
+      "sourceRefs": [
+        "kr-ncic",
+        "kr-ncic-inventory",
+        "kr-ncic-2022-notices",
+        "kr-moe"
+      ],
+      "textIncluded": false,
+      "license": "Public government curriculum source; staged seed stores official-style codes, metadata, source refs, and original paraphrases only.",
+      "verificationStatus": "needs-official-code-check",
+      "standardCount": 4,
+      "standards": [
+        {
+          "key": "kr-2022-elem-moral:[4도01-01]",
+          "code": "[4도01-01]",
+          "gradeBand": "3-4",
+          "subject": "Moral Education",
+          "subjectKorean": "도덕",
+          "domain": "Self & Moral Agency",
+          "domainKorean": "자신과 도덕적 주체성",
+          "summary": "Reflect on emotions, habits, and choices that support responsible self-management.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative moral-education anchor from the 2022 revised elementary frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-moral:[4도02-01]",
+          "code": "[4도02-01]",
+          "gradeBand": "3-4",
+          "subject": "Moral Education",
+          "subjectKorean": "도덕",
+          "domain": "Relationships",
+          "domainKorean": "타인과의 관계",
+          "summary": "Practice empathy, promise-keeping, and respectful communication with family and peers.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative moral-education anchor from the 2022 revised elementary frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-moral:[6도03-01]",
+          "code": "[6도03-01]",
+          "gradeBand": "5-6",
+          "subject": "Moral Education",
+          "subjectKorean": "도덕",
+          "domain": "Community Responsibility",
+          "domainKorean": "사회와 공동체",
+          "summary": "Reason about fairness, responsibility, and participation in school and local communities.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative moral-education anchor from the 2022 revised elementary frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-moral:[6도04-01]",
+          "code": "[6도04-01]",
+          "gradeBand": "5-6",
+          "subject": "Moral Education",
+          "subjectKorean": "도덕",
+          "domain": "Peace & Coexistence",
+          "domainKorean": "평화와 공존",
+          "summary": "Consider ecological care, cultural respect, peace, and coexistence in everyday decisions.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative moral-education anchor from the 2022 revised elementary frame; code requires official NCIC check."
+        }
+      ]
+    },
+    {
+      "id": "kr-2022-elem-practical-arts",
+      "slug": "kr-2022-elem-practical-arts",
+      "country": "KR",
+      "subject": "Practical Arts",
+      "subjectKorean": "실과",
+      "schoolLevel": "elementary",
+      "version": "2022 revised national curriculum",
+      "sourceUrls": [
+        "https://ncic.re.kr/",
+        "https://ncic.re.kr/inv/org/list.do",
+        "https://ncic.re.kr/bbs/eduNotice2022/list.do",
+        "https://www.moe.go.kr/"
+      ],
+      "sourceRefs": [
+        "kr-ncic",
+        "kr-ncic-inventory",
+        "kr-ncic-2022-notices",
+        "kr-moe"
+      ],
+      "textIncluded": false,
+      "license": "Public government curriculum source; staged seed stores official-style codes, metadata, source refs, and original paraphrases only.",
+      "verificationStatus": "needs-official-code-check",
+      "standardCount": 4,
+      "standards": [
+        {
+          "key": "kr-2022-elem-practical-arts:[6실01-01]",
+          "code": "[6실01-01]",
+          "gradeBand": "5-6",
+          "subject": "Practical Arts",
+          "subjectKorean": "실과",
+          "domain": "Human Development & Family Life",
+          "domainKorean": "인간 발달과 가족",
+          "summary": "Connect growth, self-care, family roles, and respectful household participation.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative practical-arts anchor from the 2022 revised elementary frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-practical-arts:[6실02-01]",
+          "code": "[6실02-01]",
+          "gradeBand": "5-6",
+          "subject": "Practical Arts",
+          "subjectKorean": "실과",
+          "domain": "Home Life & Resources",
+          "domainKorean": "가정생활과 자원",
+          "summary": "Plan sustainable use of food, clothing, money, time, and household resources.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative practical-arts anchor from the 2022 revised elementary frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-practical-arts:[6실03-01]",
+          "code": "[6실03-01]",
+          "gradeBand": "5-6",
+          "subject": "Practical Arts",
+          "subjectKorean": "실과",
+          "domain": "Technology & Making",
+          "domainKorean": "기술과 만들기",
+          "summary": "Design, make, test, and improve simple products for practical needs.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative practical-arts anchor from the 2022 revised elementary frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-practical-arts:[6실04-01]",
+          "code": "[6실04-01]",
+          "gradeBand": "5-6",
+          "subject": "Practical Arts",
+          "subjectKorean": "실과",
+          "domain": "Information & Digital Problem Solving",
+          "domainKorean": "정보와 디지털 문제 해결",
+          "summary": "Use basic computational ideas, data, and digital tools safely to solve everyday problems.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative practical-arts and elementary information anchor from the 2022 revised frame; code requires official NCIC check."
+        }
+      ]
+    },
+    {
+      "id": "kr-2022-elem-integrated",
+      "slug": "kr-2022-elem-integrated",
+      "country": "KR",
+      "subject": "Integrated Subjects",
+      "subjectKorean": "통합교과",
+      "schoolLevel": "elementary",
+      "version": "2022 revised national curriculum",
+      "sourceUrls": [
+        "https://ncic.re.kr/",
+        "https://ncic.re.kr/inv/org/list.do",
+        "https://ncic.re.kr/bbs/eduNotice2022/list.do",
+        "https://www.moe.go.kr/"
+      ],
+      "sourceRefs": [
+        "kr-ncic",
+        "kr-ncic-inventory",
+        "kr-ncic-2022-notices",
+        "kr-moe"
+      ],
+      "textIncluded": false,
+      "license": "Public government curriculum source; staged seed stores official-style codes, metadata, source refs, and original paraphrases only.",
+      "verificationStatus": "needs-official-code-check",
+      "standardCount": 6,
+      "standards": [
+        {
+          "key": "kr-2022-elem-integrated:[2바01-01]",
+          "code": "[2바01-01]",
+          "gradeBand": "1-2",
+          "subject": "Integrated Subjects",
+          "subjectKorean": "통합교과",
+          "domain": "Right Life",
+          "domainKorean": "바른 생활",
+          "summary": "Build safe school routines, self-care habits, and respectful participation in class life.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative integrated-subject anchor for Barun Saenghwal under the 2022 revised frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-integrated:[2바02-01]",
+          "code": "[2바02-01]",
+          "gradeBand": "1-2",
+          "subject": "Integrated Subjects",
+          "subjectKorean": "통합교과",
+          "domain": "Right Life",
+          "domainKorean": "바른 생활",
+          "summary": "Practice courteous relationships and community habits with family, classmates, and neighbors.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative integrated-subject anchor for Barun Saenghwal under the 2022 revised frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-integrated:[2슬01-01]",
+          "code": "[2슬01-01]",
+          "gradeBand": "1-2",
+          "subject": "Integrated Subjects",
+          "subjectKorean": "통합교과",
+          "domain": "Wise Life",
+          "domainKorean": "슬기로운 생활",
+          "summary": "Observe and inquire into school, neighborhood, nature, and everyday phenomena.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative integrated-subject anchor for Seulgiroun Saenghwal under the 2022 revised frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-integrated:[2슬02-01]",
+          "code": "[2슬02-01]",
+          "gradeBand": "1-2",
+          "subject": "Integrated Subjects",
+          "subjectKorean": "통합교과",
+          "domain": "Wise Life",
+          "domainKorean": "슬기로운 생활",
+          "summary": "Compare seasonal, family, and community changes through observation and questioning.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative integrated-subject anchor for Seulgiroun Saenghwal under the 2022 revised frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-integrated:[2즐01-01]",
+          "code": "[2즐01-01]",
+          "gradeBand": "1-2",
+          "subject": "Integrated Subjects",
+          "subjectKorean": "통합교과",
+          "domain": "Joyful Life",
+          "domainKorean": "즐거운 생활",
+          "summary": "Express experiences through play, movement, music, visual art, and making.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative integrated-subject anchor for Jeulgeoun Saenghwal under the 2022 revised frame; code requires official NCIC check."
+        },
+        {
+          "key": "kr-2022-elem-integrated:[2즐02-01]",
+          "code": "[2즐02-01]",
+          "gradeBand": "1-2",
+          "subject": "Integrated Subjects",
+          "subjectKorean": "통합교과",
+          "domain": "Joyful Life",
+          "domainKorean": "즐거운 생활",
+          "summary": "Create and share cooperative performances or products connected to class and community events.",
+          "sourceTextIncluded": false,
+          "sourceRefs": [
+            "kr-ncic-inventory"
+          ],
+          "verificationStatus": "needs-official-code-check",
+          "sourceBasis": "Representative integrated-subject anchor for Jeulgeoun Saenghwal under the 2022 revised frame; code requires official NCIC check."
         }
       ]
     }
   ],
   "microTopics": [
+    {
+      "id": "kr.mt.korean.discourse.turn-taking.1-2",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Listening & Speaking",
+      "domainKorean": "듣기·말하기",
+      "gradeBand": "1-2",
+      "type": "LANGUAGE",
+      "titleKorean": "차례 지키며 말하기",
+      "titleEnglish": "Turn-taking in Korean classroom talk",
+      "summary": "Listen to others and contribute short, relevant responses in familiar Korean classroom talk."
+    },
+    {
+      "id": "kr.mt.korean.hangul.decoding.1-2",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Reading",
+      "domainKorean": "읽기",
+      "gradeBand": "1-2",
+      "type": "LANGUAGE",
+      "titleKorean": "한글 해독과 음절 읽기",
+      "titleEnglish": "Hangul decoding and syllable reading",
+      "summary": "Connect consonants, vowels, syllable blocks, pronunciation, and meaning while reading."
+    },
+    {
+      "id": "kr.mt.korean.writing.sentences.1-2",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Writing",
+      "domainKorean": "쓰기",
+      "gradeBand": "1-2",
+      "type": "PROCEDURAL",
+      "titleKorean": "낱말과 문장 쓰기",
+      "titleEnglish": "Writing Korean words and sentences",
+      "summary": "Write readable Korean words and short sentences for a simple purpose."
+    },
+    {
+      "id": "kr.mt.korean.grammar.sound-letter.1-2",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Grammar",
+      "domainKorean": "문법",
+      "gradeBand": "1-2",
+      "type": "LANGUAGE",
+      "titleKorean": "소리와 글자의 대응",
+      "titleEnglish": "Korean sound-letter relationships",
+      "summary": "Notice how Korean sounds, letters, syllable blocks, words, and sentences relate."
+    },
+    {
+      "id": "kr.mt.korean.literature.response.3-4",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Literature",
+      "domainKorean": "문학",
+      "gradeBand": "3-4",
+      "type": "META",
+      "titleKorean": "문학 감상과 반응",
+      "titleEnglish": "Korean literary response",
+      "summary": "Share feelings, interpretations, and textual evidence after reading Korean literary works."
+    },
+    {
+      "id": "kr.mt.korean.media.critical-viewing.5-6",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Media",
+      "domainKorean": "매체",
+      "gradeBand": "5-6",
+      "type": "META",
+      "titleKorean": "매체 메시지 비판적 이해",
+      "titleEnglish": "Critical understanding of Korean media messages",
+      "summary": "Interpret purpose, audience, mode, evidence, and credibility in Korean media texts."
+    },
     {
       "id": "kr.mt.math.number.place-value.1-2",
       "subject": "Mathematics",
@@ -466,79 +1196,361 @@
       "summary": "Use diagrams and models to reason about Earth, weather, and space phenomena."
     },
     {
-      "id": "kr.mt.korean.discourse.turn-taking.1-2",
-      "subject": "Korean Language",
-      "subjectKorean": "국어",
-      "domain": "Listening & Speaking",
-      "domainKorean": "듣기·말하기",
-      "gradeBand": "1-2",
-      "type": "LANGUAGE",
-      "titleKorean": "차례 지키며 말하기",
-      "titleEnglish": "Turn-taking in talk",
-      "summary": "Listen to others and contribute short, relevant responses in familiar talk."
-    },
-    {
-      "id": "kr.mt.korean.hangul.decoding.1-2",
-      "subject": "Korean Language",
-      "subjectKorean": "국어",
-      "domain": "Reading",
-      "domainKorean": "읽기",
-      "gradeBand": "1-2",
-      "type": "LANGUAGE",
-      "titleKorean": "한글 해독과 음절 읽기",
-      "titleEnglish": "Hangul decoding and syllable reading",
-      "summary": "Connect consonants, vowels, syllable blocks, pronunciation, and meaning while reading."
-    },
-    {
-      "id": "kr.mt.korean.writing.sentences.1-2",
-      "subject": "Korean Language",
-      "subjectKorean": "국어",
-      "domain": "Writing",
-      "domainKorean": "쓰기",
-      "gradeBand": "1-2",
-      "type": "PROCEDURAL",
-      "titleKorean": "낱말과 문장 쓰기",
-      "titleEnglish": "Writing words and sentences",
-      "summary": "Write readable words and short sentences for a simple purpose."
-    },
-    {
-      "id": "kr.mt.korean.grammar.sound-letter.1-2",
-      "subject": "Korean Language",
-      "subjectKorean": "국어",
-      "domain": "Grammar",
-      "domainKorean": "문법",
-      "gradeBand": "1-2",
-      "type": "LANGUAGE",
-      "titleKorean": "소리와 글자의 대응",
-      "titleEnglish": "Sound-letter relationships",
-      "summary": "Notice how Korean sounds, letters, syllable blocks, words, and sentences relate."
-    },
-    {
-      "id": "kr.mt.korean.literature.response.3-4",
-      "subject": "Korean Language",
-      "subjectKorean": "국어",
-      "domain": "Literature",
-      "domainKorean": "문학",
+      "id": "kr.mt.social.geography.local-map.3-4",
+      "subject": "Social Studies",
+      "subjectKorean": "사회",
+      "domain": "Local Geography",
+      "domainKorean": "지역 지리",
       "gradeBand": "3-4",
-      "type": "META",
-      "titleKorean": "문학 감상과 반응",
-      "titleEnglish": "Literary response",
-      "summary": "Share feelings, interpretations, and textual evidence after reading literary works."
+      "type": "REPRESENTATIONAL",
+      "titleKorean": "우리 지역 지도 읽기",
+      "titleEnglish": "Reading maps of the local Korean community",
+      "summary": "Use maps, symbols, directions, and place descriptions to understand a Korean local community."
     },
     {
-      "id": "kr.mt.korean.media.critical-viewing.5-6",
-      "subject": "Korean Language",
-      "subjectKorean": "국어",
-      "domain": "Media",
-      "domainKorean": "매체",
+      "id": "kr.mt.social.history.local-change.3-4",
+      "subject": "Social Studies",
+      "subjectKorean": "사회",
+      "domain": "Local History",
+      "domainKorean": "지역의 역사",
+      "gradeBand": "3-4",
+      "type": "CONCEPTUAL",
+      "titleKorean": "지역 생활의 변화",
+      "titleEnglish": "Change in local Korean community life",
+      "summary": "Investigate how local places, work, transportation, and daily life have changed over time."
+    },
+    {
+      "id": "kr.mt.social.civics.local-institutions.3-4",
+      "subject": "Social Studies",
+      "subjectKorean": "사회",
+      "domain": "Community & Civics",
+      "domainKorean": "공동체와 시민성",
+      "gradeBand": "3-4",
+      "type": "CONCEPTUAL",
+      "titleKorean": "공공기관과 공동체 규칙",
+      "titleEnglish": "Public institutions and community rules",
+      "summary": "Explain how local Korean public institutions, rules, and cooperation support shared life."
+    },
+    {
+      "id": "kr.mt.social.geography.korean-regions.3-4",
+      "subject": "Social Studies",
+      "subjectKorean": "사회",
+      "domain": "Regions of Korea",
+      "domainKorean": "우리 국토와 지역",
+      "gradeBand": "3-4",
+      "type": "REPRESENTATIONAL",
+      "titleKorean": "우리 국토와 지역 비교",
+      "titleEnglish": "Comparing regions of Korea",
+      "summary": "Compare Korean regions with maps, landscape evidence, transport links, and daily-life examples."
+    },
+    {
+      "id": "kr.mt.social.history.korea-chronology.5-6",
+      "subject": "Social Studies",
+      "subjectKorean": "사회",
+      "domain": "Korean History",
+      "domainKorean": "한국사",
+      "gradeBand": "5-6",
+      "type": "CONCEPTUAL",
+      "titleKorean": "한국사 흐름과 문화유산",
+      "titleEnglish": "Korean history chronology and cultural heritage",
+      "summary": "Place Korean historical periods, events, people, and heritage in chronological relationships."
+    },
+    {
+      "id": "kr.mt.social.civics.democratic-participation.5-6",
+      "subject": "Social Studies",
+      "subjectKorean": "사회",
+      "domain": "Democratic Citizenship",
+      "domainKorean": "민주시민과 사회",
       "gradeBand": "5-6",
       "type": "META",
-      "titleKorean": "매체 메시지 비판적 이해",
-      "titleEnglish": "Critical understanding of media messages",
-      "summary": "Interpret purpose, audience, mode, evidence, and credibility in media texts."
+      "titleKorean": "민주적 참여와 책임",
+      "titleEnglish": "Democratic participation and responsibility",
+      "summary": "Reason about rights, responsibilities, participation, and public issues in Korean democracy."
+    },
+    {
+      "id": "kr.mt.english.efl.listening.sounds-phrases.3-4",
+      "subject": "English as a Foreign Language",
+      "subjectKorean": "영어",
+      "domain": "Listening",
+      "domainKorean": "듣기",
+      "gradeBand": "3-4",
+      "type": "LANGUAGE",
+      "titleKorean": "영어 소리와 기초 표현 듣기",
+      "titleEnglish": "Listening to English sounds and basic phrases",
+      "summary": "Recognize familiar English sounds, words, and short phrases as a Korean beginner EFL learner."
+    },
+    {
+      "id": "kr.mt.english.efl.speaking.greetings.3-4",
+      "subject": "English as a Foreign Language",
+      "subjectKorean": "영어",
+      "domain": "Speaking",
+      "domainKorean": "말하기",
+      "gradeBand": "3-4",
+      "type": "LANGUAGE",
+      "titleKorean": "인사와 교실 영어 말하기",
+      "titleEnglish": "Greetings and classroom English speaking",
+      "summary": "Use rehearsed greetings, classroom expressions, and supported short exchanges."
+    },
+    {
+      "id": "kr.mt.english.efl.reading.alphabet-phonics.3-4",
+      "subject": "English as a Foreign Language",
+      "subjectKorean": "영어",
+      "domain": "Reading",
+      "domainKorean": "읽기",
+      "gradeBand": "3-4",
+      "type": "LANGUAGE",
+      "titleKorean": "알파벳과 기초 파닉스",
+      "titleEnglish": "Alphabet and basic phonics",
+      "summary": "Connect Roman letters, simple sound patterns, and high-frequency English words."
+    },
+    {
+      "id": "kr.mt.english.efl.writing.alphabet-words.3-4",
+      "subject": "English as a Foreign Language",
+      "subjectKorean": "영어",
+      "domain": "Writing",
+      "domainKorean": "쓰기",
+      "gradeBand": "3-4",
+      "type": "PROCEDURAL",
+      "titleKorean": "알파벳과 낱말 쓰기",
+      "titleEnglish": "Writing alphabet letters and words",
+      "summary": "Copy and write letters, words, and short familiar phrases with attention to form."
+    },
+    {
+      "id": "kr.mt.english.efl.listening.main-idea.5-6",
+      "subject": "English as a Foreign Language",
+      "subjectKorean": "영어",
+      "domain": "Listening",
+      "domainKorean": "듣기",
+      "gradeBand": "5-6",
+      "type": "LANGUAGE",
+      "titleKorean": "짧은 영어 듣기 요지 이해",
+      "titleEnglish": "Main idea in short EFL listening",
+      "summary": "Understand main ideas and simple details in short spoken English about familiar topics."
+    },
+    {
+      "id": "kr.mt.english.efl.speaking.info-exchange.5-6",
+      "subject": "English as a Foreign Language",
+      "subjectKorean": "영어",
+      "domain": "Speaking",
+      "domainKorean": "말하기",
+      "gradeBand": "5-6",
+      "type": "LANGUAGE",
+      "titleKorean": "정보 묻고 답하기",
+      "titleEnglish": "Asking and answering information",
+      "summary": "Ask, answer, and present simple information in supported EFL interaction."
+    },
+    {
+      "id": "kr.mt.moral.self.agency.3-4",
+      "subject": "Moral Education",
+      "subjectKorean": "도덕",
+      "domain": "Self & Moral Agency",
+      "domainKorean": "자신과 도덕적 주체성",
+      "gradeBand": "3-4",
+      "type": "META",
+      "titleKorean": "감정과 생활 습관 성찰",
+      "titleEnglish": "Reflecting on emotions and habits",
+      "summary": "Reflect on emotions, habits, choices, and responsible self-management."
+    },
+    {
+      "id": "kr.mt.moral.relationships.empathy.3-4",
+      "subject": "Moral Education",
+      "subjectKorean": "도덕",
+      "domain": "Relationships",
+      "domainKorean": "타인과의 관계",
+      "gradeBand": "3-4",
+      "type": "META",
+      "titleKorean": "공감과 약속 지키기",
+      "titleEnglish": "Empathy and promise-keeping",
+      "summary": "Practice empathy, promise-keeping, and respectful communication with family and peers."
+    },
+    {
+      "id": "kr.mt.moral.community.fairness.5-6",
+      "subject": "Moral Education",
+      "subjectKorean": "도덕",
+      "domain": "Community Responsibility",
+      "domainKorean": "사회와 공동체",
+      "gradeBand": "5-6",
+      "type": "META",
+      "titleKorean": "공정성과 공동체 책임",
+      "titleEnglish": "Fairness and community responsibility",
+      "summary": "Reason about fairness, responsibility, and participation in school and local communities."
+    },
+    {
+      "id": "kr.mt.moral.coexistence.peace-ecology.5-6",
+      "subject": "Moral Education",
+      "subjectKorean": "도덕",
+      "domain": "Peace & Coexistence",
+      "domainKorean": "평화와 공존",
+      "gradeBand": "5-6",
+      "type": "META",
+      "titleKorean": "평화와 생태적 공존",
+      "titleEnglish": "Peace and ecological coexistence",
+      "summary": "Consider ecological care, cultural respect, peace, and coexistence in everyday decisions."
+    },
+    {
+      "id": "kr.mt.practical.family.self-care.5-6",
+      "subject": "Practical Arts",
+      "subjectKorean": "실과",
+      "domain": "Human Development & Family Life",
+      "domainKorean": "인간 발달과 가족",
+      "gradeBand": "5-6",
+      "type": "PROCEDURAL",
+      "titleKorean": "성장과 자기 돌봄",
+      "titleEnglish": "Growth and self-care",
+      "summary": "Connect growth, self-care, family roles, and respectful household participation."
+    },
+    {
+      "id": "kr.mt.practical.home.resources.5-6",
+      "subject": "Practical Arts",
+      "subjectKorean": "실과",
+      "domain": "Home Life & Resources",
+      "domainKorean": "가정생활과 자원",
+      "gradeBand": "5-6",
+      "type": "PROCEDURAL",
+      "titleKorean": "가정 자원과 지속가능한 생활",
+      "titleEnglish": "Household resources and sustainable living",
+      "summary": "Plan sustainable use of food, clothing, money, time, and household resources."
+    },
+    {
+      "id": "kr.mt.practical.technology.making.5-6",
+      "subject": "Practical Arts",
+      "subjectKorean": "실과",
+      "domain": "Technology & Making",
+      "domainKorean": "기술과 만들기",
+      "gradeBand": "5-6",
+      "type": "PROCEDURAL",
+      "titleKorean": "생활 제품 설계와 만들기",
+      "titleEnglish": "Designing and making practical products",
+      "summary": "Design, make, test, and improve simple products for practical needs."
+    },
+    {
+      "id": "kr.mt.practical.info.digital-problem-solving.5-6",
+      "subject": "Practical Arts",
+      "subjectKorean": "실과",
+      "domain": "Information & Digital Problem Solving",
+      "domainKorean": "정보와 디지털 문제 해결",
+      "gradeBand": "5-6",
+      "type": "PROCEDURAL",
+      "titleKorean": "정보와 디지털 문제 해결",
+      "titleEnglish": "Information and digital problem solving",
+      "summary": "Use basic computational ideas, data, and digital tools safely to solve everyday problems."
+    },
+    {
+      "id": "kr.mt.integrated.right-life.school-routines.1-2",
+      "subject": "Integrated Subjects",
+      "subjectKorean": "통합교과",
+      "domain": "Right Life",
+      "domainKorean": "바른 생활",
+      "gradeBand": "1-2",
+      "type": "PROCEDURAL",
+      "titleKorean": "안전한 학교 생활 습관",
+      "titleEnglish": "Safe school-life routines",
+      "summary": "Build safe school routines, self-care habits, and respectful participation in class life."
+    },
+    {
+      "id": "kr.mt.integrated.right-life.community-habits.1-2",
+      "subject": "Integrated Subjects",
+      "subjectKorean": "통합교과",
+      "domain": "Right Life",
+      "domainKorean": "바른 생활",
+      "gradeBand": "1-2",
+      "type": "PROCEDURAL",
+      "titleKorean": "가족과 이웃 예절",
+      "titleEnglish": "Family and neighbor courtesy",
+      "summary": "Practice courteous relationships and community habits with family, classmates, and neighbors."
+    },
+    {
+      "id": "kr.mt.integrated.wise-life.local-inquiry.1-2",
+      "subject": "Integrated Subjects",
+      "subjectKorean": "통합교과",
+      "domain": "Wise Life",
+      "domainKorean": "슬기로운 생활",
+      "gradeBand": "1-2",
+      "type": "PROCEDURAL",
+      "titleKorean": "학교와 마을 관찰",
+      "titleEnglish": "Observing school and neighborhood",
+      "summary": "Observe and ask questions about school, neighborhood, nature, and everyday phenomena."
+    },
+    {
+      "id": "kr.mt.integrated.wise-life.seasonal-change.1-2",
+      "subject": "Integrated Subjects",
+      "subjectKorean": "통합교과",
+      "domain": "Wise Life",
+      "domainKorean": "슬기로운 생활",
+      "gradeBand": "1-2",
+      "type": "CONCEPTUAL",
+      "titleKorean": "계절과 생활 변화",
+      "titleEnglish": "Seasonal and daily-life changes",
+      "summary": "Compare seasonal, family, and community changes through observation and questioning."
+    },
+    {
+      "id": "kr.mt.integrated.joyful-life.expression.1-2",
+      "subject": "Integrated Subjects",
+      "subjectKorean": "통합교과",
+      "domain": "Joyful Life",
+      "domainKorean": "즐거운 생활",
+      "gradeBand": "1-2",
+      "type": "REPRESENTATIONAL",
+      "titleKorean": "놀이와 예술 표현",
+      "titleEnglish": "Play and arts expression",
+      "summary": "Express experiences through play, movement, music, visual art, and making."
+    },
+    {
+      "id": "kr.mt.integrated.joyful-life.cooperative-sharing.1-2",
+      "subject": "Integrated Subjects",
+      "subjectKorean": "통합교과",
+      "domain": "Joyful Life",
+      "domainKorean": "즐거운 생활",
+      "gradeBand": "1-2",
+      "type": "REPRESENTATIONAL",
+      "titleKorean": "협동 표현과 나눔",
+      "titleEnglish": "Cooperative expression and sharing",
+      "summary": "Create and share cooperative performances or products connected to class and community events."
     }
   ],
   "standardMappings": [
+    {
+      "standardKey": "kr-2022-elem-korean:[2국01-01]",
+      "microTopicId": "kr.mt.korean.discourse.turn-taking.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps Korean listening-speaking to turn-taking discourse routines."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[2국02-01]",
+      "microTopicId": "kr.mt.korean.hangul.decoding.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps early Korean reading to Hangul decoding and syllable-block reading."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[2국03-01]",
+      "microTopicId": "kr.mt.korean.writing.sentences.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps Korean writing to words and short sentences."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[2국04-01]",
+      "microTopicId": "kr.mt.korean.grammar.sound-letter.1-2",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps grammar to Korean sound-letter and syllable awareness."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[4국05-01]",
+      "microTopicId": "kr.mt.korean.literature.response.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps literature to Korean literary response and interpretation."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[6국06-01]",
+      "microTopicId": "kr.mt.korean.media.critical-viewing.5-6",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps media to purpose, audience, mode, and credibility."
+    },
     {
       "standardKey": "kr-2022-elem-math:[2수01-01]",
       "microTopicId": "kr.mt.math.number.place-value.1-2",
@@ -624,49 +1636,206 @@
       "note": "Maps Earth-and-space code to model-based system reasoning."
     },
     {
-      "standardKey": "kr-2022-elem-korean:[2국01-01]",
-      "microTopicId": "kr.mt.korean.discourse.turn-taking.1-2",
+      "standardKey": "kr-2022-elem-social-studies:[4사01-01]",
+      "microTopicId": "kr.mt.social.geography.local-map.3-4",
       "relationship": "introduces",
       "confidence": "seed",
-      "note": "Maps listening-speaking code to turn-taking discourse routines."
+      "note": "Maps local Korean geography to map and place-reading micro-topic."
     },
     {
-      "standardKey": "kr-2022-elem-korean:[2국02-01]",
-      "microTopicId": "kr.mt.korean.hangul.decoding.1-2",
+      "standardKey": "kr-2022-elem-social-studies:[4사02-01]",
+      "microTopicId": "kr.mt.social.history.local-change.3-4",
       "relationship": "introduces",
       "confidence": "seed",
-      "note": "Maps reading code to Hangul decoding and syllable-block reading."
+      "note": "Maps local history to changes in Korean community life."
     },
     {
-      "standardKey": "kr-2022-elem-korean:[2국03-01]",
-      "microTopicId": "kr.mt.korean.writing.sentences.1-2",
-      "relationship": "introduces",
-      "confidence": "seed",
-      "note": "Maps writing code to words and short sentences."
-    },
-    {
-      "standardKey": "kr-2022-elem-korean:[2국04-01]",
-      "microTopicId": "kr.mt.korean.grammar.sound-letter.1-2",
+      "standardKey": "kr-2022-elem-social-studies:[4사03-01]",
+      "microTopicId": "kr.mt.social.civics.local-institutions.3-4",
       "relationship": "supports",
       "confidence": "seed",
-      "note": "Maps grammar code to Korean sound-letter and syllable awareness."
+      "note": "Maps local civics to Korean public institutions and community rules."
     },
     {
-      "standardKey": "kr-2022-elem-korean:[4국05-01]",
-      "microTopicId": "kr.mt.korean.literature.response.3-4",
+      "standardKey": "kr-2022-elem-social-studies:[4사04-01]",
+      "microTopicId": "kr.mt.social.geography.korean-regions.3-4",
       "relationship": "introduces",
       "confidence": "seed",
-      "note": "Maps literature code to response and interpretation."
+      "note": "Maps geography to comparison of Korean regions rather than US or UK regional studies."
     },
     {
-      "standardKey": "kr-2022-elem-korean:[6국06-01]",
-      "microTopicId": "kr.mt.korean.media.critical-viewing.5-6",
+      "standardKey": "kr-2022-elem-social-studies:[6사03-01]",
+      "microTopicId": "kr.mt.social.history.korea-chronology.5-6",
       "relationship": "introduces",
       "confidence": "seed",
-      "note": "Maps media code to purpose, audience, mode, and credibility."
+      "note": "Maps history to Korean chronology, people, events, and heritage."
+    },
+    {
+      "standardKey": "kr-2022-elem-social-studies:[6사05-01]",
+      "microTopicId": "kr.mt.social.civics.democratic-participation.5-6",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps civics to rights, responsibility, and participation in Korean society."
+    },
+    {
+      "standardKey": "kr-2022-elem-english-efl:[4영01-01]",
+      "microTopicId": "kr.mt.english.efl.listening.sounds-phrases.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps English listening as Korean beginner EFL, not native-language ELA."
+    },
+    {
+      "standardKey": "kr-2022-elem-english-efl:[4영02-01]",
+      "microTopicId": "kr.mt.english.efl.speaking.greetings.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps speaking to supported greetings and classroom English exchanges."
+    },
+    {
+      "standardKey": "kr-2022-elem-english-efl:[4영03-01]",
+      "microTopicId": "kr.mt.english.efl.reading.alphabet-phonics.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps English reading to alphabet and phonics for Korean EFL learners."
+    },
+    {
+      "standardKey": "kr-2022-elem-english-efl:[4영04-01]",
+      "microTopicId": "kr.mt.english.efl.writing.alphabet-words.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps English writing to alphabet, word, and phrase production."
+    },
+    {
+      "standardKey": "kr-2022-elem-english-efl:[6영01-01]",
+      "microTopicId": "kr.mt.english.efl.listening.main-idea.5-6",
+      "relationship": "extends",
+      "confidence": "seed",
+      "note": "Extends EFL listening into short familiar-topic main-idea comprehension."
+    },
+    {
+      "standardKey": "kr-2022-elem-english-efl:[6영02-01]",
+      "microTopicId": "kr.mt.english.efl.speaking.info-exchange.5-6",
+      "relationship": "extends",
+      "confidence": "seed",
+      "note": "Extends EFL speaking into supported information exchange and presentation."
+    },
+    {
+      "standardKey": "kr-2022-elem-moral:[4도01-01]",
+      "microTopicId": "kr.mt.moral.self.agency.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps moral self-agency to reflection on emotions, habits, and choices."
+    },
+    {
+      "standardKey": "kr-2022-elem-moral:[4도02-01]",
+      "microTopicId": "kr.mt.moral.relationships.empathy.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps relationship ethics to empathy and promise-keeping."
+    },
+    {
+      "standardKey": "kr-2022-elem-moral:[6도03-01]",
+      "microTopicId": "kr.mt.moral.community.fairness.5-6",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps community responsibility to fairness and participation."
+    },
+    {
+      "standardKey": "kr-2022-elem-moral:[6도04-01]",
+      "microTopicId": "kr.mt.moral.coexistence.peace-ecology.5-6",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps coexistence to ecological care, cultural respect, and peace."
+    },
+    {
+      "standardKey": "kr-2022-elem-practical-arts:[6실01-01]",
+      "microTopicId": "kr.mt.practical.family.self-care.5-6",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps practical arts to growth, self-care, and family life."
+    },
+    {
+      "standardKey": "kr-2022-elem-practical-arts:[6실02-01]",
+      "microTopicId": "kr.mt.practical.home.resources.5-6",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps home-life learning to sustainable household resource decisions."
+    },
+    {
+      "standardKey": "kr-2022-elem-practical-arts:[6실03-01]",
+      "microTopicId": "kr.mt.practical.technology.making.5-6",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps technology learning to design, making, testing, and improvement."
+    },
+    {
+      "standardKey": "kr-2022-elem-practical-arts:[6실04-01]",
+      "microTopicId": "kr.mt.practical.info.digital-problem-solving.5-6",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps practical-arts information content to digital problem solving and safe tool use."
+    },
+    {
+      "standardKey": "kr-2022-elem-integrated:[2바01-01]",
+      "microTopicId": "kr.mt.integrated.right-life.school-routines.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps Right Life to safe school routines and class participation."
+    },
+    {
+      "standardKey": "kr-2022-elem-integrated:[2바02-01]",
+      "microTopicId": "kr.mt.integrated.right-life.community-habits.1-2",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps Right Life to family, classmate, and neighbor courtesy."
+    },
+    {
+      "standardKey": "kr-2022-elem-integrated:[2슬01-01]",
+      "microTopicId": "kr.mt.integrated.wise-life.local-inquiry.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps Wise Life to local observation and inquiry."
+    },
+    {
+      "standardKey": "kr-2022-elem-integrated:[2슬02-01]",
+      "microTopicId": "kr.mt.integrated.wise-life.seasonal-change.1-2",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps Wise Life to seasonal and daily-life change."
+    },
+    {
+      "standardKey": "kr-2022-elem-integrated:[2즐01-01]",
+      "microTopicId": "kr.mt.integrated.joyful-life.expression.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps Joyful Life to play, movement, music, visual art, and making."
+    },
+    {
+      "standardKey": "kr-2022-elem-integrated:[2즐02-01]",
+      "microTopicId": "kr.mt.integrated.joyful-life.cooperative-sharing.1-2",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps Joyful Life to cooperative expression and sharing."
     }
   ],
   "coverageNotes": [
+    {
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "status": "representative-seed",
+      "included": [
+        "Hangul decoding and syllable awareness",
+        "Listening and speaking discourse",
+        "Writing",
+        "Korean grammar",
+        "Literature",
+        "Media literacy"
+      ],
+      "gaps": [
+        "This is not an ELA translation and should be reviewed by Korean-language curriculum experts.",
+        "Full reading, writing, grammar, literature, and media sequences remain out of scope for v0.2."
+      ]
+    },
     {
       "subject": "Mathematics",
       "subjectKorean": "수학",
@@ -678,7 +1847,7 @@
         "Data collection and graph interpretation"
       ],
       "gaps": [
-        "Fractions, decimals, ratio, full measurement sequence, and probability remain out of scope for v0.1.",
+        "Fractions, decimals, ratio, full measurement sequence, and probability remain out of scope for v0.2.",
         "Every code must be checked against the official source before full import."
       ]
     },
@@ -699,21 +1868,81 @@
       ]
     },
     {
-      "subject": "Korean Language",
-      "subjectKorean": "국어",
+      "subject": "Social Studies",
+      "subjectKorean": "사회",
       "status": "representative-seed",
       "included": [
-        "Hangul decoding and syllable awareness",
-        "Listening and speaking discourse",
-        "Writing",
-        "Korean grammar",
-        "Literature",
-        "Media literacy"
+        "Korean local community geography",
+        "Local history and community change",
+        "Regions of Korea",
+        "Korean history chronology and cultural heritage",
+        "Democratic citizenship in Korean society"
       ],
       "gaps": [
-        "This is not an ELA translation and should be reviewed by Korean-language curriculum experts.",
-        "Full reading, writing, grammar, literature, and media sequences remain out of scope for v0.1."
+        "This seed intentionally excludes US/UK history and civics frames.",
+        "Detailed Korean history periodization, economy, geography, and public-issue sequences remain out of scope for v0.2."
+      ]
+    },
+    {
+      "subject": "English as a Foreign Language",
+      "subjectKorean": "영어",
+      "status": "representative-seed",
+      "included": [
+        "Beginner EFL listening for Korean learners",
+        "Supported greetings and classroom English",
+        "Alphabet and basic phonics",
+        "Word and phrase writing",
+        "Upper-elementary short listening and information exchange"
+      ],
+      "gaps": [
+        "This is not native English language arts and should not inherit ELA literature or composition expectations.",
+        "Full 3-6 EFL receptive/productive and intercultural communication sequence remains out of scope for v0.2."
+      ]
+    },
+    {
+      "subject": "Moral Education",
+      "subjectKorean": "도덕",
+      "status": "representative-seed",
+      "included": [
+        "Self-agency and habit reflection",
+        "Empathy and relationships",
+        "Fairness and community responsibility",
+        "Peace, coexistence, and ecological care"
+      ],
+      "gaps": [
+        "Full moral inquiry, value conflict, and action-practice sequence remains out of scope for v0.2.",
+        "Code-level verification is required before marking any anchor reviewed."
+      ]
+    },
+    {
+      "subject": "Practical Arts",
+      "subjectKorean": "실과",
+      "status": "representative-seed",
+      "included": [
+        "Self-care and family life",
+        "Household resources and sustainable living",
+        "Technology design and making",
+        "Information and digital problem solving"
+      ],
+      "gaps": [
+        "Food, clothing, career, agriculture, and detailed software/data sequences remain partial.",
+        "Information-content boundaries with standalone computing taxonomy require later review."
+      ]
+    },
+    {
+      "subject": "Integrated Subjects",
+      "subjectKorean": "통합교과",
+      "status": "representative-seed",
+      "included": [
+        "Barun Saenghwal school and community habits",
+        "Seulgiroun Saenghwal local and seasonal inquiry",
+        "Jeulgeoun Saenghwal expressive play and cooperative sharing"
+      ],
+      "gaps": [
+        "Thematic 1-2 integration across daily life, inquiry, and expression is represented only by anchors.",
+        "Exact official code and strand alignment requires NCIC source-artifact review."
       ]
     }
-  ]
+  ],
+  "createdAt": "2026-07-09"
 }

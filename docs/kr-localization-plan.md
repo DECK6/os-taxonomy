@@ -1,111 +1,63 @@
-# Korean Marble Taxonomy v0.1 Localization Plan
+# Korean Marble Taxonomy Redesign Plan
 
 ## Purpose
 
-Korean Marble Taxonomy v0.1 is a seed implementation for aligning Marble's elementary learning taxonomy to Korea's 2022 revised national curriculum. It is not a full conversion and does not translate the existing English or ELA taxonomy into Korean.
+Korean Marble Taxonomy is a Korea-first redesign of Marble's elementary learning taxonomy under the 2022 revised Korean national curriculum. It is **not** a translation pass over the English-speaking taxonomy. The target is a curriculum graph whose subjects, grade bands, domains, examples, and prerequisite assumptions match Korean elementary schooling.
 
-The v0.1 scope is deliberately narrow:
+Current repository status is a staged seed, not full coverage. The seed proves the data model, provenance fields, validation path, and subject redesign direction before a complete standard-by-standard import.
 
-- Priority subjects: elementary Mathematics, Science, and Korean language.
-- Source posture: use official curriculum identifiers, source URLs, metadata, and short original paraphrases.
-- Legal posture: do not ship verbatim Korean curriculum standard text until license clearance is confirmed.
-- Execution posture: keep the seed machine-readable and validate it without changing the original `npm run validate` behavior.
+## Current v0.2 Scope
+
+The staged v0.2 seed covers representative anchors for eight Korean elementary curriculum areas:
+
+| Curriculum id | Korean subject | Redesign principle |
+|---|---|---|
+| `kr-2022-elem-korean` | 국어 | Hangul literacy, Korean grammar, discourse, literature, media |
+| `kr-2022-elem-math` | 수학 | Korean grade-band sequence and 2022 domain framing |
+| `kr-2022-elem-science` | 과학 | Inquiry plus Korean elementary science domains |
+| `kr-2022-elem-social-studies` | 사회 | Local community, Korean geography/history/civics |
+| `kr-2022-elem-english-efl` | 영어 | English as a foreign language for Korean learners |
+| `kr-2022-elem-moral` | 도덕 | Self, relationships, community, coexistence |
+| `kr-2022-elem-practical-arts` | 실과 | Life skills, family, technology, information/digital problem solving |
+| `kr-2022-elem-integrated` | 통합교과 | 바른 생활, 슬기로운 생활, 즐거운 생활 for grades 1–2 |
 
 ## Source Posture
 
-Primary references for v0.1 are official Korean curriculum portals:
+The 2022 revised Korean national curriculum is a public government curriculum source. v0.2 therefore uses official public-document structure as the governing frame and records provenance rather than treating the curriculum as unavailable.
+
+Primary references:
 
 - NCIC main portal: https://ncic.re.kr/
 - NCIC domestic curriculum inventory: https://ncic.re.kr/inv/org/list.do
 - NCIC 2022 revised curriculum notices: https://ncic.re.kr/bbs/eduNotice2022/list.do
-- NCIC copyright policy: https://ncic.re.kr/mbr/policy.do
+- NCIC copyright/reuse policy: https://ncic.re.kr/mbr/policy.do
 - Ministry of Education: https://www.moe.go.kr/
 
-NCIC's copyright policy indicates that reuse depends on the marked KOGL status and conditions, including attribution and, for KOGL type 2 materials, non-commercial-only use. Therefore v0.1 treats source standard text as not cleared for redistribution and stores only codes, short paraphrased summaries, links, and metadata.
+The staged seed still stores concise original summaries rather than bulk verbatim curriculum text so each anchor remains reviewable and compact. Records carry `verificationStatus`; most current anchors are `needs-official-code-check` until a full code-by-code pass is completed against official PDFs/NCIC records.
 
 ## Deliverables
 
-The v0.1 seed adds:
+- `data/kr/curriculum-standards.seed.json` — staged Korea redesign seed.
+- `data/kr/manifest.json` — counts and checksums for KR seed files.
+- `schema/kr-curriculum-standards.schema.json` — JSON Schema for the expanded staged seed.
+- `scripts/validate-kr.mjs` — dependency-free integrity validator.
+- `docs/kr-curriculum-mapping-method.md` — source and mapping rules.
+- `docs/kr-subject-redesign-notes.md` — per-subject redesign rationale.
 
-- `data/kr/curriculum-standards.seed.json`: compact executable seed for three Korean elementary curricula.
-- `data/kr/manifest.json`: counts plus SHA-256 checksums for KR seed files.
-- `schema/kr-curriculum-standards.schema.json`: structural contract for the KR seed format.
-- `scripts/validate-kr.mjs`: dependency-free integrity validator.
-- `npm run validate:kr`: package script for KR validation.
+## Completion Criteria for a Future Full Release
 
-The original files in `data/*.json` are unchanged.
+A full Korean release requires:
 
-## ID Strategy
+1. Download or mirror the official 2022 revised curriculum artifacts used for each subject.
+2. Verify every achievement-standard code and grade band against the public source.
+3. Expand beyond representative anchors to full elementary coverage.
+4. Review subject-specific micro-topic decomposition with Korean curriculum specialists.
+5. Build prerequisite edges after standards and topics are stable.
+6. Decide whether Korean topics remain in `data/kr/` or become a merged regional graph.
 
-Curriculum IDs are stable, human-readable, and namespace-scoped:
+## Non-goals for v0.2
 
-- `kr-2022-elem-math`
-- `kr-2022-elem-science`
-- `kr-2022-elem-korean`
-
-Standard keys use the existing Marble convention:
-
-```text
-<curriculum-id>:<official-code>
-```
-
-Example:
-
-```text
-kr-2022-elem-korean:[2국02-01]
-```
-
-Seed micro-topic IDs use a separate KR namespace so they cannot collide with existing `mt_` IDs:
-
-```text
-kr.mt.<subject>.<domain>.<topic>.<grade-band>
-```
-
-Example:
-
-```text
-kr.mt.korean.hangul.decoding.1-2
-```
-
-## Subject Design
-
-### Mathematics
-
-The seed covers representative elementary anchors across number and operations, change and relationships, geometry and measurement, and data/probability. The summaries are intentionally short and original. v0.1 is meant to prove the data model and validation path before full standard-by-standard import.
-
-### Science
-
-The seed covers inquiry practices plus representative elementary anchors across motion/energy, matter, life, and Earth/space. Domain placement is provisional and must be reconciled against the official standard text during a licensed import.
-
-### Korean Language
-
-Korean language is modeled as its own subject, not as a translation of English/ELA. The seed explicitly includes:
-
-- Hangul decoding and early literacy.
-- Korean grammar and sentence awareness.
-- Listening/speaking discourse routines.
-- Writing composition.
-- Literature response.
-- Media literacy.
-
-## Validation Contract
-
-`npm run validate:kr` checks:
-
-- Required top-level counts match array lengths.
-- Each curriculum has `textIncluded: false`.
-- Each standard key equals `<curriculum-id>:<code>`.
-- Official-style KR code format is used for standards.
-- Micro-topic IDs use the `kr.mt.` namespace.
-- Standard mappings reference existing standards and micro-topics.
-- Manifest bytes and SHA-256 hashes match files on disk.
-
-`npm run validate` remains the original dataset validator.
-
-## Roadmap
-
-1. Confirm license terms for official 2022 revised curriculum source text and NCIC exports.
-2. Replace provisional paraphrase-only summaries with a cleared source-text policy, if allowed.
-3. Expand all three priority subjects across all elementary grade bands.
-4. Add reviewed prerequisite edges between KR micro-topics.
-5. Decide whether KR topics should remain a regional seed file or be merged into the primary Marble graph.
+- It does not claim full coverage.
+- It does not claim every code has been officially checked.
+- It does not reuse the English/ELA or History taxonomy as a source of truth.
+- It does not build the full dependency graph.

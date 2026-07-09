@@ -1,28 +1,34 @@
 {
-  "dataset": "Korean Marble Taxonomy v0.1 seed",
-  "taxonomyVersion": "kr-localization-v0.1",
-  "generatedAt": "2026-07-09T00:00:00.000Z",
+  "dataset": "Korean Marble Taxonomy staged redesign seed",
+  "taxonomyVersion": "kr-redesign-v0.2",
+  "generatedAt": "2026-07-09T05:06:22Z",
   "locale": "ko-KR",
   "country": "KR",
-  "status": "seed",
+  "status": "staged-seed",
   "counts": {
-    "sources": 4,
-    "curricula": 3,
-    "standards": 18,
-    "microTopics": 18,
-    "standardMappings": 18,
-    "coverageNotes": 3
+    "sources": 5,
+    "curricula": 8,
+    "standards": 44,
+    "microTopics": 44,
+    "standardMappings": 44,
+    "coverageNotes": 8
   },
   "codesOnlySources": [
+    "kr-2022-elem-korean",
     "kr-2022-elem-math",
     "kr-2022-elem-science",
-    "kr-2022-elem-korean"
+    "kr-2022-elem-social-studies",
+    "kr-2022-elem-english-efl",
+    "kr-2022-elem-moral",
+    "kr-2022-elem-practical-arts",
+    "kr-2022-elem-integrated"
   ],
   "files": {
     "curriculum-standards.seed.json": {
-      "bytes": 26778,
-      "sha256": "82240f1e15dd66fb7d2be4c96c91139d3c611c1b97fbe25df883eb077b41ed93"
+      "bytes": 79769,
+      "sha256": "4610736166cdfa909aa774d217b0cba7f7e069666572096340d07dd2c10302e3"
     }
   },
-  "licenseCaution": "KR seed includes official-style codes, metadata, source URLs, and original paraphrases only. Do not import or redistribute official Korean curriculum text until licensing is cleared."
+  "sourcePosture": "Korean national curriculum documents are public government curriculum documents; staged seed records official-source provenance and verification status while using concise original summaries.",
+  "verificationStatus": "needs-official-code-check"
 }
