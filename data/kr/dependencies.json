@@ -4,7 +4,7 @@
   "taxonomyVersion": "kr-full-depth-v0.4",
   "locale": "ko-KR",
   "country": "KR",
-  "edgeCount": 2722,
+  "edgeCount": 2723,
   "minimumTarget": 2500,
   "dependencies": [
     {
@@ -21097,7 +21097,7 @@
     },
     {
       "topicId": "kr.mt.english-efl.3-4.understanding.4영01-08.02.디지털-카드-문장-이해",
-      "prerequisiteId": "kr.mt.english-efl.3-4.understanding.4영01-07.02.반복-듣기와-다시-읽기",
+      "prerequisiteId": "kr.mt.english-efl.3-4.understanding.4영01-07.03.몸짓-그림-상황-단서-활용",
       "strength": "soft",
       "reason": "영어 3-4 읽기 클러스터 안에서 앞선 주제가 후속 주제의 학습 맥락을 제공한다.",
       "basis": "generated-cluster-adjacency",
@@ -21105,7 +21105,7 @@
     },
     {
       "topicId": "kr.mt.english-efl.3-4.understanding.4영01-10.02.다른-생활-방식-존중하기",
-      "prerequisiteId": "kr.mt.english-efl.3-4.understanding.4영01-08.02.디지털-카드-문장-이해",
+      "prerequisiteId": "kr.mt.english-efl.3-4.understanding.4영01-08.03.매체-자료에-흥미-표현",
       "strength": "soft",
       "reason": "영어 3-4 읽기 클러스터 안에서 앞선 주제가 후속 주제의 학습 맥락을 제공한다.",
       "basis": "generated-cluster-adjacency",
@@ -21176,7 +21176,7 @@
       "source": "integration-builder"
     },
     {
-      "topicId": "kr.mt.english-efl.3-4.expression.4영02-10.01.인사와-차례-지키기",
+      "topicId": "kr.mt.english-efl.3-4.expression.4영02-09.03.비언어-전략으로-의사-전달",
       "prerequisiteId": "kr.mt.english-efl.3-4.expression.4영02-09.01.그림-카드로-의미-표현",
       "strength": "soft",
       "reason": "영어 3-4 말하기 클러스터 안에서 앞선 주제가 후속 주제의 학습 맥락을 제공한다.",
@@ -21385,7 +21385,7 @@
     },
     {
       "topicId": "kr.mt.english-efl.5-6.understanding.6영01-08.02.디지털-텍스트-읽기",
-      "prerequisiteId": "kr.mt.english-efl.5-6.understanding.6영01-07.02.특정-정보-찾아-듣기-읽기",
+      "prerequisiteId": "kr.mt.english-efl.5-6.understanding.6영01-07.03.내용-확인하며-다시-듣기-읽기",
       "strength": "soft",
       "reason": "영어 5-6 읽기 클러스터 안에서 앞선 주제가 후속 주제의 학습 맥락을 제공한다.",
       "basis": "generated-cluster-adjacency",
@@ -21456,7 +21456,7 @@
       "source": "integration-builder"
     },
     {
-      "topicId": "kr.mt.english-efl.5-6.expression.6영02-09.01.사진-자료로-말하기",
+      "topicId": "kr.mt.english-efl.5-6.understanding.6영01-08.03.매체-선택-이유-말하기",
       "prerequisiteId": "kr.mt.english-efl.5-6.expression.6영02-07.02.들은-내용-답하기",
       "strength": "soft",
       "reason": "영어 5-6 말하기 클러스터 안에서 앞선 주제가 후속 주제의 학습 맥락을 제공한다.",
@@ -21464,7 +21464,15 @@
       "source": "integration-builder"
     },
     {
-      "topicId": "kr.mt.english-efl.5-6.expression.6영02-10.01.모둠-대화-역할-수행",
+      "topicId": "kr.mt.english-efl.5-6.expression.6영02-09.01.사진-자료로-말하기",
+      "prerequisiteId": "kr.mt.english-efl.5-6.understanding.6영01-08.03.매체-선택-이유-말하기",
+      "strength": "soft",
+      "reason": "영어 5-6 말하기 클러스터 안에서 앞선 주제가 후속 주제의 학습 맥락을 제공한다.",
+      "basis": "generated-cluster-adjacency",
+      "source": "integration-builder"
+    },
+    {
+      "topicId": "kr.mt.english-efl.5-6.expression.6영02-09.03.전략-선택해-의사-전달",
       "prerequisiteId": "kr.mt.english-efl.5-6.expression.6영02-09.01.사진-자료로-말하기",
       "strength": "soft",
       "reason": "영어 5-6 말하기 클러스터 안에서 앞선 주제가 후속 주제의 학습 맥락을 제공한다.",

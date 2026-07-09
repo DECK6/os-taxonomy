@@ -878,7 +878,7 @@
       "domain": "Reading",
       "domainKorean": "읽기",
       "gradeBand": "3-4",
-      "topicCount": 16,
+      "topicCount": 18,
       "topics": [
         "kr.mt.english-efl.3-4.understanding.4영01-02.01.대문자와-소문자-모양-식별",
         "kr.mt.english-efl.3-4.understanding.4영01-02.02.알파벳-이름-읽기와-순서-감각",
@@ -890,7 +890,9 @@
         "kr.mt.english-efl.3-4.understanding.4영01-06.02.가족-친구-주제-정보-찾기",
         "kr.mt.english-efl.3-4.understanding.4영01-06.03.학교생활-담화-핵심-파악",
         "kr.mt.english-efl.3-4.understanding.4영01-07.02.반복-듣기와-다시-읽기",
+        "kr.mt.english-efl.3-4.understanding.4영01-07.03.몸짓-그림-상황-단서-활용",
         "kr.mt.english-efl.3-4.understanding.4영01-08.02.디지털-카드-문장-이해",
+        "kr.mt.english-efl.3-4.understanding.4영01-08.03.매체-자료에-흥미-표현",
         "kr.mt.english-efl.3-4.understanding.4영01-10.02.다른-생활-방식-존중하기",
         "kr.mt.english-efl.3-4.expression.4영02-02.02.획순과-위치-맞춰-쓰기",
         "kr.mt.english-efl.3-4.expression.4영02-02.03.알파벳-카드-보고-쓰기",
@@ -909,7 +911,7 @@
       "domain": "Speaking",
       "domainKorean": "말하기",
       "gradeBand": "3-4",
-      "topicCount": 15,
+      "topicCount": 16,
       "topics": [
         "kr.mt.english-efl.3-4.understanding.4영01-03.02.짧은-어구-리듬-따라-듣기",
         "kr.mt.english-efl.3-4.understanding.4영01-03.03.문장-억양-의미-구별",
@@ -924,6 +926,7 @@
         "kr.mt.english-efl.3-4.expression.4영02-08.02.학교생활-정보-질문하기",
         "kr.mt.english-efl.3-4.expression.4영02-08.03.짝-대화에서-핵심-답하기",
         "kr.mt.english-efl.3-4.expression.4영02-09.01.그림-카드로-의미-표현",
+        "kr.mt.english-efl.3-4.expression.4영02-09.03.비언어-전략으로-의사-전달",
         "kr.mt.english-efl.3-4.expression.4영02-10.01.인사와-차례-지키기",
         "kr.mt.english-efl.3-4.expression.4영02-10.02.실수해도-다시-말하기"
       ],
@@ -1039,7 +1042,7 @@
       "domain": "Reading",
       "domainKorean": "읽기",
       "gradeBand": "5-6",
-      "topicCount": 14,
+      "topicCount": 15,
       "topics": [
         "kr.mt.english-efl.5-6.understanding.6영01-02.01.어구-단위-소리내어-읽기",
         "kr.mt.english-efl.5-6.understanding.6영01-03.02.일상-표현-의미-이해",
@@ -1050,6 +1053,7 @@
         "kr.mt.english-efl.5-6.understanding.6영01-06.02.절차-글-순서-배열",
         "kr.mt.english-efl.5-6.understanding.6영01-06.03.전후-관계-단서-찾기",
         "kr.mt.english-efl.5-6.understanding.6영01-07.02.특정-정보-찾아-듣기-읽기",
+        "kr.mt.english-efl.5-6.understanding.6영01-07.03.내용-확인하며-다시-듣기-읽기",
         "kr.mt.english-efl.5-6.understanding.6영01-08.02.디지털-텍스트-읽기",
         "kr.mt.english-efl.5-6.understanding.6영01-09.02.노래-가사-분위기-파악",
         "kr.mt.english-efl.5-6.understanding.6영01-10.02.다양한-관점-수용하기",
@@ -1068,7 +1072,7 @@
       "domain": "Speaking",
       "domainKorean": "말하기",
       "gradeBand": "5-6",
-      "topicCount": 16,
+      "topicCount": 18,
       "topics": [
         "kr.mt.english-efl.5-6.understanding.6영01-01.02.어구-리듬-패턴-구별",
         "kr.mt.english-efl.5-6.understanding.6영01-01.03.의문문-평서문-억양-구별",
@@ -1083,7 +1087,9 @@
         "kr.mt.english-efl.5-6.expression.6영02-06.01.감정과-이유-말하기",
         "kr.mt.english-efl.5-6.expression.6영02-07.01.세부-정보-질문-만들기",
         "kr.mt.english-efl.5-6.expression.6영02-07.02.들은-내용-답하기",
+        "kr.mt.english-efl.5-6.understanding.6영01-08.03.매체-선택-이유-말하기",
         "kr.mt.english-efl.5-6.expression.6영02-09.01.사진-자료로-말하기",
+        "kr.mt.english-efl.5-6.expression.6영02-09.03.전략-선택해-의사-전달",
         "kr.mt.english-efl.5-6.expression.6영02-10.01.모둠-대화-역할-수행",
         "kr.mt.english-efl.5-6.expression.6영02-10.02.온라인-오프라인-협력-과업"
       ],

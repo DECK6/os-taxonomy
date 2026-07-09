@@ -11,7 +11,7 @@
     "curricula": 11,
     "standards": 641,
     "topics": 2019,
-    "dependencies": 2722,
+    "dependencies": 2723,
     "clusters": 155,
     "standardMappings": 2019,
     "coverageGaps": 50,
@@ -34,8 +34,8 @@
   ],
   "files": {
     "clusters.json": {
-      "bytes": 330390,
-      "sha256": "2327ebbaab40c8d4853d6d03bb4b67b526909fc00ca2a2f12faa231779458e2e"
+      "bytes": 330950,
+      "sha256": "be9637c7e4f0b1e4942958c70db744e83d389daa387b8218ed3943d1214a538e"
     },
     "clusters.seed.json": {
       "bytes": 70468,
@@ -50,8 +50,8 @@
       "sha256": "90e514cd75bb79ebe4f0a5ef469533d6e543bb16d08a9cf867b1d2f044b3df84"
     },
     "dependencies.json": {
-      "bytes": 1104696,
-      "sha256": "309c2ae60ff99a311ac1fc4e87b99aedf774768cf265a4a7493ff7773a0b2845"
+      "bytes": 1105177,
+      "sha256": "5866730f4302bbd52ab7e24948d69aab338ed36d300d9fb0116a45fe340a7655"
     },
     "dependencies.seed.json": {
       "bytes": 127512,
@@ -70,8 +70,8 @@
       "sha256": "748eb3d0dd642f9b812dce2ef7fb703070c237e123be2866dce6fc10166e0ec4"
     },
     "workstreams/english-efl.json": {
-      "bytes": 342664,
-      "sha256": "b9218981b175976893856797d9b187b720b22b619192d0f83b28c7cf0e90b917"
+      "bytes": 343224,
+      "sha256": "d39f918203be040fbb64d3d1fde846c82ced3a2d180377bcb1911318aa8824fa"
     },
     "workstreams/integrated.json": {
       "bytes": 503827,
