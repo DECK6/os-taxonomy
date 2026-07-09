@@ -1,0 +1,719 @@
+{
+  "$schema": "../../schema/kr-curriculum-standards.schema.json",
+  "dataset": "Korean Marble Taxonomy v0.1 seed",
+  "taxonomyVersion": "kr-localization-v0.1",
+  "locale": "ko-KR",
+  "country": "KR",
+  "status": "seed",
+  "createdAt": "2026-07-09",
+  "textPolicy": {
+    "standardTextIncluded": false,
+    "summaryPolicy": "Short original paraphrases only; do not copy Korean curriculum source text until redistribution rights are confirmed.",
+    "licensingStatus": "not-cleared",
+    "licenseCaution": "Official curriculum source text may have KOGL or other reuse conditions. Treat source text as codes-only until reviewed."
+  },
+  "sourceCount": 4,
+  "sources": [
+    {
+      "id": "kr-ncic",
+      "name": "NCIC National Curriculum Information Center",
+      "url": "https://ncic.re.kr/",
+      "accessDate": "2026-07-09",
+      "usage": "Official curriculum portal reference only."
+    },
+    {
+      "id": "kr-ncic-inventory",
+      "name": "NCIC domestic curriculum inventory",
+      "url": "https://ncic.re.kr/inv/org/list.do",
+      "accessDate": "2026-07-09",
+      "usage": "Source for official curriculum inventory lookup and standard-code verification."
+    },
+    {
+      "id": "kr-ncic-2022-notices",
+      "name": "NCIC 2022 revised curriculum notices",
+      "url": "https://ncic.re.kr/bbs/eduNotice2022/list.do",
+      "accessDate": "2026-07-09",
+      "usage": "Source for 2022 revised curriculum publication context."
+    },
+    {
+      "id": "kr-ncic-copyright",
+      "name": "NCIC copyright policy",
+      "url": "https://ncic.re.kr/mbr/policy.do",
+      "accessDate": "2026-07-09",
+      "usage": "License caution reference; verify KOGL markings before importing source text."
+    }
+  ],
+  "curriculumCount": 3,
+  "standardCount": 18,
+  "microTopicCount": 18,
+  "mappingCount": 18,
+  "coverageNoteCount": 3,
+  "curricula": [
+    {
+      "id": "kr-2022-elem-math",
+      "slug": "kr-2022-elem-math",
+      "country": "KR",
+      "subject": "Mathematics",
+      "subjectKorean": "수학",
+      "schoolLevel": "elementary",
+      "version": "2022 revised national curriculum",
+      "sourceUrls": [
+        "https://ncic.re.kr/",
+        "https://ncic.re.kr/inv/org/list.do"
+      ],
+      "textIncluded": false,
+      "license": "Codes, metadata, and original paraphrases only. Official source text redistribution is not cleared.",
+      "standardCount": 6,
+      "standards": [
+        {
+          "key": "kr-2022-elem-math:[2수01-01]",
+          "code": "[2수01-01]",
+          "gradeBand": "1-2",
+          "subject": "Mathematics",
+          "subjectKorean": "수학",
+          "domain": "Number & Operations",
+          "domainKorean": "수와 연산",
+          "summary": "Early whole-number reading, place-value structure, and ordered counting.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-math:[2수01-02]",
+          "code": "[2수01-02]",
+          "gradeBand": "1-2",
+          "subject": "Mathematics",
+          "subjectKorean": "수학",
+          "domain": "Number & Operations",
+          "domainKorean": "수와 연산",
+          "summary": "Compare and order early whole numbers using concrete and symbolic representations.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-math:[2수01-05]",
+          "code": "[2수01-05]",
+          "gradeBand": "1-2",
+          "subject": "Mathematics",
+          "subjectKorean": "수학",
+          "domain": "Number & Operations",
+          "domainKorean": "수와 연산",
+          "summary": "Represent and solve addition and subtraction situations with small whole numbers.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-math:[4수02-01]",
+          "code": "[4수02-01]",
+          "gradeBand": "3-4",
+          "subject": "Mathematics",
+          "subjectKorean": "수학",
+          "domain": "Change & Relationships",
+          "domainKorean": "변화와 관계",
+          "summary": "Notice repeating or growing patterns and describe relationships in multiple ways.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-math:[4수03-01]",
+          "code": "[4수03-01]",
+          "gradeBand": "3-4",
+          "subject": "Mathematics",
+          "subjectKorean": "수학",
+          "domain": "Geometry & Measurement",
+          "domainKorean": "도형과 측정",
+          "summary": "Classify plane figures and reason about their observable properties.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-math:[6수04-01]",
+          "code": "[6수04-01]",
+          "gradeBand": "5-6",
+          "subject": "Mathematics",
+          "subjectKorean": "수학",
+          "domain": "Data & Probability",
+          "domainKorean": "자료와 가능성",
+          "summary": "Collect, organize, and interpret data with grade-appropriate representations.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        }
+      ]
+    },
+    {
+      "id": "kr-2022-elem-science",
+      "slug": "kr-2022-elem-science",
+      "country": "KR",
+      "subject": "Science",
+      "subjectKorean": "과학",
+      "schoolLevel": "elementary",
+      "version": "2022 revised national curriculum",
+      "sourceUrls": [
+        "https://ncic.re.kr/",
+        "https://ncic.re.kr/inv/org/list.do"
+      ],
+      "textIncluded": false,
+      "license": "Codes, metadata, and original paraphrases only. Official source text redistribution is not cleared.",
+      "standardCount": 6,
+      "standards": [
+        {
+          "key": "kr-2022-elem-science:[4과01-01]",
+          "code": "[4과01-01]",
+          "gradeBand": "3-4",
+          "subject": "Science",
+          "subjectKorean": "과학",
+          "domain": "Scientific Inquiry",
+          "domainKorean": "과학 탐구",
+          "summary": "Observe, classify, and communicate patterns from familiar natural phenomena.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-science:[4과02-01]",
+          "code": "[4과02-01]",
+          "gradeBand": "3-4",
+          "subject": "Science",
+          "subjectKorean": "과학",
+          "domain": "Motion & Energy",
+          "domainKorean": "운동과 에너지",
+          "summary": "Explore push-pull interactions and simple changes in motion through investigation.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-science:[4과03-01]",
+          "code": "[4과03-01]",
+          "gradeBand": "3-4",
+          "subject": "Science",
+          "subjectKorean": "과학",
+          "domain": "Matter",
+          "domainKorean": "물질",
+          "summary": "Compare material properties and connect observations to everyday uses.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-science:[4과04-01]",
+          "code": "[4과04-01]",
+          "gradeBand": "3-4",
+          "subject": "Science",
+          "subjectKorean": "과학",
+          "domain": "Life",
+          "domainKorean": "생명",
+          "summary": "Observe living things and describe basic structures, needs, and life changes.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-science:[6과03-01]",
+          "code": "[6과03-01]",
+          "gradeBand": "5-6",
+          "subject": "Science",
+          "subjectKorean": "과학",
+          "domain": "Matter",
+          "domainKorean": "물질",
+          "summary": "Investigate matter changes and explain observations with particle-aware language.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-science:[6과04-01]",
+          "code": "[6과04-01]",
+          "gradeBand": "5-6",
+          "subject": "Science",
+          "subjectKorean": "과학",
+          "domain": "Earth & Space",
+          "domainKorean": "지구와 우주",
+          "summary": "Use observations and models to reason about Earth, weather, and space systems.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        }
+      ]
+    },
+    {
+      "id": "kr-2022-elem-korean",
+      "slug": "kr-2022-elem-korean",
+      "country": "KR",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "schoolLevel": "elementary",
+      "version": "2022 revised national curriculum",
+      "sourceUrls": [
+        "https://ncic.re.kr/",
+        "https://ncic.re.kr/inv/org/list.do"
+      ],
+      "textIncluded": false,
+      "license": "Codes, metadata, and original paraphrases only. Official source text redistribution is not cleared.",
+      "standardCount": 6,
+      "standards": [
+        {
+          "key": "kr-2022-elem-korean:[2국01-01]",
+          "code": "[2국01-01]",
+          "gradeBand": "1-2",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Listening & Speaking",
+          "domainKorean": "듣기·말하기",
+          "summary": "Participate in simple classroom talk by listening, taking turns, and responding.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-korean:[2국02-01]",
+          "code": "[2국02-01]",
+          "gradeBand": "1-2",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Reading",
+          "domainKorean": "읽기",
+          "summary": "Decode Hangul syllable blocks and read short familiar texts with meaning.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-korean:[2국03-01]",
+          "code": "[2국03-01]",
+          "gradeBand": "1-2",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Writing",
+          "domainKorean": "쓰기",
+          "summary": "Compose words and short sentences for a familiar purpose or audience.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-korean:[2국04-01]",
+          "code": "[2국04-01]",
+          "gradeBand": "1-2",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Grammar",
+          "domainKorean": "문법",
+          "summary": "Notice Hangul sound-letter relationships and basic word or sentence forms.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-korean:[4국05-01]",
+          "code": "[4국05-01]",
+          "gradeBand": "3-4",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Literature",
+          "domainKorean": "문학",
+          "summary": "Respond to poems, stories, and drama through personal interpretation and discussion.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        },
+        {
+          "key": "kr-2022-elem-korean:[6국06-01]",
+          "code": "[6국06-01]",
+          "gradeBand": "5-6",
+          "subject": "Korean Language",
+          "subjectKorean": "국어",
+          "domain": "Media",
+          "domainKorean": "매체",
+          "summary": "Interpret media messages by noticing purpose, audience, mode, and credibility.",
+          "sourceTextIncluded": false,
+          "sourceRefs": ["kr-ncic-inventory"]
+        }
+      ]
+    }
+  ],
+  "microTopics": [
+    {
+      "id": "kr.mt.math.number.place-value.1-2",
+      "subject": "Mathematics",
+      "subjectKorean": "수학",
+      "domain": "Number & Operations",
+      "domainKorean": "수와 연산",
+      "gradeBand": "1-2",
+      "type": "CONCEPTUAL",
+      "titleKorean": "자릿값과 수 세기",
+      "titleEnglish": "Place value and counting",
+      "summary": "Build early whole-number meaning through counting, place value, and ordering."
+    },
+    {
+      "id": "kr.mt.math.number.compare-order.1-2",
+      "subject": "Mathematics",
+      "subjectKorean": "수학",
+      "domain": "Number & Operations",
+      "domainKorean": "수와 연산",
+      "gradeBand": "1-2",
+      "type": "CONCEPTUAL",
+      "titleKorean": "수의 크기 비교",
+      "titleEnglish": "Comparing and ordering numbers",
+      "summary": "Use language, models, and symbols to compare and order early whole numbers."
+    },
+    {
+      "id": "kr.mt.math.number.add-sub.1-2",
+      "subject": "Mathematics",
+      "subjectKorean": "수학",
+      "domain": "Number & Operations",
+      "domainKorean": "수와 연산",
+      "gradeBand": "1-2",
+      "type": "PROCEDURAL",
+      "titleKorean": "덧셈과 뺄셈 상황",
+      "titleEnglish": "Addition and subtraction situations",
+      "summary": "Represent joining, separating, and comparing situations with addition or subtraction."
+    },
+    {
+      "id": "kr.mt.math.relationship.patterns.3-4",
+      "subject": "Mathematics",
+      "subjectKorean": "수학",
+      "domain": "Change & Relationships",
+      "domainKorean": "변화와 관계",
+      "gradeBand": "3-4",
+      "type": "REPRESENTATIONAL",
+      "titleKorean": "규칙과 관계 표현",
+      "titleEnglish": "Patterns and relationship representations",
+      "summary": "Describe regularities with words, tables, diagrams, or symbols."
+    },
+    {
+      "id": "kr.mt.math.geometry.shapes.3-4",
+      "subject": "Mathematics",
+      "subjectKorean": "수학",
+      "domain": "Geometry & Measurement",
+      "domainKorean": "도형과 측정",
+      "gradeBand": "3-4",
+      "type": "CONCEPTUAL",
+      "titleKorean": "평면도형의 성질",
+      "titleEnglish": "Properties of plane figures",
+      "summary": "Classify and reason about figures using sides, vertices, angles, and symmetry."
+    },
+    {
+      "id": "kr.mt.math.data.graphs.5-6",
+      "subject": "Mathematics",
+      "subjectKorean": "수학",
+      "domain": "Data & Probability",
+      "domainKorean": "자료와 가능성",
+      "gradeBand": "5-6",
+      "type": "REPRESENTATIONAL",
+      "titleKorean": "자료 수집과 그래프 해석",
+      "titleEnglish": "Data collection and graph interpretation",
+      "summary": "Organize data and make evidence-based claims from tables and graphs."
+    },
+    {
+      "id": "kr.mt.science.inquiry.observe-classify.3-4",
+      "subject": "Science",
+      "subjectKorean": "과학",
+      "domain": "Scientific Inquiry",
+      "domainKorean": "과학 탐구",
+      "gradeBand": "3-4",
+      "type": "PROCEDURAL",
+      "titleKorean": "관찰과 분류",
+      "titleEnglish": "Observation and classification",
+      "summary": "Use senses and simple tools to notice features, classify cases, and share evidence."
+    },
+    {
+      "id": "kr.mt.science.energy.force-motion.3-4",
+      "subject": "Science",
+      "subjectKorean": "과학",
+      "domain": "Motion & Energy",
+      "domainKorean": "운동과 에너지",
+      "gradeBand": "3-4",
+      "type": "CONCEPTUAL",
+      "titleKorean": "힘과 운동 변화",
+      "titleEnglish": "Force and motion change",
+      "summary": "Connect pushes, pulls, contact, and observed changes in motion."
+    },
+    {
+      "id": "kr.mt.science.matter.properties.3-4",
+      "subject": "Science",
+      "subjectKorean": "과학",
+      "domain": "Matter",
+      "domainKorean": "물질",
+      "gradeBand": "3-4",
+      "type": "CONCEPTUAL",
+      "titleKorean": "물질의 성질",
+      "titleEnglish": "Properties of materials",
+      "summary": "Compare materials by observable properties and explain suitable uses."
+    },
+    {
+      "id": "kr.mt.science.life.structures-needs.3-4",
+      "subject": "Science",
+      "subjectKorean": "과학",
+      "domain": "Life",
+      "domainKorean": "생명",
+      "gradeBand": "3-4",
+      "type": "CONCEPTUAL",
+      "titleKorean": "생물의 구조와 필요",
+      "titleEnglish": "Living things: structures and needs",
+      "summary": "Observe living things and connect structures, needs, and life changes."
+    },
+    {
+      "id": "kr.mt.science.matter.changes.5-6",
+      "subject": "Science",
+      "subjectKorean": "과학",
+      "domain": "Matter",
+      "domainKorean": "물질",
+      "gradeBand": "5-6",
+      "type": "CONCEPTUAL",
+      "titleKorean": "물질 변화의 증거",
+      "titleEnglish": "Evidence of matter changes",
+      "summary": "Use observations from investigations to distinguish and explain matter changes."
+    },
+    {
+      "id": "kr.mt.science.earth-space.systems.5-6",
+      "subject": "Science",
+      "subjectKorean": "과학",
+      "domain": "Earth & Space",
+      "domainKorean": "지구와 우주",
+      "gradeBand": "5-6",
+      "type": "REPRESENTATIONAL",
+      "titleKorean": "지구와 우주 체계 모델",
+      "titleEnglish": "Earth and space system models",
+      "summary": "Use diagrams and models to reason about Earth, weather, and space phenomena."
+    },
+    {
+      "id": "kr.mt.korean.discourse.turn-taking.1-2",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Listening & Speaking",
+      "domainKorean": "듣기·말하기",
+      "gradeBand": "1-2",
+      "type": "LANGUAGE",
+      "titleKorean": "차례 지키며 말하기",
+      "titleEnglish": "Turn-taking in talk",
+      "summary": "Listen to others and contribute short, relevant responses in familiar talk."
+    },
+    {
+      "id": "kr.mt.korean.hangul.decoding.1-2",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Reading",
+      "domainKorean": "읽기",
+      "gradeBand": "1-2",
+      "type": "LANGUAGE",
+      "titleKorean": "한글 해독과 음절 읽기",
+      "titleEnglish": "Hangul decoding and syllable reading",
+      "summary": "Connect consonants, vowels, syllable blocks, pronunciation, and meaning while reading."
+    },
+    {
+      "id": "kr.mt.korean.writing.sentences.1-2",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Writing",
+      "domainKorean": "쓰기",
+      "gradeBand": "1-2",
+      "type": "PROCEDURAL",
+      "titleKorean": "낱말과 문장 쓰기",
+      "titleEnglish": "Writing words and sentences",
+      "summary": "Write readable words and short sentences for a simple purpose."
+    },
+    {
+      "id": "kr.mt.korean.grammar.sound-letter.1-2",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Grammar",
+      "domainKorean": "문법",
+      "gradeBand": "1-2",
+      "type": "LANGUAGE",
+      "titleKorean": "소리와 글자의 대응",
+      "titleEnglish": "Sound-letter relationships",
+      "summary": "Notice how Korean sounds, letters, syllable blocks, words, and sentences relate."
+    },
+    {
+      "id": "kr.mt.korean.literature.response.3-4",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Literature",
+      "domainKorean": "문학",
+      "gradeBand": "3-4",
+      "type": "META",
+      "titleKorean": "문학 감상과 반응",
+      "titleEnglish": "Literary response",
+      "summary": "Share feelings, interpretations, and textual evidence after reading literary works."
+    },
+    {
+      "id": "kr.mt.korean.media.critical-viewing.5-6",
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "domain": "Media",
+      "domainKorean": "매체",
+      "gradeBand": "5-6",
+      "type": "META",
+      "titleKorean": "매체 메시지 비판적 이해",
+      "titleEnglish": "Critical understanding of media messages",
+      "summary": "Interpret purpose, audience, mode, evidence, and credibility in media texts."
+    }
+  ],
+  "standardMappings": [
+    {
+      "standardKey": "kr-2022-elem-math:[2수01-01]",
+      "microTopicId": "kr.mt.math.number.place-value.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Connects early number-code anchor to place-value and counting micro-topic."
+    },
+    {
+      "standardKey": "kr-2022-elem-math:[2수01-02]",
+      "microTopicId": "kr.mt.math.number.compare-order.1-2",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps comparison language and ordering representations to a focused number micro-topic."
+    },
+    {
+      "standardKey": "kr-2022-elem-math:[2수01-05]",
+      "microTopicId": "kr.mt.math.number.add-sub.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps early operation situations to addition and subtraction modeling."
+    },
+    {
+      "standardKey": "kr-2022-elem-math:[4수02-01]",
+      "microTopicId": "kr.mt.math.relationship.patterns.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps change-and-relationship code to pattern representation."
+    },
+    {
+      "standardKey": "kr-2022-elem-math:[4수03-01]",
+      "microTopicId": "kr.mt.math.geometry.shapes.3-4",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps geometry-and-measurement code to plane-figure properties."
+    },
+    {
+      "standardKey": "kr-2022-elem-math:[6수04-01]",
+      "microTopicId": "kr.mt.math.data.graphs.5-6",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps data-and-probability code to graph interpretation."
+    },
+    {
+      "standardKey": "kr-2022-elem-science:[4과01-01]",
+      "microTopicId": "kr.mt.science.inquiry.observe-classify.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Connects early science anchor to observation, classification, and evidence sharing."
+    },
+    {
+      "standardKey": "kr-2022-elem-science:[4과02-01]",
+      "microTopicId": "kr.mt.science.energy.force-motion.3-4",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps motion-and-energy code to force and motion observations."
+    },
+    {
+      "standardKey": "kr-2022-elem-science:[4과03-01]",
+      "microTopicId": "kr.mt.science.matter.properties.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps matter code to material-property comparison."
+    },
+    {
+      "standardKey": "kr-2022-elem-science:[4과04-01]",
+      "microTopicId": "kr.mt.science.life.structures-needs.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps life-science code to living-things observation and needs."
+    },
+    {
+      "standardKey": "kr-2022-elem-science:[6과03-01]",
+      "microTopicId": "kr.mt.science.matter.changes.5-6",
+      "relationship": "extends",
+      "confidence": "seed",
+      "note": "Connects upper-elementary matter code to evidence of matter changes."
+    },
+    {
+      "standardKey": "kr-2022-elem-science:[6과04-01]",
+      "microTopicId": "kr.mt.science.earth-space.systems.5-6",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps Earth-and-space code to model-based system reasoning."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[2국01-01]",
+      "microTopicId": "kr.mt.korean.discourse.turn-taking.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps listening-speaking code to turn-taking discourse routines."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[2국02-01]",
+      "microTopicId": "kr.mt.korean.hangul.decoding.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps reading code to Hangul decoding and syllable-block reading."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[2국03-01]",
+      "microTopicId": "kr.mt.korean.writing.sentences.1-2",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps writing code to words and short sentences."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[2국04-01]",
+      "microTopicId": "kr.mt.korean.grammar.sound-letter.1-2",
+      "relationship": "supports",
+      "confidence": "seed",
+      "note": "Maps grammar code to Korean sound-letter and syllable awareness."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[4국05-01]",
+      "microTopicId": "kr.mt.korean.literature.response.3-4",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps literature code to response and interpretation."
+    },
+    {
+      "standardKey": "kr-2022-elem-korean:[6국06-01]",
+      "microTopicId": "kr.mt.korean.media.critical-viewing.5-6",
+      "relationship": "introduces",
+      "confidence": "seed",
+      "note": "Maps media code to purpose, audience, mode, and credibility."
+    }
+  ],
+  "coverageNotes": [
+    {
+      "subject": "Mathematics",
+      "subjectKorean": "수학",
+      "status": "representative-seed",
+      "included": [
+        "Early number sense and operations",
+        "Pattern and relationship representation",
+        "Plane-figure properties",
+        "Data collection and graph interpretation"
+      ],
+      "gaps": [
+        "Fractions, decimals, ratio, full measurement sequence, and probability remain out of scope for v0.1.",
+        "Every code must be checked against the official source before full import."
+      ]
+    },
+    {
+      "subject": "Science",
+      "subjectKorean": "과학",
+      "status": "representative-seed",
+      "included": [
+        "Inquiry practice",
+        "Motion and energy",
+        "Matter",
+        "Life",
+        "Earth and space"
+      ],
+      "gaps": [
+        "Domain placement and code-to-topic alignment require official text review.",
+        "Prerequisite edges are intentionally deferred."
+      ]
+    },
+    {
+      "subject": "Korean Language",
+      "subjectKorean": "국어",
+      "status": "representative-seed",
+      "included": [
+        "Hangul decoding and syllable awareness",
+        "Listening and speaking discourse",
+        "Writing",
+        "Korean grammar",
+        "Literature",
+        "Media literacy"
+      ],
+      "gaps": [
+        "This is not an ELA translation and should be reviewed by Korean-language curriculum experts.",
+        "Full reading, writing, grammar, literature, and media sequences remain out of scope for v0.1."
+      ]
+    }
+  ]
+}

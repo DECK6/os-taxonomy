@@ -1,0 +1,28 @@
+{
+  "dataset": "Korean Marble Taxonomy v0.1 seed",
+  "taxonomyVersion": "kr-localization-v0.1",
+  "generatedAt": "2026-07-09T00:00:00.000Z",
+  "locale": "ko-KR",
+  "country": "KR",
+  "status": "seed",
+  "counts": {
+    "sources": 4,
+    "curricula": 3,
+    "standards": 18,
+    "microTopics": 18,
+    "standardMappings": 18,
+    "coverageNotes": 3
+  },
+  "codesOnlySources": [
+    "kr-2022-elem-math",
+    "kr-2022-elem-science",
+    "kr-2022-elem-korean"
+  ],
+  "files": {
+    "curriculum-standards.seed.json": {
+      "bytes": 26778,
+      "sha256": "82240f1e15dd66fb7d2be4c96c91139d3c611c1b97fbe25df883eb077b41ed93"
+    }
+  },
+  "licenseCaution": "KR seed includes official-style codes, metadata, source URLs, and original paraphrases only. Do not import or redistribute official Korean curriculum text until licensing is cleared."
+}
