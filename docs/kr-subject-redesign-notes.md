@@ -36,6 +36,10 @@ Practical Arts links everyday life, family, resources, technology, making, and i
 
 The integrated subjects for grades 1–2 are structurally important. They bridge first-school-life routines, inquiry into surrounding life, and expressive/cooperative activity through 바른 생활, 슬기로운 생활, and 즐거운 생활.
 
+## Full-Depth Integration Status
+
+The full-depth integration now merges all subject workstreams into repository-level KR files. Current coverage is 11 curricula, 641 achievement-standard anchors, 2019 micro-topics, 2722 dependencies, and 155 clusters. See `docs/kr-full-depth-integration-report.md` for exact subject counts and remaining gaps.
+
 ## Remaining Review
 
 Most v0.2 records are representative anchors with `needs-official-code-check`. A full pass must verify every code, expand every subject, and then build prerequisite edges.

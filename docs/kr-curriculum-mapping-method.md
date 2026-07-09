@@ -121,6 +121,20 @@ Model grades 1–2 integrated subjects as first-school-life anchors:
 6. Run `npm run validate:kr` and update `data/kr/manifest.json`.
 7. Run `npm run validate` to protect the upstream dataset path.
 
-## Expanded v0.3 Validation
+## Full-Depth v0.4 Integration
+
+Subject workstream artifacts under `data/kr/workstreams/*.json` are merged by `npm run build:kr`. The builder writes full-depth repository-level files:
+
+- `data/kr/curriculum-standards.json`
+- `data/kr/topics.json`
+- `data/kr/dependencies.json`
+- `data/kr/clusters.json`
+- `data/kr/manifest.json`
+
+The integrated files preserve record-level provenance and verification status. Workstream-authored dependency suggestions are kept first, then the integration builder adds deterministic within-standard and cluster progression edges only when both endpoints resolve.
+
+## Expanded v0.3 Seed Validation
 
 The v0.3 validator checks `curriculum-standards.seed.json`, `topics.seed.json`, `dependencies.seed.json`, `clusters.seed.json`, and `manifest.json` together. It verifies counts, standard keys, topic references, dependency endpoints, cluster topic lists, provenance fields, and SHA-256 checksums.
+
+The current `npm run validate:kr` target validates the v0.4 full-depth files and still protects the old seed artifacts through manifest checksums.

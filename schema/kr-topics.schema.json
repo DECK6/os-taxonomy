@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://withmarble.com/taxonomy/schema/kr-topics.schema.json",
+  "title": "Korean Marble Taxonomy — full-depth topics",
+  "type": "object",
+  "required": ["version", "topicCount", "topics"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "type": "string" },
+    "taxonomyVersion": { "type": "string" },
+    "locale": { "const": "ko-KR" },
+    "country": { "const": "KR" },
+    "topicCount": { "type": "integer", "minimum": 1500 },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "subject", "subjectKorean", "name", "description", "evidence", "assessmentPrompt", "standards"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^kr\\.mt\\." },
+          "type": { "enum": ["CONCEPTUAL", "PROCEDURAL", "REPRESENTATIONAL", "LANGUAGE", "META"] },
+          "subject": { "type": "string" },
+          "subjectKorean": { "type": "string" },
+          "domain": { "type": ["string", "null"] },
+          "domainKorean": { "type": ["string", "null"] },
+          "gradeBand": { "type": ["string", "null"] },
+          "name": { "type": "string", "minLength": 1 },
+          "title": { "type": ["string", "null"] },
+          "titleKorean": { "type": ["string", "null"] },
+          "titleEnglish": { "type": ["string", "null"] },
+          "summary": { "type": ["string", "null"] },
+          "description": { "type": "string", "minLength": 1 },
+          "ageRangeStart": { "type": ["integer", "null"] },
+          "ageRangeEnd": { "type": ["integer", "null"] },
+          "centrality": { "type": ["number", "null"] },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": ["string", "object"] }
+          },
+          "assessmentPrompt": { "type": "string", "minLength": 1 },
+          "standards": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "sourceRefs": { "type": "array", "items": { "type": "string" } },
+          "verificationStatus": {
+            "enum": ["official-source-checked", "public-doc-derived", "needs-official-code-check"]
+          },
+          "sourceTextIncluded": { "const": false },
+          "workstreamFile": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

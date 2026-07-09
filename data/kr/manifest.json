@@ -1,51 +1,106 @@
 {
-  "dataset": "Korean Marble Taxonomy expanded candidate seed",
-  "taxonomyVersion": "kr-full-depth-v0.3",
-  "generatedAt": "2026-07-09T07:04:15Z",
+  "dataset": "Korean Marble Taxonomy full-depth integrated workstream build",
+  "taxonomyVersion": "kr-full-depth-v0.4",
+  "generatedAt": "2026-07-09T00:00:00+09:00",
   "locale": "ko-KR",
   "country": "KR",
-  "status": "expanded-candidate-seed",
+  "status": "integrated-workstream-candidate",
+  "verificationStatus": "needs-official-code-check",
   "counts": {
-    "sources": 5,
+    "sources": 21,
     "curricula": 11,
-    "standards": 612,
-    "topics": 612,
-    "dependencies": 500,
-    "clusters": 112,
-    "standardMappings": 612,
-    "coverageNotes": 11
+    "standards": 641,
+    "topics": 2019,
+    "dependencies": 2722,
+    "clusters": 155,
+    "standardMappings": 2019,
+    "coverageGaps": 50,
+    "workstreams": 9
   },
-  "codesOnlySources": [
-    "kr-2022-elem-korean",
-    "kr-2022-elem-math",
-    "kr-2022-elem-science",
-    "kr-2022-elem-social-studies",
-    "kr-2022-elem-english-efl",
-    "kr-2022-elem-moral",
-    "kr-2022-elem-practical-arts",
-    "kr-2022-elem-integrated",
-    "kr-2022-elem-art",
-    "kr-2022-elem-music",
-    "kr-2022-elem-physical-education"
+  "targets": {
+    "topicsAtLeast": 1500,
+    "dependenciesAtLeast": 2500
+  },
+  "workstreams": [
+    "arts-pe.json",
+    "english-efl.json",
+    "integrated.json",
+    "korean.json",
+    "math.json",
+    "moral.json",
+    "practical-arts.json",
+    "science.json",
+    "social.json"
   ],
   "files": {
+    "clusters.json": {
+      "bytes": 330390,
+      "sha256": "2327ebbaab40c8d4853d6d03bb4b67b526909fc00ca2a2f12faa231779458e2e"
+    },
+    "clusters.seed.json": {
+      "bytes": 70468,
+      "sha256": "c9664dd578a5492d163dc258cd054d5c8eda501c35ac81844a3f34d1c6c5c1b5"
+    },
+    "curriculum-standards.json": {
+      "bytes": 1787789,
+      "sha256": "cef106afa6e0efbb7c9a4462a989460827c1828837897adc36ce2ef976c468f4"
+    },
     "curriculum-standards.seed.json": {
       "bytes": 1085745,
       "sha256": "90e514cd75bb79ebe4f0a5ef469533d6e543bb16d08a9cf867b1d2f044b3df84"
     },
-    "topics.seed.json": {
-      "bytes": 365755,
-      "sha256": "0c982e39e36f7fa02945eab21a981043c61fef1765bfba9274bb55988e53043f"
+    "dependencies.json": {
+      "bytes": 1104696,
+      "sha256": "309c2ae60ff99a311ac1fc4e87b99aedf774768cf265a4a7493ff7773a0b2845"
     },
     "dependencies.seed.json": {
       "bytes": 127512,
       "sha256": "8a25e60bae09954d457f932dd152afc5e7541a261a280ceb4bbf13d3bbe85884"
     },
-    "clusters.seed.json": {
-      "bytes": 70468,
-      "sha256": "c9664dd578a5492d163dc258cd054d5c8eda501c35ac81844a3f34d1c6c5c1b5"
+    "topics.json": {
+      "bytes": 3843730,
+      "sha256": "c38b3e7fa86d61cd56d9275786e7132d984da5f3580d7c5c555f876a49eaabfe"
+    },
+    "topics.seed.json": {
+      "bytes": 365755,
+      "sha256": "0c982e39e36f7fa02945eab21a981043c61fef1765bfba9274bb55988e53043f"
+    },
+    "workstreams/arts-pe.json": {
+      "bytes": 643409,
+      "sha256": "748eb3d0dd642f9b812dce2ef7fb703070c237e123be2866dce6fc10166e0ec4"
+    },
+    "workstreams/english-efl.json": {
+      "bytes": 342664,
+      "sha256": "b9218981b175976893856797d9b187b720b22b619192d0f83b28c7cf0e90b917"
+    },
+    "workstreams/integrated.json": {
+      "bytes": 503827,
+      "sha256": "44fd14cce05e720d3c20a84d2135c06670dfd96c23f6e0451f402ca60ed0edb3"
+    },
+    "workstreams/korean.json": {
+      "bytes": 1375645,
+      "sha256": "e9a6dd595eaa36f916f9bd9bb14425c1dfdf6c806d76b98fce12465b90409bae"
+    },
+    "workstreams/math.json": {
+      "bytes": 1205806,
+      "sha256": "a5a874a24000058e9bf7565be97112fbc7187c5e41fcd8f8c05e5301144507e9"
+    },
+    "workstreams/moral.json": {
+      "bytes": 449576,
+      "sha256": "e4af2bdfc86105103aa84507b641447b048551c85bdd712bb7709bb0be607e29"
+    },
+    "workstreams/practical-arts.json": {
+      "bytes": 233364,
+      "sha256": "72d19c03466018a604441dd5fabb24d49dbb9ee0a7698d6a3fbc849a2defb6d8"
+    },
+    "workstreams/science.json": {
+      "bytes": 1160119,
+      "sha256": "ca31bf42e8aea2e90281ac8a20cf50ca64e07eecc12c3419e93dad146cc662ab"
+    },
+    "workstreams/social.json": {
+      "bytes": 681890,
+      "sha256": "4c33fe4edc8f8a7e2189cdc4a32c58aa2dae8b38f3e0a3fb9a8dcedc254839c2"
     }
   },
-  "sourcePosture": "Public Korean national curriculum documents are used as governing structure; v0.3 remains a generated candidate seed with exact official-code verification pending.",
-  "verificationStatus": "needs-official-code-check"
+  "sourcePosture": "Subject workstream artifacts preserve official-source-checked, public-doc-derived, and needs-official-code-check provenance at record level."
 }
