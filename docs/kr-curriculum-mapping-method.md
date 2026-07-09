@@ -120,3 +120,7 @@ Model grades 1–2 integrated subjects as first-school-life anchors:
 5. Review Korean subject fit; reject imported English/US/UK assumptions.
 6. Run `npm run validate:kr` and update `data/kr/manifest.json`.
 7. Run `npm run validate` to protect the upstream dataset path.
+
+## Expanded v0.3 Validation
+
+The v0.3 validator checks `curriculum-standards.seed.json`, `topics.seed.json`, `dependencies.seed.json`, `clusters.seed.json`, and `manifest.json` together. It verifies counts, standard keys, topic references, dependency endpoints, cluster topic lists, provenance fields, and SHA-256 checksums.

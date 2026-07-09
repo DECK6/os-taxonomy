@@ -39,3 +39,7 @@ The integrated subjects for grades 1–2 are structurally important. They bridge
 ## Remaining Review
 
 Most v0.2 records are representative anchors with `needs-official-code-check`. A full pass must verify every code, expand every subject, and then build prerequisite edges.
+
+## 미술 / 음악 / 체육
+
+The v0.3 candidate seed adds arts and physical education as first-class Korean elementary subjects. These are broad generated anchors that need official code verification, but they prevent the Korean taxonomy from collapsing into only academic core subjects.

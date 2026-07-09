@@ -1,137 +1,543 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://withmarble.com/taxonomy/schema/kr-curriculum-standards.schema.json",
-  "title": "Korean Marble Taxonomy staged seed",
+  "title": "Korean Marble Taxonomy expanded candidate seed",
   "type": "object",
   "required": [
-    "dataset", "taxonomyVersion", "locale", "country", "status", "verificationStatus",
-    "sourceBasis", "createdAt", "textPolicy", "sourceCount", "sources", "curriculumCount",
-    "standardCount", "microTopicCount", "mappingCount", "coverageNoteCount", "curricula",
-    "microTopics", "standardMappings", "coverageNotes"
+    "dataset",
+    "taxonomyVersion",
+    "locale",
+    "country",
+    "status",
+    "verificationStatus",
+    "sourceBasis",
+    "createdAt",
+    "textPolicy",
+    "sourceCount",
+    "sources",
+    "curriculumCount",
+    "standardCount",
+    "microTopicCount",
+    "mappingCount",
+    "coverageNoteCount",
+    "curricula",
+    "microTopics",
+    "standardMappings",
+    "coverageNotes"
   ],
   "properties": {
-    "$schema": { "type": "string" },
-    "dataset": { "type": "string" },
-    "taxonomyVersion": { "type": "string" },
-    "locale": { "const": "ko-KR" },
-    "country": { "const": "KR" },
-    "status": { "enum": ["seed", "staged-seed"] },
-    "verificationStatus": { "enum": ["official-source-checked", "public-doc-derived", "needs-official-code-check"] },
-    "sourceBasis": { "type": "string", "minLength": 1 },
-    "createdAt": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "taxonomyVersion": {
+      "type": "string"
+    },
+    "locale": {
+      "const": "ko-KR"
+    },
+    "country": {
+      "const": "KR"
+    },
+    "status": {
+      "enum": [
+        "seed",
+        "staged-seed",
+        "expanded-candidate-seed"
+      ]
+    },
+    "verificationStatus": {
+      "enum": [
+        "official-source-checked",
+        "public-doc-derived",
+        "needs-official-code-check"
+      ]
+    },
+    "sourceBasis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "createdAt": {
+      "type": "string"
+    },
     "textPolicy": {
       "type": "object",
-      "required": ["standardTextIncluded", "summaryPolicy", "licensingStatus", "licenseCaution"],
+      "required": [
+        "standardTextIncluded",
+        "summaryPolicy",
+        "licensingStatus",
+        "licenseCaution"
+      ],
       "properties": {
-        "standardTextIncluded": { "const": false },
-        "summaryPolicy": { "type": "string" },
-        "licensingStatus": { "type": "string" },
-        "licenseCaution": { "type": "string" }
+        "standardTextIncluded": {
+          "const": false
+        },
+        "summaryPolicy": {
+          "type": "string"
+        },
+        "licensingStatus": {
+          "type": "string"
+        },
+        "licenseCaution": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
-    "sourceCount": { "type": "integer", "minimum": 0 },
-    "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
-    "curriculumCount": { "type": "integer", "minimum": 0 },
-    "standardCount": { "type": "integer", "minimum": 0 },
-    "microTopicCount": { "type": "integer", "minimum": 0 },
-    "mappingCount": { "type": "integer", "minimum": 0 },
-    "coverageNoteCount": { "type": "integer", "minimum": 0 },
-    "curricula": { "type": "array", "items": { "$ref": "#/$defs/curriculum" } },
-    "microTopics": { "type": "array", "items": { "$ref": "#/$defs/microTopic" } },
-    "standardMappings": { "type": "array", "items": { "$ref": "#/$defs/standardMapping" } },
-    "coverageNotes": { "type": "array", "items": { "$ref": "#/$defs/coverageNote" } }
+    "sourceCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "curriculumCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "standardCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "microTopicCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mappingCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "coverageNoteCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "curricula": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/curriculum"
+      }
+    },
+    "microTopics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/microTopic"
+      }
+    },
+    "standardMappings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/standardMapping"
+      }
+    },
+    "coverageNotes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/coverageNote"
+      }
+    }
   },
   "additionalProperties": false,
   "$defs": {
     "source": {
       "type": "object",
-      "required": ["id", "name", "url", "accessDate", "usage"],
+      "required": [
+        "id",
+        "name",
+        "url",
+        "accessDate",
+        "usage"
+      ],
       "properties": {
-        "id": { "type": "string", "pattern": "^kr-" },
-        "name": { "type": "string" },
-        "url": { "type": "string", "format": "uri" },
-        "accessDate": { "type": "string" },
-        "usage": { "type": "string" }
+        "id": {
+          "type": "string",
+          "pattern": "^kr-"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "accessDate": {
+          "type": "string"
+        },
+        "usage": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
     "curriculum": {
       "type": "object",
-      "required": ["id", "slug", "country", "subject", "subjectKorean", "schoolLevel", "version", "sourceUrls", "textIncluded", "license", "standardCount", "standards"],
+      "required": [
+        "id",
+        "slug",
+        "country",
+        "subject",
+        "subjectKorean",
+        "schoolLevel",
+        "version",
+        "sourceUrls",
+        "textIncluded",
+        "license",
+        "standardCount",
+        "standards"
+      ],
       "properties": {
-        "id": { "type": "string", "pattern": "^kr-2022-elem-(korean|math|science|social-studies|english-efl|moral|practical-arts|integrated)$" },
-        "slug": { "type": "string" },
-        "country": { "const": "KR" },
-        "subject": { "enum": ["Korean Language", "Mathematics", "Science", "Social Studies", "English as a Foreign Language", "Moral Education", "Practical Arts", "Integrated Subjects"] },
-        "subjectKorean": { "enum": ["국어", "수학", "과학", "사회", "영어", "도덕", "실과", "통합교과"] },
-        "schoolLevel": { "const": "elementary" },
-        "version": { "type": "string" },
-        "sourceUrls": { "type": "array", "items": { "type": "string", "format": "uri" }, "minItems": 1 },
-        "textIncluded": { "const": false },
-        "license": { "type": "string" },
-        "standardCount": { "type": "integer", "minimum": 0 },
-        "standards": { "type": "array", "items": { "$ref": "#/$defs/standard" } }
+        "id": {
+          "type": "string",
+          "pattern": "^kr-2022-elem-(korean|math|science|social-studies|english-efl|moral|practical-arts|integrated|art|music|physical-education)$"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "country": {
+          "const": "KR"
+        },
+        "subject": {
+          "enum": [
+            "Art",
+            "English as a Foreign Language",
+            "Integrated Subjects",
+            "Korean Language",
+            "Mathematics",
+            "Moral Education",
+            "Music",
+            "Physical Education",
+            "Practical Arts",
+            "Science",
+            "Social Studies"
+          ]
+        },
+        "subjectKorean": {
+          "enum": [
+            "과학",
+            "국어",
+            "도덕",
+            "미술",
+            "사회",
+            "수학",
+            "실과",
+            "영어",
+            "음악",
+            "체육",
+            "통합교과"
+          ]
+        },
+        "schoolLevel": {
+          "const": "elementary"
+        },
+        "version": {
+          "type": "string"
+        },
+        "sourceUrls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "minItems": 1
+        },
+        "textIncluded": {
+          "const": false
+        },
+        "license": {
+          "type": "string"
+        },
+        "standardCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "standards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/standard"
+          }
+        }
       },
       "additionalProperties": false
     },
     "standard": {
       "type": "object",
-      "required": ["key", "code", "gradeBand", "subject", "subjectKorean", "domain", "domainKorean", "summary", "sourceTextIncluded", "sourceRefs", "verificationStatus", "sourceBasis"],
+      "required": [
+        "key",
+        "code",
+        "gradeBand",
+        "subject",
+        "subjectKorean",
+        "domain",
+        "domainKorean",
+        "summary",
+        "sourceTextIncluded",
+        "sourceRefs",
+        "verificationStatus",
+        "sourceBasis"
+      ],
       "properties": {
-        "key": { "type": "string", "pattern": "^kr-2022-elem-[a-z-]+:\\[[246](국|수|과|사|영|도|실|바|슬|즐)[0-9]{2}-[0-9]{2}\\]$" },
-        "code": { "type": "string", "pattern": "^\\[[246](국|수|과|사|영|도|실|바|슬|즐)[0-9]{2}-[0-9]{2}\\]$" },
-        "gradeBand": { "enum": ["1-2", "3-4", "5-6"] },
-        "subject": { "enum": ["Korean Language", "Mathematics", "Science", "Social Studies", "English as a Foreign Language", "Moral Education", "Practical Arts", "Integrated Subjects"] },
-        "subjectKorean": { "enum": ["국어", "수학", "과학", "사회", "영어", "도덕", "실과", "통합교과"] },
-        "domain": { "type": "string" },
-        "domainKorean": { "type": "string" },
-        "summary": { "type": "string" },
-        "sourceTextIncluded": { "const": false },
-        "sourceRefs": { "type": "array", "items": { "type": "string", "pattern": "^kr-" }, "minItems": 1 },
-        "verificationStatus": { "enum": ["official-source-checked", "public-doc-derived", "needs-official-code-check"] },
-        "sourceBasis": { "type": "string", "minLength": 1 }
+        "key": {
+          "type": "string",
+          "pattern": "^kr-2022-elem-[a-z-]+:\\[[246](국|수|과|사|영|도|실|바|슬|즐|미|음|체)[0-9]{2}-[0-9]{2}\\]$"
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^\\[[246](국|수|과|사|영|도|실|바|슬|즐|미|음|체)[0-9]{2}-[0-9]{2}\\]$"
+        },
+        "gradeBand": {
+          "enum": [
+            "1-2",
+            "3-4",
+            "5-6"
+          ]
+        },
+        "subject": {
+          "enum": [
+            "Art",
+            "English as a Foreign Language",
+            "Integrated Subjects",
+            "Korean Language",
+            "Mathematics",
+            "Moral Education",
+            "Music",
+            "Physical Education",
+            "Practical Arts",
+            "Science",
+            "Social Studies"
+          ]
+        },
+        "subjectKorean": {
+          "enum": [
+            "과학",
+            "국어",
+            "도덕",
+            "미술",
+            "사회",
+            "수학",
+            "실과",
+            "영어",
+            "음악",
+            "체육",
+            "통합교과"
+          ]
+        },
+        "domain": {
+          "type": "string"
+        },
+        "domainKorean": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "sourceTextIncluded": {
+          "const": false
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^kr-"
+          },
+          "minItems": 1
+        },
+        "verificationStatus": {
+          "enum": [
+            "official-source-checked",
+            "public-doc-derived",
+            "needs-official-code-check"
+          ]
+        },
+        "sourceBasis": {
+          "type": "string",
+          "minLength": 1
+        }
       },
       "additionalProperties": false
     },
     "microTopic": {
       "type": "object",
-      "required": ["id", "subject", "subjectKorean", "domain", "domainKorean", "gradeBand", "type", "titleKorean", "titleEnglish", "summary"],
+      "required": [
+        "id",
+        "subject",
+        "subjectKorean",
+        "domain",
+        "domainKorean",
+        "gradeBand",
+        "type",
+        "titleKorean",
+        "titleEnglish",
+        "summary"
+      ],
       "properties": {
-        "id": { "type": "string", "pattern": "^kr\\.mt\\." },
-        "subject": { "enum": ["Korean Language", "Mathematics", "Science", "Social Studies", "English as a Foreign Language", "Moral Education", "Practical Arts", "Integrated Subjects"] },
-        "subjectKorean": { "enum": ["국어", "수학", "과학", "사회", "영어", "도덕", "실과", "통합교과"] },
-        "domain": { "type": "string" },
-        "domainKorean": { "type": "string" },
-        "gradeBand": { "enum": ["1-2", "3-4", "5-6"] },
-        "type": { "enum": ["CONCEPTUAL", "PROCEDURAL", "REPRESENTATIONAL", "LANGUAGE", "META"] },
-        "titleKorean": { "type": "string" },
-        "titleEnglish": { "type": "string" },
-        "summary": { "type": "string" }
+        "id": {
+          "type": "string",
+          "pattern": "^kr\\.mt\\."
+        },
+        "subject": {
+          "enum": [
+            "Art",
+            "English as a Foreign Language",
+            "Integrated Subjects",
+            "Korean Language",
+            "Mathematics",
+            "Moral Education",
+            "Music",
+            "Physical Education",
+            "Practical Arts",
+            "Science",
+            "Social Studies"
+          ]
+        },
+        "subjectKorean": {
+          "enum": [
+            "과학",
+            "국어",
+            "도덕",
+            "미술",
+            "사회",
+            "수학",
+            "실과",
+            "영어",
+            "음악",
+            "체육",
+            "통합교과"
+          ]
+        },
+        "domain": {
+          "type": "string"
+        },
+        "domainKorean": {
+          "type": "string"
+        },
+        "gradeBand": {
+          "enum": [
+            "1-2",
+            "3-4",
+            "5-6"
+          ]
+        },
+        "type": {
+          "enum": [
+            "CONCEPTUAL",
+            "PROCEDURAL",
+            "REPRESENTATIONAL",
+            "LANGUAGE",
+            "META"
+          ]
+        },
+        "titleKorean": {
+          "type": "string"
+        },
+        "titleEnglish": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
     "standardMapping": {
       "type": "object",
-      "required": ["standardKey", "microTopicId", "relationship", "confidence", "note"],
+      "required": [
+        "standardKey",
+        "microTopicId",
+        "relationship",
+        "confidence",
+        "note"
+      ],
       "properties": {
-        "standardKey": { "type": "string" },
-        "microTopicId": { "type": "string", "pattern": "^kr\\.mt\\." },
-        "relationship": { "enum": ["introduces", "supports", "extends", "assesses"] },
-        "confidence": { "enum": ["seed", "reviewed", "verified"] },
-        "note": { "type": "string" }
+        "standardKey": {
+          "type": "string"
+        },
+        "microTopicId": {
+          "type": "string",
+          "pattern": "^kr\\.mt\\."
+        },
+        "relationship": {
+          "enum": [
+            "introduces",
+            "supports",
+            "extends",
+            "assesses"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "seed",
+            "reviewed",
+            "verified"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
     "coverageNote": {
       "type": "object",
-      "required": ["subject", "subjectKorean", "status", "included", "gaps"],
+      "required": [
+        "subject",
+        "subjectKorean",
+        "status",
+        "included",
+        "gaps"
+      ],
       "properties": {
-        "subject": { "enum": ["Korean Language", "Mathematics", "Science", "Social Studies", "English as a Foreign Language", "Moral Education", "Practical Arts", "Integrated Subjects"] },
-        "subjectKorean": { "enum": ["국어", "수학", "과학", "사회", "영어", "도덕", "실과", "통합교과"] },
-        "status": { "enum": ["representative-seed", "staged-representative-seed"] },
-        "included": { "type": "array", "items": { "type": "string" } },
-        "gaps": { "type": "array", "items": { "type": "string" } }
+        "subject": {
+          "enum": [
+            "Art",
+            "English as a Foreign Language",
+            "Integrated Subjects",
+            "Korean Language",
+            "Mathematics",
+            "Moral Education",
+            "Music",
+            "Physical Education",
+            "Practical Arts",
+            "Science",
+            "Social Studies"
+          ]
+        },
+        "subjectKorean": {
+          "enum": [
+            "과학",
+            "국어",
+            "도덕",
+            "미술",
+            "사회",
+            "수학",
+            "실과",
+            "영어",
+            "음악",
+            "체육",
+            "통합교과"
+          ]
+        },
+        "status": {
+          "enum": [
+            "representative-seed",
+            "staged-representative-seed"
+          ]
+        },
+        "included": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "additionalProperties": false
     }

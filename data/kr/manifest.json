@@ -1,17 +1,19 @@
 {
-  "dataset": "Korean Marble Taxonomy staged redesign seed",
-  "taxonomyVersion": "kr-redesign-v0.2",
-  "generatedAt": "2026-07-09T05:06:22Z",
+  "dataset": "Korean Marble Taxonomy expanded candidate seed",
+  "taxonomyVersion": "kr-full-depth-v0.3",
+  "generatedAt": "2026-07-09T07:04:15Z",
   "locale": "ko-KR",
   "country": "KR",
-  "status": "staged-seed",
+  "status": "expanded-candidate-seed",
   "counts": {
     "sources": 5,
-    "curricula": 8,
-    "standards": 44,
-    "microTopics": 44,
-    "standardMappings": 44,
-    "coverageNotes": 8
+    "curricula": 11,
+    "standards": 612,
+    "topics": 612,
+    "dependencies": 500,
+    "clusters": 112,
+    "standardMappings": 612,
+    "coverageNotes": 11
   },
   "codesOnlySources": [
     "kr-2022-elem-korean",
@@ -21,14 +23,29 @@
     "kr-2022-elem-english-efl",
     "kr-2022-elem-moral",
     "kr-2022-elem-practical-arts",
-    "kr-2022-elem-integrated"
+    "kr-2022-elem-integrated",
+    "kr-2022-elem-art",
+    "kr-2022-elem-music",
+    "kr-2022-elem-physical-education"
   ],
   "files": {
     "curriculum-standards.seed.json": {
-      "bytes": 79769,
-      "sha256": "4610736166cdfa909aa774d217b0cba7f7e069666572096340d07dd2c10302e3"
+      "bytes": 1085745,
+      "sha256": "90e514cd75bb79ebe4f0a5ef469533d6e543bb16d08a9cf867b1d2f044b3df84"
+    },
+    "topics.seed.json": {
+      "bytes": 365755,
+      "sha256": "0c982e39e36f7fa02945eab21a981043c61fef1765bfba9274bb55988e53043f"
+    },
+    "dependencies.seed.json": {
+      "bytes": 127512,
+      "sha256": "8a25e60bae09954d457f932dd152afc5e7541a261a280ceb4bbf13d3bbe85884"
+    },
+    "clusters.seed.json": {
+      "bytes": 70468,
+      "sha256": "c9664dd578a5492d163dc258cd054d5c8eda501c35ac81844a3f34d1c6c5c1b5"
     }
   },
-  "sourcePosture": "Korean national curriculum documents are public government curriculum documents; staged seed records official-source provenance and verification status while using concise original summaries.",
+  "sourcePosture": "Public Korean national curriculum documents are used as governing structure; v0.3 remains a generated candidate seed with exact official-code verification pending.",
   "verificationStatus": "needs-official-code-check"
 }
