@@ -62,21 +62,6 @@ Fix:
 - Added an adversarial regression test proving that topic status inflation without source provenance is rejected.
 - Rechecked the canonical corpus: all 1,257 `official-source-checked` topics retain accepted provenance, including all 789 topics that intentionally omit a repeated top-level `sourceLocator`.
 
-### 4. Official locator, grade-band, and manifest completeness checks had false greens
-
-Independent adversarial fixtures reproduced three additional validator gaps:
-
-- An official standard code such as `[4사01-01]` could be assigned the wrong `gradeBand` while checksums still passed.
-- A code-only evidence string could satisfy the item-level official-source locator gate after its source id, attachment, hash, page, and structured locator were removed.
-- A tracked KR workstream could be omitted from `manifest.files`, allowing the validator to ignore that file and still report checksums OK.
-
-Fix:
-
-- Cross-check official standard grade bands against their `[2|4|6...]` code family and topic grade bands against mapped standards.
-- Require a structured locator or a source-specific legacy locator carrying the expected source, attachment/hash anchors where applicable, page/section signal, and exact code.
-- Compare the complete recursive `data/kr/**/*.json` file set against `manifest.files` in both directions before checksum validation.
-- Added one adversarial regression test for each false green.
-
 ### 4. Official standard grade-band drift was checksum-valid
 
 An adversarial fixture changed social standard `[4사01-01]` from grade band `3-4` to `1-2`, refreshed the manifest checksum, and the previous validator returned success.
@@ -231,13 +216,13 @@ Canonical tree:
 
 Isolated reproduction:
 
-1. Cloned the branch into `/tmp/os-taxonomy-t_aaef893a-repro-final`.
-2. Applied the exact uncommitted review patch to the clean clone.
-3. Ran `npm ci --ignore-scripts`.
-4. Ran the full KR build, all 37 tests, and `validate:kr`.
-5. Compared every tracked file under `data/kr` against the canonical working tree.
+1. Cloned commit `a7b2f395b52bc1a1b83f891ac03792beb5980ce2` into `/tmp/os-taxonomy-v04-final-isolated` with local hard-link reuse disabled.
+2. Ran `npm ci --ignore-scripts` inside the isolated clone.
+3. Ran the full KR build, all 37 tests, content-quality gate, `validate:kr`, repository `validate`, and `npm audit --audit-level=low`.
+4. Required a clean isolated `git diff` after rebuilding.
+5. Compared every tracked JSON artifact under `data/kr` against the canonical working tree.
 
-Result: **18/18 tracked KR artifacts byte-identical; 0 mismatches.**
+Result: **18/18 tracked KR artifacts byte-identical; 37/37 tests passed; 0 mismatches.**
 
 Final `data/kr/manifest.json` SHA-256: `855b7ac7b522d57feddfca540cc2fb1366a9e0d9a7b7222887451328f3e4738b`.
 
