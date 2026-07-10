@@ -11,9 +11,10 @@ const KOREAN_FACING_FIELDS = [
   'generationBasis',
 ];
 
-const JOSA_PLACEHOLDER = /(?:을\/를|이\/가|이\(가\)|을\(를\))/;
+const JOSA_PLACEHOLDER = /(?:을\/를|이\/가|이\(가\)|을\(를\)|과\/와)/;
 const KNOWN_MALFORMED = /(?:하기과|존중를|조건와)/;
 const ENGLISH_FACET = /\b(?:concept|practice|reflection)\b/i;
+const UNDEFINED_PLACEHOLDER = /\bundefined\b/i;
 const PROVENANCE_SIGNAL =
   /(?:source-to-topic-decomposition|source link|mapped to|official (?:code|achievement|wording)|NCIC|PDF (?:text|attachment|lists)|workstream-authored|성취기준에서 분해|공식 (?:코드|문구|원문)|출처|원문)/i;
 const OBSERVABLE_SIGNAL =
@@ -103,6 +104,7 @@ export function resolveKoreanText(value) {
     ['이(가)', /([가-힣A-Za-z0-9])이\(가\)/g],
     ['을/를', /([가-힣A-Za-z0-9])을\/를/g],
     ['이/가', /([가-힣A-Za-z0-9])이\/가/g],
+    ['과/와', /([가-힣A-Za-z0-9])과\/와/g],
   ];
   let repaired = value;
   for (const [pair, pattern] of patterns) {
@@ -111,7 +113,9 @@ export function resolveKoreanText(value) {
   return repaired
     .replaceAll('하기과', '하기와')
     .replaceAll('존중를', '존중을')
-    .replaceAll('조건와', '조건과');
+    .replaceAll('조건와', '조건과')
+    .replaceAll('실천 실천', '실천')
+    .replaceAll('생활 생활', '생활');
 }
 
 function repairStrings(value) {
@@ -178,7 +182,7 @@ export function assessmentPromptForTopic(topic) {
   const name = resolveKoreanText(topic.name || topic.title || topic.titleKorean || topic.id);
   const skill = typeLabel(topic.type);
   const prompts = {
-    CONCEPTUAL: `${name}의 ${skill}를 사례와 연결해 설명하고, 선택한 사례가 알맞은지 근거 두 가지로 판단하게 한다.`,
+    CONCEPTUAL: `${name}의 ${attachJosa(skill, '을/를')} 사례와 연결해 설명하고, 선택한 사례가 알맞은지 근거 두 가지로 판단하게 한다.`,
     PROCEDURAL: `${attachJosa(name, '을/를')} 계획한 순서대로 수행하게 하고, 과정 기록·결과물·개선점으로 ${skill}를 확인한다.`,
     REPRESENTATIONAL: `${attachJosa(name, '을/를')} 알맞은 표현 방식으로 나타내게 하고, 표현물에서 내용과 근거를 짚어 설명하게 한다.`,
     LANGUAGE: `${name}에 맞는 짧은 듣기·말하기·읽기·쓰기 과업을 제시하고, 목표 의미를 이해하거나 표현한 증거를 기록한다.`,
@@ -255,6 +259,30 @@ function repairArtsPeTopics(topics, standardByKey, focusByKey) {
   }
 }
 
+function repairPracticalArtsTopics(topics, standardByKey) {
+  for (const topic of topics) {
+    if (topic.subjectKorean !== '실과(기술·가정)/정보') continue;
+    const standard = standardByKey.get(topic.standards?.[0]);
+    if (!standard) continue;
+    const title = standard.titleKorean;
+    if (topic.id.endsWith('.concept')) {
+      const focus = Array.isArray(standard.focus) ? standard.focus.join(', ') : standard.focus;
+      topic.description = `${standard.domainKorean} 영역에서 ${attachJosa(focus, '을/를')} 중심으로 ${standard.summary}`;
+      topic.assessmentPrompt = `${attachJosa(title, '과/와')} 관련된 핵심 개념을 생활 사례 하나와 연결하여 설명하고, 판단 근거를 두 가지 제시한다.`;
+    } else if (topic.id.endsWith('.practice')) {
+      topic.assessmentPrompt = `${attachJosa(title, '을/를')} 실제 생활 과제로 적용한 결과물을 만들거나 실행한 뒤, 과정 증거와 개선점을 함께 제출한다.`;
+    }
+  }
+}
+
+function repairMoralTopics(topics) {
+  for (const topic of topics) {
+    if (topic.subjectKorean !== '도덕' || !topic.id.endsWith('.concept')) continue;
+    const focus = String(topic.name || '').replace(/ 가치 개념$/, '');
+    topic.assessmentPrompt = `${attachJosa(focus, '과/와')} 관련된 짧은 상황을 제시하고, 학생이 핵심 가치와 판단 기준을 자신의 말로 설명하게 하라.`;
+  }
+}
+
 function normalizeTopic(topic) {
   topic.name ||= topic.title || topic.titleKorean || topic.summary || topic.id;
   topic.title ||= topic.name;
@@ -305,6 +333,8 @@ export function repairWorkstreamContent(inputArtifact) {
   const standardByKey = new Map(standards.map((standard) => [standard.key, standard]));
   const focusByKey = repairArtsPeStandards(standards);
   repairArtsPeTopics(artifact.microTopics || [], standardByKey, focusByKey);
+  repairPracticalArtsTopics(artifact.microTopics || [], standardByKey);
+  repairMoralTopics(artifact.microTopics || []);
   artifact.microTopics = repairTopicRecords(artifact.microTopics || []);
   return repairStrings(artifact);
 }
@@ -327,6 +357,7 @@ export function computeContentQualityMetrics(topics) {
   let unresolvedJosa = 0;
   let knownMalformed = 0;
   let englishFacetLabels = 0;
+  let undefinedPlaceholders = 0;
   let evidenceBelowTwo = 0;
   let nonObservableEvidence = 0;
   for (const topic of topics) {
@@ -336,9 +367,10 @@ export function computeContentQualityMetrics(topics) {
     ]
       .filter((value) => typeof value === 'string')
       .join('\n');
-    unresolvedJosa += [...koreanText.matchAll(/을\/를|이\/가|이\(가\)|을\(를\)/g)].length;
+    unresolvedJosa += [...koreanText.matchAll(/을\/를|이\/가|이\(가\)|을\(를\)|과\/와/g)].length;
     knownMalformed += [...koreanText.matchAll(/하기과|존중를|조건와/g)].length;
     englishFacetLabels += [...koreanText.matchAll(/\b(?:concept|practice|reflection)\b/gi)].length;
+    undefinedPlaceholders += [...koreanText.matchAll(/\bundefined\b/gi)].length;
     if (!Array.isArray(topic.evidence) || topic.evidence.length < 2) evidenceBelowTwo += 1;
     nonObservableEvidence += (topic.evidence || []).filter((item) => !isLearnerObservableEvidence(item)).length;
   }
@@ -363,6 +395,7 @@ export function computeContentQualityMetrics(topics) {
     unresolvedJosa,
     knownMalformed,
     englishFacetLabels,
+    undefinedPlaceholders,
     semanticDuplicateGroups: semanticGroups.length,
     semanticDuplicateRecords: semanticGroups.reduce((count, group) => count + group.length, 0),
     evidenceBelowTwo,
@@ -378,6 +411,9 @@ export function contentQualityErrors(topics) {
   if (metrics.unresolvedJosa) errors.push(`Korean-facing fields contain ${metrics.unresolvedJosa} unresolved josa placeholder(s)`);
   if (metrics.knownMalformed) errors.push(`Korean-facing fields contain ${metrics.knownMalformed} known malformed josa form(s)`);
   if (metrics.englishFacetLabels) errors.push(`Korean-facing fields contain ${metrics.englishFacetLabels} English facet label(s)`);
+  if (metrics.undefinedPlaceholders) {
+    errors.push(`Korean-facing fields contain ${metrics.undefinedPlaceholders} undefined placeholder(s)`);
+  }
   if (metrics.semanticDuplicateGroups) {
     errors.push(
       `topics contain ${metrics.semanticDuplicateGroups} exact semantic duplicate group(s) covering ${metrics.semanticDuplicateRecords} records`,
@@ -397,5 +433,6 @@ export const CONTENT_QUALITY_PATTERNS = {
   JOSA_PLACEHOLDER,
   KNOWN_MALFORMED,
   ENGLISH_FACET,
+  UNDEFINED_PLACEHOLDER,
   PROVENANCE_SIGNAL,
 };

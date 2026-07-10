@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import Ajv2020 from 'ajv/dist/2020.js';
 import { createHash } from 'node:crypto';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, isAbsolute, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { contentQualityErrors } from './lib/kr-content-quality.mjs';
@@ -52,15 +52,66 @@ const hasVerificationEvidence = (record) =>
   meaningfulStringLeaves(record.sourceEvidence) > 0 ||
   meaningfulStringLeaves(record.verificationNotes) > 0 ||
   meaningfulStringLeaves(record.verificationNote) > 0;
-const hasItemLevelSourceLocator = (record) =>
-  JSON.stringify([
+const hasTopicVerificationEvidence = (record) =>
+  meaningfulStringLeaves(record.sourceLocator) > 0 ||
+  meaningfulStringLeaves(record.sourceSection) > 0 ||
+  meaningfulStringLeaves(record.provenanceEvidence) > 0 ||
+  meaningfulStringLeaves(record.sourceEvidence) > 0 ||
+  meaningfulStringLeaves(record.verificationNotes) > 0 ||
+  meaningfulStringLeaves(record.verificationNote) > 0;
+const gradeBandForCode = (code) => ({ 2: '1-2', 4: '3-4', 6: '5-6' })[String(code || '').match(/^\[([246])/)?.[1]];
+const hasItemLevelSourceLocator = (record, expectedSourceId, sourceSnapshot = {}) => {
+  const sourceLocator = record.sourceLocator;
+  if (sourceLocator && typeof sourceLocator === 'object' && !Array.isArray(sourceLocator)) {
+    const locatorCode = sourceLocator.code || sourceLocator.standardCode;
+    return (
+      sourceLocator.sourceId === expectedSourceId &&
+      sourceLocator.attachmentNo === sourceSnapshot.attachmentNo &&
+      sourceLocator.sha256 === sourceSnapshot.sha256 &&
+      Number.isInteger(sourceLocator.pdfPage) &&
+      locatorCode === record.code
+    );
+  }
+
+  const evidenceObjects = [
+    ...(Array.isArray(record.evidence) ? record.evidence : []),
+    ...(Array.isArray(record.sourceEvidence) ? record.sourceEvidence : []),
+  ].filter((item) => item && typeof item === 'object' && !Array.isArray(item));
+  if (
+    evidenceObjects.some((item) => {
+      if (item.sourceId !== expectedSourceId || !isMeaningfulString(item.locator)) return false;
+      return JSON.stringify(item).includes(record.code) && /(?:pdf|line|section|쪽|페이지)/i.test(item.locator);
+    })
+  ) {
+    return true;
+  }
+
+  // Legacy Korean and base integrated records retain a source section plus
+  // source-specific text rather than structured locator objects. All three
+  // anchors are required so code-only evidence cannot pass as item evidence.
+  const legacyText = JSON.stringify([
     record.sourceLocator,
     record.sourceSection,
     record.evidence,
     record.sourceEvidence,
-    record.verificationNotes,
-    record.verificationNote,
-  ]).includes(record.code);
+  ]);
+  return (
+    isMeaningfulString(record.sourceSection) &&
+    legacyText.includes(record.code) &&
+    (legacyText.includes(sourceSnapshot.attachmentNo || '__missing_attachment__') ||
+      /NCIC PDF \[별책\d+\]/.test(String(record.sourceLocator || '')))
+  );
+};
+
+function listKrJsonFiles(directory = KR_DATA, prefix = '') {
+  const files = [];
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const relativeName = prefix ? `${prefix}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) files.push(...listKrJsonFiles(resolve(directory, entry.name), relativeName));
+    else if (entry.isFile() && entry.name.endsWith('.json') && relativeName !== 'manifest.json') files.push(relativeName);
+  }
+  return files.sort();
+}
 
 const standardsFile = load('curriculum-standards.json');
 const topicsFile = load('topics.json');
@@ -146,6 +197,7 @@ for (const source of standardsFile.sources || []) {
   }
 }
 const standardKeys = new Set();
+const standardsByKey = new Map();
 const subjectByEnglish = new Map();
 const subjectByKorean = new Map();
 const curriculaById = new Map();
@@ -165,6 +217,10 @@ for (const curriculum of standardsFile.curricula || []) {
     standardCount += 1;
     check(standard.key === `${curriculum.id}:${standard.code}`, `standard key mismatch ${standard.key}`);
     check(KR_CODE.test(standard.code), `bad KR code ${standard.code}`);
+    check(
+      standard.gradeBand === gradeBandForCode(standard.code),
+      `standard gradeBand mismatch ${standard.key}: ${standard.gradeBand} != ${gradeBandForCode(standard.code)}`,
+    );
     check(standard.sourceTextIncluded === false, `sourceTextIncluded false required ${standard.key}`);
     check(standard.officialTextIncluded !== true, `officialTextIncluded true not allowed ${standard.key}`);
     check(VER.has(standard.verificationStatus), `bad standard verification ${standard.key}`);
@@ -177,6 +233,7 @@ for (const curriculum of standardsFile.curricula || []) {
     }
     if (standardKeys.has(standard.key)) errors.push(`duplicate standard key ${standard.key}`);
     standardKeys.add(standard.key);
+    standardsByKey.set(standard.key, standard);
   }
 }
 
@@ -227,7 +284,10 @@ for (const [curriculumId, gate] of Object.entries(OFFICIAL_INVENTORY_GATES)) {
         standard.sourceRefs?.includes(group.sourceId),
         `official inventory direct source missing ${standard.key}: ${group.sourceId}`,
       );
-      check(hasItemLevelSourceLocator(standard), `official inventory source locator missing ${standard.key}`);
+      check(
+        hasItemLevelSourceLocator(standard, group.sourceId, OFFICIAL_PDF_SOURCE_SNAPSHOTS[group.sourceId]),
+        `official inventory structured source locator missing ${standard.key}`,
+      );
     }
   }
 }
@@ -245,7 +305,13 @@ for (const topic of topicsFile.topics || []) {
   check(isMeaningfulString(topic.assessmentPrompt), `topic assessmentPrompt is empty or placeholder-quality ${topic.id}`);
   check(!topic.assessmentPrompt?.includes('{{'), `topic prompt still has template token ${topic.id}`);
   check(Array.isArray(topic.standards) && topic.standards.length > 0, `topic missing standards ${topic.id}`);
-  for (const key of topic.standards || []) check(standardKeys.has(key), `topic ${topic.id} unknown standard ${key}`);
+  for (const key of topic.standards || []) {
+    check(standardKeys.has(key), `topic ${topic.id} unknown standard ${key}`);
+    const standard = standardsByKey.get(key);
+    if (standard) {
+      check(topic.gradeBand === standard.gradeBand, `topic/standard gradeBand mismatch ${topic.id}: ${topic.gradeBand} != ${standard.gradeBand}`);
+    }
+  }
   check(Number.isInteger(topic.ageRangeStart), `topic missing integer ageRangeStart ${topic.id}`);
   check(Number.isInteger(topic.ageRangeEnd), `topic missing integer ageRangeEnd ${topic.id}`);
   check(topic.ageRangeStart <= topic.ageRangeEnd, `topic age range reversed ${topic.id}: ${topic.ageRangeStart}-${topic.ageRangeEnd}`);
@@ -254,7 +320,7 @@ for (const topic of topicsFile.topics || []) {
   check(Array.isArray(topic.sourceRefs) && topic.sourceRefs.length > 0, `topic missing sourceRefs ${topic.id}`);
   for (const ref of topic.sourceRefs || []) check(sourceIds.has(ref), `topic ${topic.id} unknown sourceRef ${ref}`);
   if (topic.verificationStatus === 'official-source-checked') {
-    check(hasVerificationEvidence(topic), `official-source-checked topic missing verification evidence ${topic.id}`);
+    check(hasTopicVerificationEvidence(topic), `official-source-checked topic missing verification evidence ${topic.id}`);
   }
   if (topic.subjectKorean === '영어') {
     check(topic.subject === 'English as a Foreign Language', `English topic must be EFL, not ELA: ${topic.id}`);
@@ -395,6 +461,11 @@ for (const [topicId, memberships] of clusterMemberships) {
     check(memberships.length === 1, `topic has multiple cluster memberships under single-membership policy ${topicId}`);
   }
 }
+
+const actualKrJsonFiles = new Set(listKrJsonFiles());
+const manifestKrJsonFiles = new Set(Object.keys(manifest.files || {}));
+for (const name of actualKrJsonFiles) check(manifestKrJsonFiles.has(name), `manifest missing file entry ${name}`);
+for (const name of manifestKrJsonFiles) check(actualKrJsonFiles.has(name), `manifest references missing file ${name}`);
 
 for (const [name, meta] of Object.entries(manifest.files || {})) {
   const bytes = bytesOf(name);

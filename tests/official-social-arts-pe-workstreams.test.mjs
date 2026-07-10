@@ -54,3 +54,24 @@ test('arts/PE workstream uses only official 3-4 and 5-6 code families and preser
   assert.equal(artifact.standards.some((standard) => /^\[2(미|음|체)/.test(standard.code)), false);
   assert.deepEqual(repairWorkstreamContent(artifact).standards, artifact.standards);
 });
+
+test('social and arts/PE learner fields preserve each standard focus without undefined placeholders', () => {
+  for (const file of ['social.json', 'arts-pe.json']) {
+    const artifact = readWorkstream(file);
+    const standardByKey = new Map(artifact.standards.map((standard) => [standard.key, standard]));
+
+    for (const topic of artifact.microTopics) {
+      const standard = standardByKey.get(topic.standards[0]);
+      assert.ok(standard, `${file}: missing standard for ${topic.id}`);
+      const learnerFacingText = [topic.description, ...topic.evidence, topic.assessmentPrompt].join('\n');
+      assert.doesNotMatch(learnerFacingText, /\bundefined\b/, `${file}: ${topic.id}`);
+      assert.ok(learnerFacingText.includes(standard.summary), `${file}: ${topic.id} lost ${standard.summary}`);
+    }
+
+    assert.equal(
+      new Set(artifact.microTopics.map((topic) => topic.assessmentPrompt)).size,
+      artifact.microTopics.length,
+      `${file}: assessment prompts must remain topic-specific`,
+    );
+  }
+});

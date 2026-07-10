@@ -60,7 +60,7 @@ const FACETS = {
       label: '탐구와 참여',
       type: 'PROCEDURAL',
       description: (standard) =>
-        `${standard.focus}을 조사 질문, 자료 수집, 토의, 설명 또는 제안으로 확장하는 사회과 탐구 주제이다.`,
+        `${standard.focus}을/를 조사 질문, 자료 수집, 토의, 설명 또는 제안으로 확장하는 사회과 탐구 주제이다.`,
       evidence: (standard) => [
         `${standard.focus}에 대한 조사 질문을 만들고 알맞은 자료를 찾아 조사 과정을 기록한다.`,
         `조사 결과를 근거와 함께 설명하고 학교나 지역사회에서 실행할 제안을 한 가지 제시한다.`,
@@ -78,7 +78,7 @@ const FACETS = {
     },
     {
       key: 'make', label: '재료와 방법 적용', type: 'PROCEDURAL',
-      description: (standard) => `${standard.focus}을 재료·용구·매체와 제작 순서에 맞게 직접 시도하는 미술 수행 주제이다.`,
+      description: (standard) => `${standard.focus}을/를 재료·용구·매체와 제작 순서에 맞게 직접 시도하는 미술 수행 주제이다.`,
       evidence: (standard) => [`${standard.focus}에 알맞은 재료와 용구를 선택하고 안전하게 사용하여 표현 과정을 수행한다.`, `표현 의도에 맞게 조형 요소와 제작 방법을 적용하여 결과물을 완성한다.`],
       prompt: (standard) => `${standard.focus}에 알맞은 재료·용구·매체를 선택해 작품을 제작하고, 선택한 방법이 표현 의도에 맞는지 결과물로 보여 주게 한다.`,
     },
@@ -98,7 +98,7 @@ const FACETS = {
     },
     {
       key: 'perform', label: '연주와 창작 수행', type: 'PROCEDURAL',
-      description: (standard) => `${standard.focus}을 목소리·악기·신체·디지털 매체 중 알맞은 방법으로 연주하거나 창작하는 음악 수행 주제이다.`,
+      description: (standard) => `${standard.focus}을/를 목소리·악기·신체·디지털 매체 중 알맞은 방법으로 연주하거나 창작하는 음악 수행 주제이다.`,
       evidence: (standard) => [`${standard.focus}에 알맞은 소리 재료와 표현 방법을 선택하여 연주나 창작 과정을 수행한다.`, `음악 요소를 적용해 혼자 또는 함께 표현하고 연주·창작 결과를 기록한다.`],
       prompt: (standard) => `${standard.focus}에 알맞은 연주 또는 창작 방법을 선택해 음악으로 표현하고, 적용한 음악 요소를 결과와 함께 설명하게 한다.`,
     },
@@ -118,9 +118,9 @@ const FACETS = {
     },
     {
       key: 'perform', label: '기술 수행과 적용', type: 'PROCEDURAL',
-      description: (standard) => `${standard.focus}을 신체 수준과 환경에 맞게 계획하고 기본 기능·전략·표현 방법으로 수행하는 체육 실천 주제이다.`,
+      description: (standard) => `${standard.focus}을/를 신체 수준과 환경에 맞게 계획하고 기본 기능·전략·표현 방법으로 수행하는 체육 실천 주제이다.`,
       evidence: (standard) => [`${standard.focus}의 목표와 성공 기준을 정하고 자신의 수준에 맞는 방법으로 안전하게 수행한다.`, `기본 기능·전략·표현 방법을 활동 상황에 적용하고 수행 결과를 기록한다.`],
-      prompt: (standard) => `${standard.focus}을 자신의 수준과 활동 조건에 맞게 수행하고, 적용한 기능·전략·표현 방법을 과정 기록으로 보여 주게 한다.`,
+      prompt: (standard) => `${standard.focus}을/를 자신의 수준과 활동 조건에 맞게 수행하고, 적용한 기능·전략·표현 방법을 과정 기록으로 보여 주게 한다.`,
     },
     {
       key: 'reflect', label: '참여와 성찰', type: 'META',
@@ -230,6 +230,11 @@ function buildSubject(specKey) {
   for (const standard of standards) {
     const [ageRangeStart, ageRangeEnd] = ageRange(standard.code);
     const ids = [];
+    const topicContext = {
+      ...standard,
+      focus: standard.summary,
+      unitName: standard.domainKorean,
+    };
     for (const [index, facet] of facets.entries()) {
       const id = `kr.mt.${meta.slug}.${standard.gradeBand}.${topicCode(standard.code)}.${facet.key}`;
       const name = `${standard.summary} — ${facet.label}`;
@@ -248,10 +253,10 @@ function buildSubject(specKey) {
         title: name,
         titleKorean: name,
         titleEnglish: `${standard.subject} ${standard.code} ${facet.key}`,
-        description: facet.description(standard),
-        summary: `${standard.code}의 저장소 작성 요약인 “${standard.summary}”을 ${facet.label} 학습으로 세분화한 주제이다.`,
-        evidence: facet.evidence(standard),
-        assessmentPrompt: facet.prompt(standard),
+        description: facet.description(topicContext),
+        summary: `${standard.code}의 저장소 작성 요약 “${standard.summary}”에 기반해 ${facet.label} 학습으로 세분화한 주제이다.`,
+        evidence: facet.evidence(topicContext),
+        assessmentPrompt: facet.prompt(topicContext),
         standards: [standard.key],
         sourceStandardCode: standard.code,
         sourceTextIncluded: false,

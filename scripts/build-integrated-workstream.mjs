@@ -255,7 +255,7 @@ function evidenceFor(standard, facetIndex) {
   const subject = integratedSubjects[standard.integratedSubjectCode];
   if (standard.integratedSubjectCode === '바') {
     return [
-      `${standard.summary}이 필요한 생활 장면을 학교, 가정, 마을 중 한 곳에서 찾고 설명한다.`,
+      `${standard.summary}이/가 필요한 생활 장면을 학교, 가정, 마을 중 한 곳에서 찾고 설명한다.`,
       `${standard.lifeQuestionKorean} 질문과 연결해 자신이 실천할 수 있는 행동을 한 가지 정해 실행한다.`,
       `${subject.ko} 활동 뒤에 잘된 점과 다음에 고칠 점을 말, 그림, 짧은 글 중 하나로 기록한다.`
     ];
@@ -271,7 +271,7 @@ function evidenceFor(standard, facetIndex) {
     if (standard.curriculumAreaCode === '01') {
       return [
         [
-          `${standard.summary}과 관련된 몸의 느낌, 건강 신호, 안전 조건을 그림이나 생활 장면에서 두 가지 이상 찾아 설명한다.`,
+          `${standard.summary}과/와 관련된 몸의 느낌, 건강 신호, 안전 조건을 그림이나 생활 장면에서 두 가지 이상 찾아 설명한다.`,
           `제시된 행동을 건강에 도움이 되는 행동과 안전을 다시 살펴야 하는 행동으로 나누고 판단 근거를 말한다.`
         ],
         [
@@ -316,7 +316,7 @@ function evidenceFor(standard, facetIndex) {
     ][facetIndex];
   }
   return [
-    `${standard.summary}과 관련된 움직임, 소리, 이미지, 만들기 요소를 탐색한다.`,
+    `${standard.summary}과/와 관련된 움직임, 소리, 이미지, 만들기 요소를 탐색한다.`,
     `친구와 안전하게 놀이하거나 표현 활동에 참여하고 자신의 역할을 수행한다.`,
     `활동 뒤에 느낀 점, 새롭게 표현한 점, 함께 나눈 점을 말이나 작품으로 보여 준다.`
   ];
@@ -325,7 +325,7 @@ function evidenceFor(standard, facetIndex) {
 function assessmentPromptFor(standard, facet, facetIndex) {
   const subject = integratedSubjects[standard.integratedSubjectCode];
   if (standard.integratedSubjectCode === '바') {
-    return `학습자가 ${standard.summary}과 관련된 생활 장면을 알아차리고, ${standard.lifeQuestionKorean} 맥락에서 실천한 뒤 자신의 습관 변화를 설명할 수 있는가?`;
+    return `학습자가 ${standard.summary}과/와 관련된 생활 장면을 알아차리고, ${standard.lifeQuestionKorean} 맥락에서 실천한 뒤 자신의 습관 변화를 설명할 수 있는가?`;
   }
   if (standard.integratedSubjectCode === '슬') {
       return `학습자가 ${standard.summary}에 대한 질문을 세우고 자료를 살핀 뒤, ${standard.lifeQuestionKorean} 맥락의 탐구 결과를 근거와 함께 설명할 수 있는가?`;

@@ -191,7 +191,7 @@ function eflAssessmentFor(skill, standard, focus) {
     speaking: {
       evidence: [
         `교실 상황 카드와 말하기 틀을 활용해 ${focus}에 맞는 ${productionLoad}을 알아들을 수 있게 말한다.`,
-        `${focus} 말하기를 녹음하거나 짝에게 들려준 뒤 의미 전달, 목표 표현, 말의 리듬 중 한 항목을 점검해 다시 말한다.`
+        `${focus} 과정을 녹음하거나 짝에게 들려준 뒤 의미 전달, 목표 표현, 말의 리듬 중 한 항목을 점검해 다시 말한다.`
       ],
       prompt: `${focus}에 맞는 한국 교실 상황 카드와 필요한 낱말만 제공하고 ${productionLoad}으로 말하게 한다. 특정 억양 모방이 아니라 의미 전달, 목표 표현 사용, 다시 말하기 증거로 판정한다.`
     },
@@ -219,7 +219,7 @@ function eflAssessmentFor(skill, standard, focus) {
     writing: {
       evidence: [
         `낱말 은행이나 예시문을 참고해 ${focus}에 맞는 ${productionLoad}을 목적에 맞게 쓴다.`,
-        `쓴 결과에서 목표 어휘·철자·대소문자·문장 부호 중 ${focus}와 관련된 항목을 점검하고 한 번 고쳐 쓴다.`
+        `쓴 결과에서 목표 어휘·철자·대소문자·문장 부호 중 ${focus}과/와 관련된 항목을 점검하고 한 번 고쳐 쓴다.`
       ],
       prompt: `${focus}에 맞는 그림·목적 카드와 수준별 낱말 은행 또는 예시문을 제공한다. 학습자가 ${productionLoad}을 쓰고 목표 표현과 해당 철자·대소문자·문장 부호를 점검해 수정하는지 확인한다.`
     },

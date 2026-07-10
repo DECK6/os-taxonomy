@@ -339,7 +339,7 @@ for (const standard of standards) {
       evidence: [
         `Source link: ${standard.sourceLocator}; official code verified, official wording not reproduced.`,
         `${focus.label}에 필요한 핵심 단서와 조건을 학년군에 맞는 한국어 자료에서 찾고 자신의 말로 설명한다.`,
-        `${emphasis}와 관련된 교실·생활 맥락 과업을 수행하고, 수행 결과를 ${domain.ko} 영역 언어로 설명한다.`,
+        `${emphasis}과/와 관련된 교실·생활 맥락 과업을 수행하고, 수행 결과를 ${domain.ko} 영역 언어로 설명한다.`,
         `성취기준 ${standard.code}에 비추어 잘된 점, 보완할 점, 다음 연습 대상을 한 가지 이상 말한다.`
       ],
       assessmentPrompt: `{{name}}이/가 ${standard.summary} 활동에서 ${focus.label}의 핵심 조건을 설명하고, 실제 국어 자료나 의사소통 상황에 적용한 뒤 개선점을 말할 수 있나요?`,

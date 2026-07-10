@@ -68,6 +68,34 @@ test('KR workstream source records contain no stale source aliases', () => {
   }
 });
 
+test('KR workstream learner fields contain no known direct-josa regressions', () => {
+  const workstreamDir = resolve(KR_DATA, 'workstreams');
+  const patterns = [
+    /(?:의사소통|성찰|호응|표현|문식성|제작|실천|존중|선택|해결|활용)와\b/,
+    /(?:돌봄|활용|영향|제작|실천|선택|활동|계획|탐색|예절|과정|체험|기술)를\b/,
+    /[가-힣]+하기이\b/,
+    /(?:느끼기|어울리기|즐기기|지내기|누리기|만들기)과\b/,
+    /말하기 말하기를/,
+    /과\/와/,
+    /개념를\b/,
+    /(?:실천 실천|생활 생활|수행 수행을)/,
+  ];
+
+  for (const file of readdirSync(workstreamDir).filter((name) => name.endsWith('.json'))) {
+    const artifact = JSON.parse(readFileSync(resolve(workstreamDir, file), 'utf8'));
+    const learnerFacingText = (artifact.microTopics || [])
+      .flatMap((topic) => [
+        topic.name,
+        topic.description,
+        topic.assessmentPrompt,
+        ...(topic.evidence || []),
+      ])
+      .filter((value) => typeof value === 'string')
+      .join('\n');
+    for (const pattern of patterns) assert.doesNotMatch(learnerFacingText, pattern, `${file}: ${pattern}`);
+  }
+});
+
 test('KR dependency validation accepts the canonical DAG and rejects a reciprocal cycle', () => {
   const dataDir = fixture();
   const dependencyFile = readJson(dataDir, 'dependencies.json');
@@ -171,6 +199,16 @@ test('KR validation rejects placeholder-quality topic fields', () => {
   );
 });
 
+test('KR validation rejects literal undefined placeholders in learner-facing fields', () => {
+  const dataDir = fixture();
+  const topicsFile = readJson(dataDir, 'topics.json');
+  const topic = topicsFile.topics.find((candidate) => candidate.subjectKorean === '국어');
+  topic.description += ' undefined 값을 학습 내용으로 사용한다.';
+  writeJson(dataDir, 'topics.json', topicsFile);
+
+  assertRejected(runValidator(dataDir), /content quality: Korean-facing fields contain .* undefined placeholder/);
+});
+
 test('KR validation rejects unsupported official-source-checked status inflation', () => {
   const dataDir = fixture();
   const standardsFile = readJson(dataDir, 'curriculum-standards.json');
@@ -191,6 +229,27 @@ test('KR validation rejects unsupported official-source-checked status inflation
   writeJson(dataDir, 'curriculum-standards.json', standardsFile);
 
   assertRejected(runValidator(dataDir), /official-source-checked standard missing verification evidence/);
+});
+
+test('KR validation rejects official topic status inflation without source provenance', () => {
+  const dataDir = fixture();
+  const topicsFile = readJson(dataDir, 'topics.json');
+  const topic = topicsFile.topics.find((candidate) => candidate.verificationStatus === 'public-doc-derived');
+  assert.ok(topic, 'expected a public-doc-derived topic to mutate');
+  topic.verificationStatus = 'official-source-checked';
+  for (const field of [
+    'sourceLocator',
+    'sourceSection',
+    'provenanceEvidence',
+    'sourceEvidence',
+    'verificationNotes',
+    'verificationNote',
+  ]) {
+    delete topic[field];
+  }
+  writeJson(dataDir, 'topics.json', topicsFile);
+
+  assertRejected(runValidator(dataDir), /official-source-checked topic missing verification evidence/);
 });
 
 test('KR official-inventory gates reject direct-source and status drift', () => {
@@ -226,8 +285,39 @@ test('KR official-inventory gates reject code-inventory, source-fingerprint, and
     runValidator(dataDir),
     /official inventory code digest mismatch kr-2022-elem-social-studies/,
     /official source fingerprint mismatch kr-ncic-2022-social-pdf\.sha256/,
-    /official inventory source locator missing/,
+    /official inventory structured source locator missing/,
   );
+});
+
+test('KR validation rejects official grade-band drift even when checksums are refreshed', () => {
+  const dataDir = fixture();
+  const standardsFile = readJson(dataDir, 'curriculum-standards.json');
+  const social = standardsFile.curricula.find((curriculum) => curriculum.id === 'kr-2022-elem-social-studies');
+  social.standards[0].gradeBand = '1-2';
+  writeJson(dataDir, 'curriculum-standards.json', standardsFile);
+
+  assertRejected(runValidator(dataDir), /standard gradeBand mismatch kr-2022-elem-social-studies:\[4사01-01\]/);
+});
+
+test('KR validation rejects code-only evidence in place of a structured official locator', () => {
+  const dataDir = fixture();
+  const standardsFile = readJson(dataDir, 'curriculum-standards.json');
+  const social = standardsFile.curricula.find((curriculum) => curriculum.id === 'kr-2022-elem-social-studies');
+  const standard = social.standards[0];
+  for (const field of ['sourceLocator', 'sourceSection', 'sourceEvidence', 'evidence']) delete standard[field];
+  standard.evidence = [`Official code ${standard.code} reviewed.`];
+  writeJson(dataDir, 'curriculum-standards.json', standardsFile);
+
+  assertRejected(runValidator(dataDir), /official inventory structured source locator missing/);
+});
+
+test('KR validation rejects manifest omissions even when remaining checksums are valid', () => {
+  const dataDir = fixture();
+  const manifest = readJson(dataDir, 'manifest.json');
+  delete manifest.files['workstreams/social.json'];
+  writeFileSync(resolve(dataDir, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
+
+  assertRejected(runValidator(dataDir), /manifest missing file entry workstreams\/social\.json/);
 });
 
 test('KR validation rejects stale aliases and dead NCIC notice URLs', () => {
@@ -288,6 +378,7 @@ test('Korean josa resolver deterministically handles final consonants and legacy
     resolveKoreanText('학교이/가 조건와 존중를 실천하기과 표현을/를 살핀다.'),
     '학교가 조건과 존중을 실천하기와 표현을 살핀다.',
   );
+  assert.equal(resolveKoreanText('의사소통과/와 연결한다.'), '의사소통과 연결한다.');
 });
 
 test('KR validation rejects unresolved and known-malformed Korean particles', () => {
