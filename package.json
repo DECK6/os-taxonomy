@@ -7,7 +7,9 @@
   "license": "(ODbL-1.0 AND CC-BY-SA-4.0)",
   "homepage": "https://withmarble.com",
   "scripts": {
-    "build:kr": "node scripts/build-kr-full-depth.mjs",
+    "build:kr:workstreams": "node scripts/generate-korean-workstream.mjs && node scripts/build-english-efl-workstream.mjs && node scripts/build-integrated-workstream.mjs && node scripts/repair-kr-workstreams.mjs",
+    "build:kr": "npm run build:kr:workstreams && node scripts/build-kr-full-depth.mjs",
+    "check:kr:content": "node scripts/check-kr-content-quality.mjs",
     "check:kr:links": "node scripts/check-kr-source-links.mjs",
     "test:kr": "node --test tests/validate-kr.test.mjs",
     "validate": "node scripts/validate.mjs",

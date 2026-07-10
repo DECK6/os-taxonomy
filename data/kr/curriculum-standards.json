@@ -41,15 +41,15 @@
     },
     {
       "id": "kr-moe-2022-33-annex5-pdf",
-      "name": "교육부 고시 제2022-33호 [별책 5] 국어과 교육과정",
       "publisher": "교육부",
       "via": "NCIC 국가교육과정정보센터",
       "attachmentName": "[별책5] 국어과 교육과정.pdf",
       "attachmentNo": "10003553",
+      "sha256": "5c30ae42a973a8f912bae156b160cd16d56636b3a64af84c3bdc378c9b482544",
+      "name": "교육부 고시 제2022-33호 [별책 5] 국어과 교육과정",
       "url": "https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003553&orgType=ogi4",
       "accessDate": "2026-07-09",
-      "usage": "Governing official source for the elementary Korean achievement-standard code inventory and source locators.",
-      "sha256": "5c30ae42a973a8f912bae156b160cd16d56636b3a64af84c3bdc378c9b482544"
+      "usage": "Source metadata supplied by korean.json for taxonomy provenance and verification."
     },
     {
       "id": "kr-ncic",
@@ -75,9 +75,7 @@
     },
     {
       "id": "kr-ncic-2022-elem-korean-attachment",
-      "name": "NCIC 원문 및 해설서 inventory row for 2022 elementary Korean Language",
       "publisher": "NCIC 국가교육과정정보센터",
-      "url": "https://ncic.re.kr/inv/org/list.do",
       "inventoryPath": "2022 개정 시기 > 초등학교(2022.12) > 국어",
       "apiIdentifiers": {
         "degreeCode": "1014",
@@ -86,8 +84,10 @@
         "openYear": "2022",
         "openMonth": "12"
       },
+      "name": "NCIC 원문 및 해설서 inventory row for 2022 elementary Korean Language",
+      "url": "https://ncic.re.kr/inv/org/list.do",
       "accessDate": "2026-07-09",
-      "usage": "Official inventory route and attachment metadata for the 2022 elementary Korean curriculum."
+      "usage": "Source metadata supplied by korean.json for taxonomy provenance and verification."
     },
     {
       "id": "kr-ncic-2022-english-pdf",
@@ -16370,14 +16370,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 1-2 체험 anchor 1: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 체험 기초 후보 초점: 주변 시각 요소 관찰. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "주변 시각 요소 관찰",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16388,14 +16389,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 1-2 체험 anchor 2: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 체험 기초 후보 초점: 감각과 느낌의 시각적 연결. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "감각과 느낌의 시각적 연결",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16406,14 +16408,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 1-2 체험 anchor 3: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 체험 기초 후보 초점: 생활 공간에서 미술 발견. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "생활 공간에서 미술 발견",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16424,14 +16427,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 1-2 체험 anchor 4: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 체험 기초 후보 초점: 시각 문화와 환경의 관계 탐색. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "시각 문화와 환경의 관계 탐색",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16442,14 +16446,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 1-2 표현 anchor 1: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 표현 주제와 아이디어 정하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "표현 주제와 아이디어 정하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16460,14 +16465,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 1-2 표현 anchor 2: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 재료와 용구의 특성 탐색. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "재료와 용구의 특성 탐색",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16478,14 +16484,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 1-2 표현 anchor 3: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 조형 요소로 화면과 형태 구성. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "조형 요소로 화면과 형태 구성",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16496,14 +16503,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 1-2 표현 anchor 4: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 제작 과정 점검과 수정. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "제작 과정 점검과 수정",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16514,14 +16522,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 1-2 감상 anchor 1: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 감상 기초 후보 초점: 작품에서 보이는 특징 찾기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "작품에서 보이는 특징 찾기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16532,14 +16541,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 1-2 감상 anchor 2: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 감상 기초 후보 초점: 느낌과 해석의 근거 말하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "느낌과 해석의 근거 말하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16550,14 +16560,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 1-2 감상 anchor 3: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 감상 기초 후보 초점: 작품의 맥락과 쓰임 비교. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "작품의 맥락과 쓰임 비교",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16568,14 +16579,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 1-2 감상 anchor 4: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "1-2학년군 감상 기초 후보 초점: 감상 의견을 나누고 존중하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "감상 의견을 나누고 존중하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16586,14 +16598,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 3-4 체험 anchor 1: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 체험 확장 후보 초점: 주변 시각 요소 관찰. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "주변 시각 요소 관찰",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16604,14 +16617,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 3-4 체험 anchor 2: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 체험 확장 후보 초점: 감각과 느낌의 시각적 연결. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "감각과 느낌의 시각적 연결",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16622,14 +16636,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 3-4 체험 anchor 3: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 체험 확장 후보 초점: 생활 공간에서 미술 발견. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "생활 공간에서 미술 발견",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16640,14 +16655,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 3-4 체험 anchor 4: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 체험 확장 후보 초점: 시각 문화와 환경의 관계 탐색. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "시각 문화와 환경의 관계 탐색",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16658,14 +16674,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 3-4 표현 anchor 1: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 표현 확장 후보 초점: 표현 주제와 아이디어 정하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "표현 주제와 아이디어 정하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16676,14 +16693,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 3-4 표현 anchor 2: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 표현 확장 후보 초점: 재료와 용구의 특성 탐색. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "재료와 용구의 특성 탐색",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16694,14 +16712,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 3-4 표현 anchor 3: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 표현 확장 후보 초점: 조형 요소로 화면과 형태 구성. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "조형 요소로 화면과 형태 구성",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16712,14 +16731,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 3-4 표현 anchor 4: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 표현 확장 후보 초점: 제작 과정 점검과 수정. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "제작 과정 점검과 수정",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16730,14 +16750,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 3-4 감상 anchor 1: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 감상 확장 후보 초점: 작품에서 보이는 특징 찾기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "작품에서 보이는 특징 찾기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16748,14 +16769,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 3-4 감상 anchor 2: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 감상 확장 후보 초점: 느낌과 해석의 근거 말하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "느낌과 해석의 근거 말하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16766,14 +16788,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 3-4 감상 anchor 3: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 감상 확장 후보 초점: 작품의 맥락과 쓰임 비교. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "작품의 맥락과 쓰임 비교",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16784,14 +16807,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 3-4 감상 anchor 4: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "3-4학년군 감상 확장 후보 초점: 감상 의견을 나누고 존중하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "감상 의견을 나누고 존중하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16802,14 +16826,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 5-6 체험 anchor 1: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 체험 심화 후보 초점: 주변 시각 요소 관찰. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "주변 시각 요소 관찰",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16820,14 +16845,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 5-6 체험 anchor 2: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 체험 심화 후보 초점: 감각과 느낌의 시각적 연결. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "감각과 느낌의 시각적 연결",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16838,14 +16864,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 5-6 체험 anchor 3: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 체험 심화 후보 초점: 생활 공간에서 미술 발견. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "생활 공간에서 미술 발견",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16856,14 +16883,15 @@
           "subjectKorean": "미술",
           "domain": "Experience",
           "domainKorean": "체험",
-          "summary": "미술 5-6 체험 anchor 4: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 체험 심화 후보 초점: 시각 문화와 환경의 관계 탐색. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "시각 문화와 환경의 관계 탐색",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16874,14 +16902,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 5-6 표현 anchor 1: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 표현 심화 후보 초점: 표현 주제와 아이디어 정하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "표현 주제와 아이디어 정하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16892,14 +16921,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 5-6 표현 anchor 2: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 표현 심화 후보 초점: 재료와 용구의 특성 탐색. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "재료와 용구의 특성 탐색",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16910,14 +16940,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 5-6 표현 anchor 3: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 표현 심화 후보 초점: 조형 요소로 화면과 형태 구성. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "조형 요소로 화면과 형태 구성",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16928,14 +16959,15 @@
           "subjectKorean": "미술",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "미술 5-6 표현 anchor 4: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 표현 심화 후보 초점: 제작 과정 점검과 수정. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "제작 과정 점검과 수정",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16946,14 +16978,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 5-6 감상 anchor 1: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 감상 심화 후보 초점: 작품에서 보이는 특징 찾기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "작품에서 보이는 특징 찾기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16964,14 +16997,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 5-6 감상 anchor 2: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 감상 심화 후보 초점: 느낌과 해석의 근거 말하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "느낌과 해석의 근거 말하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -16982,14 +17016,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 5-6 감상 anchor 3: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 감상 심화 후보 초점: 작품의 맥락과 쓰임 비교. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "작품의 맥락과 쓰임 비교",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17000,14 +17035,15 @@
           "subjectKorean": "미술",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "미술 5-6 감상 anchor 4: Korean elementary art: visual experience, expression, appreciation, and everyday visual culture.",
+          "summary": "5-6학년군 감상 심화 후보 초점: 감상 의견을 나누고 존중하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "감상 의견을 나누고 존중하기",
           "workstreamFile": "arts-pe.json"
         }
       ]
@@ -17043,14 +17079,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 1-2 표현 anchor 1: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 노래의 가락과 리듬 표현. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "노래의 가락과 리듬 표현",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17061,14 +17098,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 1-2 표현 anchor 2: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 악기로 박과 음색 표현. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "악기로 박과 음색 표현",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17079,14 +17117,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 1-2 표현 anchor 3: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 소리 재료로 짧은 음악 만들기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "소리 재료로 짧은 음악 만들기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17097,14 +17136,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 1-2 표현 anchor 4: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 함께 연주하며 소리의 균형 맞추기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "함께 연주하며 소리의 균형 맞추기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17115,14 +17155,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 1-2 감상 anchor 1: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 감상 기초 후보 초점: 음악의 빠르기와 셈여림 듣기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악의 빠르기와 셈여림 듣기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17133,14 +17174,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 1-2 감상 anchor 2: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 감상 기초 후보 초점: 가락과 리듬의 특징 구별. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "가락과 리듬의 특징 구별",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17151,14 +17193,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 1-2 감상 anchor 3: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 감상 기초 후보 초점: 음악의 분위기와 쓰임 연결. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악의 분위기와 쓰임 연결",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17169,14 +17212,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 1-2 감상 anchor 4: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 감상 기초 후보 초점: 근거를 들어 감상 의견 나누기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "근거를 들어 감상 의견 나누기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17187,14 +17231,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 1-2 생활화 anchor 1: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 생활화 기초 후보 초점: 생활 속 음악 장면 찾기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "생활 속 음악 장면 찾기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17205,14 +17250,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 1-2 생활화 anchor 2: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 생활화 기초 후보 초점: 행사와 공동체 음악에 참여하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "행사와 공동체 음악에 참여하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17223,14 +17269,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 1-2 생활화 anchor 3: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 생활화 기초 후보 초점: 음악 감상 예절과 저작물 존중. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악 감상 예절과 저작물 존중",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17241,14 +17288,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 1-2 생활화 anchor 4: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "1-2학년군 생활화 기초 후보 초점: 음악으로 감정과 관계 돌보기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악으로 감정과 관계 돌보기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17259,14 +17307,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 3-4 표현 anchor 1: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 표현 확장 후보 초점: 노래의 가락과 리듬 표현. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "노래의 가락과 리듬 표현",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17277,14 +17326,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 3-4 표현 anchor 2: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 표현 확장 후보 초점: 악기로 박과 음색 표현. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "악기로 박과 음색 표현",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17295,14 +17345,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 3-4 표현 anchor 3: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 표현 확장 후보 초점: 소리 재료로 짧은 음악 만들기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "소리 재료로 짧은 음악 만들기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17313,14 +17364,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 3-4 표현 anchor 4: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 표현 확장 후보 초점: 함께 연주하며 소리의 균형 맞추기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "함께 연주하며 소리의 균형 맞추기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17331,14 +17383,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 3-4 감상 anchor 1: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 감상 확장 후보 초점: 음악의 빠르기와 셈여림 듣기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악의 빠르기와 셈여림 듣기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17349,14 +17402,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 3-4 감상 anchor 2: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 감상 확장 후보 초점: 가락과 리듬의 특징 구별. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "가락과 리듬의 특징 구별",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17367,14 +17421,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 3-4 감상 anchor 3: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 감상 확장 후보 초점: 음악의 분위기와 쓰임 연결. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악의 분위기와 쓰임 연결",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17385,14 +17440,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 3-4 감상 anchor 4: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 감상 확장 후보 초점: 근거를 들어 감상 의견 나누기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "근거를 들어 감상 의견 나누기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17403,14 +17459,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 3-4 생활화 anchor 1: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 생활화 확장 후보 초점: 생활 속 음악 장면 찾기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "생활 속 음악 장면 찾기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17421,14 +17478,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 3-4 생활화 anchor 2: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 생활화 확장 후보 초점: 행사와 공동체 음악에 참여하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "행사와 공동체 음악에 참여하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17439,14 +17497,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 3-4 생활화 anchor 3: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 생활화 확장 후보 초점: 음악 감상 예절과 저작물 존중. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악 감상 예절과 저작물 존중",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17457,14 +17516,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 3-4 생활화 anchor 4: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "3-4학년군 생활화 확장 후보 초점: 음악으로 감정과 관계 돌보기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악으로 감정과 관계 돌보기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17475,14 +17535,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 5-6 표현 anchor 1: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 표현 심화 후보 초점: 노래의 가락과 리듬 표현. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "노래의 가락과 리듬 표현",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17493,14 +17554,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 5-6 표현 anchor 2: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 표현 심화 후보 초점: 악기로 박과 음색 표현. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "악기로 박과 음색 표현",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17511,14 +17573,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 5-6 표현 anchor 3: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 표현 심화 후보 초점: 소리 재료로 짧은 음악 만들기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "소리 재료로 짧은 음악 만들기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17529,14 +17592,15 @@
           "subjectKorean": "음악",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "음악 5-6 표현 anchor 4: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 표현 심화 후보 초점: 함께 연주하며 소리의 균형 맞추기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "함께 연주하며 소리의 균형 맞추기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17547,14 +17611,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 5-6 감상 anchor 1: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 감상 심화 후보 초점: 음악의 빠르기와 셈여림 듣기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악의 빠르기와 셈여림 듣기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17565,14 +17630,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 5-6 감상 anchor 2: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 감상 심화 후보 초점: 가락과 리듬의 특징 구별. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "가락과 리듬의 특징 구별",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17583,14 +17649,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 5-6 감상 anchor 3: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 감상 심화 후보 초점: 음악의 분위기와 쓰임 연결. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악의 분위기와 쓰임 연결",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17601,14 +17668,15 @@
           "subjectKorean": "음악",
           "domain": "Appreciation",
           "domainKorean": "감상",
-          "summary": "음악 5-6 감상 anchor 4: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 감상 심화 후보 초점: 근거를 들어 감상 의견 나누기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "근거를 들어 감상 의견 나누기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17619,14 +17687,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 5-6 생활화 anchor 1: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 생활화 심화 후보 초점: 생활 속 음악 장면 찾기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "생활 속 음악 장면 찾기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17637,14 +17706,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 5-6 생활화 anchor 2: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 생활화 심화 후보 초점: 행사와 공동체 음악에 참여하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "행사와 공동체 음악에 참여하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17655,14 +17725,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 5-6 생활화 anchor 3: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 생활화 심화 후보 초점: 음악 감상 예절과 저작물 존중. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악 감상 예절과 저작물 존중",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17673,14 +17744,15 @@
           "subjectKorean": "음악",
           "domain": "Life & Culture",
           "domainKorean": "생활화",
-          "summary": "음악 5-6 생활화 anchor 4: Korean elementary music: singing/playing/creating, listening, music in life and culture.",
+          "summary": "5-6학년군 생활화 심화 후보 초점: 음악으로 감정과 관계 돌보기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "음악으로 감정과 관계 돌보기",
           "workstreamFile": "arts-pe.json"
         }
       ]
@@ -17716,14 +17788,15 @@
           "subjectKorean": "체육",
           "domain": "Health",
           "domainKorean": "건강",
-          "summary": "체육 1-2 건강 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 건강 기초 후보 초점: 신체 변화와 건강 신호 살피기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "신체 변화와 건강 신호 살피기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17734,14 +17807,15 @@
           "subjectKorean": "체육",
           "domain": "Health",
           "domainKorean": "건강",
-          "summary": "체육 1-2 건강 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 건강 기초 후보 초점: 규칙적인 신체 활동 계획하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "규칙적인 신체 활동 계획하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17752,14 +17826,15 @@
           "subjectKorean": "체육",
           "domain": "Health",
           "domainKorean": "건강",
-          "summary": "체육 1-2 건강 anchor 3: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 건강 기초 후보 초점: 운동과 휴식의 균형 실천하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "운동과 휴식의 균형 실천하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17770,14 +17845,15 @@
           "subjectKorean": "체육",
           "domain": "Challenge",
           "domainKorean": "도전",
-          "summary": "체육 1-2 도전 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 도전 기초 후보 초점: 움직임 목표와 성공 기준 정하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "움직임 목표와 성공 기준 정하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17788,14 +17864,15 @@
           "subjectKorean": "체육",
           "domain": "Challenge",
           "domainKorean": "도전",
-          "summary": "체육 1-2 도전 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 도전 기초 후보 초점: 기본 움직임을 조절해 기록 향상하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "기본 움직임을 조절해 기록 향상하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17806,14 +17883,15 @@
           "subjectKorean": "체육",
           "domain": "Challenge",
           "domainKorean": "도전",
-          "summary": "체육 1-2 도전 anchor 3: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 도전 기초 후보 초점: 도전 과정에서 끈기와 안전 지키기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "도전 과정에서 끈기와 안전 지키기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17824,14 +17902,15 @@
           "subjectKorean": "체육",
           "domain": "Competition",
           "domainKorean": "경쟁",
-          "summary": "체육 1-2 경쟁 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 경쟁 기초 후보 초점: 게임 규칙과 역할 이해하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "게임 규칙과 역할 이해하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17842,14 +17921,15 @@
           "subjectKorean": "체육",
           "domain": "Competition",
           "domainKorean": "경쟁",
-          "summary": "체육 1-2 경쟁 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 경쟁 기초 후보 초점: 공간과 도구를 활용한 전략 적용하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "공간과 도구를 활용한 전략 적용하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17860,14 +17940,15 @@
           "subjectKorean": "체육",
           "domain": "Competition",
           "domainKorean": "경쟁",
-          "summary": "체육 1-2 경쟁 anchor 3: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 경쟁 기초 후보 초점: 협력과 공정한 경기 태도 실천하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "협력과 공정한 경기 태도 실천하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17878,14 +17959,15 @@
           "subjectKorean": "체육",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "체육 1-2 표현 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 몸 움직임의 요소 탐색하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "몸 움직임의 요소 탐색하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17896,14 +17978,15 @@
           "subjectKorean": "체육",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "체육 1-2 표현 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 느낌과 생각을 움직임으로 구성하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "느낌과 생각을 움직임으로 구성하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17914,14 +17997,15 @@
           "subjectKorean": "체육",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "체육 1-2 표현 anchor 3: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 표현 기초 후보 초점: 함께 표현하고 감상 의견 나누기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "함께 표현하고 감상 의견 나누기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17932,14 +18016,15 @@
           "subjectKorean": "체육",
           "domain": "Safety",
           "domainKorean": "안전",
-          "summary": "체육 1-2 안전 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 안전 기초 후보 초점: 활동 공간과 위험 요소 점검하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "활동 공간과 위험 요소 점검하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17950,14 +18035,15 @@
           "subjectKorean": "체육",
           "domain": "Safety",
           "domainKorean": "안전",
-          "summary": "체육 1-2 안전 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 안전 기초 후보 초점: 준비운동과 보호 장비 적용하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "준비운동과 보호 장비 적용하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17968,14 +18054,15 @@
           "subjectKorean": "체육",
           "domain": "Safety",
           "domainKorean": "안전",
-          "summary": "체육 1-2 안전 anchor 3: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "1-2학년군 안전 기초 후보 초점: 사고 상황에 대처하고 도움 요청하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "사고 상황에 대처하고 도움 요청하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -17986,14 +18073,15 @@
           "subjectKorean": "체육",
           "domain": "Health",
           "domainKorean": "건강",
-          "summary": "체육 3-4 건강 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 건강 확장 후보 초점: 신체 변화와 건강 신호 살피기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "신체 변화와 건강 신호 살피기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18004,14 +18092,15 @@
           "subjectKorean": "체육",
           "domain": "Health",
           "domainKorean": "건강",
-          "summary": "체육 3-4 건강 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 건강 확장 후보 초점: 규칙적인 신체 활동 계획하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "규칙적인 신체 활동 계획하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18022,14 +18111,15 @@
           "subjectKorean": "체육",
           "domain": "Health",
           "domainKorean": "건강",
-          "summary": "체육 3-4 건강 anchor 3: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 건강 확장 후보 초점: 운동과 휴식의 균형 실천하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "운동과 휴식의 균형 실천하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18040,14 +18130,15 @@
           "subjectKorean": "체육",
           "domain": "Challenge",
           "domainKorean": "도전",
-          "summary": "체육 3-4 도전 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 도전 확장 후보 초점: 움직임 목표와 성공 기준 정하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "움직임 목표와 성공 기준 정하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18058,14 +18149,15 @@
           "subjectKorean": "체육",
           "domain": "Challenge",
           "domainKorean": "도전",
-          "summary": "체육 3-4 도전 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 도전 확장 후보 초점: 기본 움직임을 조절해 기록 향상하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "기본 움직임을 조절해 기록 향상하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18076,14 +18168,15 @@
           "subjectKorean": "체육",
           "domain": "Competition",
           "domainKorean": "경쟁",
-          "summary": "체육 3-4 경쟁 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 경쟁 확장 후보 초점: 게임 규칙과 역할 이해하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "게임 규칙과 역할 이해하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18094,14 +18187,15 @@
           "subjectKorean": "체육",
           "domain": "Competition",
           "domainKorean": "경쟁",
-          "summary": "체육 3-4 경쟁 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 경쟁 확장 후보 초점: 공간과 도구를 활용한 전략 적용하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "공간과 도구를 활용한 전략 적용하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18112,14 +18206,15 @@
           "subjectKorean": "체육",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "체육 3-4 표현 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 표현 확장 후보 초점: 몸 움직임의 요소 탐색하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "몸 움직임의 요소 탐색하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18130,14 +18225,15 @@
           "subjectKorean": "체육",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "체육 3-4 표현 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 표현 확장 후보 초점: 느낌과 생각을 움직임으로 구성하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "느낌과 생각을 움직임으로 구성하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18148,14 +18244,15 @@
           "subjectKorean": "체육",
           "domain": "Safety",
           "domainKorean": "안전",
-          "summary": "체육 3-4 안전 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 안전 확장 후보 초점: 활동 공간과 위험 요소 점검하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "활동 공간과 위험 요소 점검하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18166,14 +18263,15 @@
           "subjectKorean": "체육",
           "domain": "Safety",
           "domainKorean": "안전",
-          "summary": "체육 3-4 안전 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "3-4학년군 안전 확장 후보 초점: 준비운동과 보호 장비 적용하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "준비운동과 보호 장비 적용하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18184,14 +18282,15 @@
           "subjectKorean": "체육",
           "domain": "Health",
           "domainKorean": "건강",
-          "summary": "체육 5-6 건강 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "5-6학년군 건강 심화 후보 초점: 신체 변화와 건강 신호 살피기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "신체 변화와 건강 신호 살피기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18202,14 +18301,15 @@
           "subjectKorean": "체육",
           "domain": "Health",
           "domainKorean": "건강",
-          "summary": "체육 5-6 건강 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "5-6학년군 건강 심화 후보 초점: 규칙적인 신체 활동 계획하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "규칙적인 신체 활동 계획하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18220,14 +18320,15 @@
           "subjectKorean": "체육",
           "domain": "Challenge",
           "domainKorean": "도전",
-          "summary": "체육 5-6 도전 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "5-6학년군 도전 심화 후보 초점: 움직임 목표와 성공 기준 정하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "움직임 목표와 성공 기준 정하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18238,14 +18339,15 @@
           "subjectKorean": "체육",
           "domain": "Challenge",
           "domainKorean": "도전",
-          "summary": "체육 5-6 도전 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "5-6학년군 도전 심화 후보 초점: 기본 움직임을 조절해 기록 향상하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "기본 움직임을 조절해 기록 향상하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18256,14 +18358,15 @@
           "subjectKorean": "체육",
           "domain": "Competition",
           "domainKorean": "경쟁",
-          "summary": "체육 5-6 경쟁 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "5-6학년군 경쟁 심화 후보 초점: 게임 규칙과 역할 이해하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "게임 규칙과 역할 이해하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18274,14 +18377,15 @@
           "subjectKorean": "체육",
           "domain": "Competition",
           "domainKorean": "경쟁",
-          "summary": "체육 5-6 경쟁 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "5-6학년군 경쟁 심화 후보 초점: 공간과 도구를 활용한 전략 적용하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "공간과 도구를 활용한 전략 적용하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18292,14 +18396,15 @@
           "subjectKorean": "체육",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "체육 5-6 표현 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "5-6학년군 표현 심화 후보 초점: 몸 움직임의 요소 탐색하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "몸 움직임의 요소 탐색하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18310,14 +18415,15 @@
           "subjectKorean": "체육",
           "domain": "Expression",
           "domainKorean": "표현",
-          "summary": "체육 5-6 표현 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "5-6학년군 표현 심화 후보 초점: 느낌과 생각을 움직임으로 구성하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "느낌과 생각을 움직임으로 구성하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18328,14 +18434,15 @@
           "subjectKorean": "체육",
           "domain": "Safety",
           "domainKorean": "안전",
-          "summary": "체육 5-6 안전 anchor 1: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "5-6학년군 안전 심화 후보 초점: 활동 공간과 위험 요소 점검하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "활동 공간과 위험 요소 점검하기",
           "workstreamFile": "arts-pe.json"
         },
         {
@@ -18346,14 +18453,15 @@
           "subjectKorean": "체육",
           "domain": "Safety",
           "domainKorean": "안전",
-          "summary": "체육 5-6 안전 anchor 2: Korean elementary physical education: health, movement challenge, games, expression, and safety.",
+          "summary": "5-6학년군 안전 심화 후보 초점: 준비운동과 보호 장비 적용하기. 공식 성취기준 코드와 문구를 대조하기 전의 로컬 설계 항목이다.",
           "sourceTextIncluded": false,
           "sourceRefs": [
             "kr-ncic-inventory",
             "kr-ncic-2022-notices"
           ],
           "verificationStatus": "needs-official-code-check",
-          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass.",
+          "sourceBasis": "Candidate extracted from existing kr-full-depth-v0.3 seed; requires official arts/PE curriculum document code pass. Candidate topic focus is locally authored for differentiation and does not assert official curriculum wording.",
+          "candidateTopicFocus": "준비운동과 보호 장비 적용하기",
           "workstreamFile": "arts-pe.json"
         }
       ]

@@ -9,6 +9,7 @@ import {
 } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { repairTopicRecords, resolveKoreanText } from './lib/kr-content-quality.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const KR_DATA = resolve(ROOT, 'data', 'kr');
@@ -120,7 +121,7 @@ function sourceUrls(sourceIds, sourcesById) {
 function normalizePrompt(topic) {
   const name = topicName(topic);
   const prompt = topic.assessmentPrompt || `${name}을/를 설명하고 적용할 수 있는지 관찰 과제로 확인한다.`;
-  return prompt.replaceAll('{{name}}', name);
+  return resolveKoreanText(prompt.replaceAll('{{name}}', name));
 }
 
 function normalizeEvidence(topic, standardByKey) {
@@ -275,6 +276,10 @@ for (const { file, data } of workstreams) {
 for (const topic of topicById.values()) {
   topic.evidence = normalizeEvidence(topic, standardByKey);
 }
+
+const repairedTopics = repairTopicRecords([...topicById.values()]);
+topicById.clear();
+for (const topic of repairedTopics) topicById.set(topic.id, topic);
 
 const standardByCurriculum = new Map();
 for (const standard of standardByKey.values()) {

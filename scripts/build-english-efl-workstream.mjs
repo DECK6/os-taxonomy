@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { repairWorkstreamContent } from './lib/kr-content-quality.mjs';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const OUT = resolve(ROOT, 'data', 'kr', 'workstreams', 'english-efl.json');
@@ -252,11 +253,22 @@ const domainAliases = {
   'Culture & Intercultural': ['Culture & Intercultural']
 };
 
+function topicMatchesCluster(topic, domain) {
+  if (domainAliases[domain].includes(topic.domain)) return true;
+  if (topic.domain === 'Strategies') {
+    return domain === (topic.officialArea === 'Understanding' ? 'Listening' : 'Speaking');
+  }
+  if (topic.domain === 'Media') {
+    return domain === (topic.officialArea === 'Understanding' ? 'Reading' : 'Writing');
+  }
+  return false;
+}
+
 const clusters = [];
 for (const gradeBand of ['3-4', '5-6']) {
   for (const [domain, domainKorean] of clusterDomains) {
     const topics = microTopics
-      .filter((topic) => topic.gradeBand === gradeBand && domainAliases[domain].includes(topic.domain))
+      .filter((topic) => topic.gradeBand === gradeBand && topicMatchesCluster(topic, domain))
       .map((topic) => topic.id);
     clusters.push({
       id: `kr.cluster.english-efl.${gradeBand}.${slugify(domain)}`,
@@ -348,6 +360,6 @@ const artifact = {
 };
 
 mkdirSync(resolve(ROOT, 'data', 'kr', 'workstreams'), { recursive: true });
-writeFileSync(OUT, `${JSON.stringify(artifact, null, 2)}\n`);
+writeFileSync(OUT, `${JSON.stringify(repairWorkstreamContent(artifact), null, 2)}\n`);
 console.log(`Wrote ${OUT}`);
 console.log(JSON.stringify(artifact.counts, null, 2));

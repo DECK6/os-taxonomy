@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import test from 'node:test';
+import { attachJosa, resolveKoreanText } from '../scripts/lib/kr-content-quality.mjs';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const KR_DATA = resolve(ROOT, 'data', 'kr');
@@ -181,4 +182,87 @@ test('KR validation rejects malformed source URLs and missing repository-local s
     'file:data/kr/does-not-exist.json';
   writeJson(missingDir, 'curriculum-standards.json', missingStandards);
   assertRejected(runValidator(missingDir), /local source path missing kr-project-v03-social-seed/);
+});
+
+test('Korean josa resolver deterministically handles final consonants and legacy placeholders', () => {
+  assert.equal(attachJosa('조건', '과/와'), '조건과');
+  assert.equal(attachJosa('존중', '을/를'), '존중을');
+  assert.equal(attachJosa('학교', '이/가'), '학교가');
+  assert.equal(
+    resolveKoreanText('학교이/가 조건와 존중를 실천하기과 표현을/를 살핀다.'),
+    '학교가 조건과 존중을 실천하기와 표현을 살핀다.',
+  );
+});
+
+test('KR validation rejects unresolved and known-malformed Korean particles', () => {
+  const dataDir = fixture();
+  const topicsFile = readJson(dataDir, 'topics.json');
+  topicsFile.topics[0].description += ' 조사을/를 조건와 연결한다.';
+  writeJson(dataDir, 'topics.json', topicsFile);
+
+  assertRejected(
+    runValidator(dataDir),
+    /content quality: Korean-facing fields contain .* unresolved josa placeholder/,
+    /content quality: Korean-facing fields contain .* known malformed josa form/,
+  );
+});
+
+test('KR validation rejects English facet labels in Korean-facing topic fields', () => {
+  const dataDir = fixture();
+  const topicsFile = readJson(dataDir, 'topics.json');
+  topicsFile.topics[0].name += ' practice';
+  writeJson(dataDir, 'topics.json', topicsFile);
+
+  assertRejected(runValidator(dataDir), /content quality: Korean-facing fields contain .* English facet label/);
+});
+
+test('KR validation rejects exact semantic duplicate topic records', () => {
+  const dataDir = fixture();
+  const topicsFile = readJson(dataDir, 'topics.json');
+  const [first, second] = topicsFile.topics.filter((topic) => topic.subjectKorean === '미술').slice(0, 2);
+  second.name = first.name;
+  second.title = first.title;
+  second.titleKorean = first.titleKorean;
+  second.description = first.description;
+  writeJson(dataDir, 'topics.json', topicsFile);
+
+  assertRejected(runValidator(dataDir), /content quality: topics contain .* exact semantic duplicate group/);
+});
+
+test('KR validation requires two learner-observable evidence criteria and keeps provenance separate', () => {
+  const tooShortDir = fixture();
+  const tooShortTopics = readJson(tooShortDir, 'topics.json');
+  tooShortTopics.topics[0].evidence = ['학습자가 핵심 내용을 설명한다.'];
+  writeJson(tooShortDir, 'topics.json', tooShortTopics);
+  assertRejected(
+    runValidator(tooShortDir),
+    /JSON Schema topics\.json.*must NOT have fewer than 2 items/,
+    /content quality: .*fewer than two mastery criteria/,
+  );
+
+  const provenanceDir = fixture();
+  const provenanceTopics = readJson(provenanceDir, 'topics.json');
+  provenanceTopics.topics[0].evidence = [
+    'NCIC PDF source link records the official code location.',
+    'Mapped to official achievement standard without copied wording.',
+  ];
+  provenanceTopics.topics[0].provenanceEvidence = [
+    'Source metadata remains available in this dedicated provenance field.',
+  ];
+  writeJson(provenanceDir, 'topics.json', provenanceTopics);
+  assertRejected(runValidator(provenanceDir), /content quality: topic evidence contains .* non-observable or provenance-only item/);
+});
+
+test('KR validation rejects exact duplicate assessment prompts within one standard', () => {
+  const dataDir = fixture();
+  const topicsFile = readJson(dataDir, 'topics.json');
+  const first = topicsFile.topics[0];
+  const second = topicsFile.topics.find(
+    (topic) => topic.id !== first.id && topic.standards.some((standard) => first.standards.includes(standard)),
+  );
+  assert.ok(second, 'expected two topic facets mapped to one standard');
+  second.assessmentPrompt = first.assessmentPrompt;
+  writeJson(dataDir, 'topics.json', topicsFile);
+
+  assertRejected(runValidator(dataDir), /content quality: standards contain .* exact duplicate assessment-prompt group/);
 });

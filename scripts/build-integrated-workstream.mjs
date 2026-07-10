@@ -2,6 +2,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { repairWorkstreamContent } from './lib/kr-content-quality.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = resolve(ROOT, 'data', 'kr', 'workstreams', 'integrated.json');
@@ -553,6 +554,6 @@ if (errors.length) {
 }
 
 mkdirSync(dirname(OUT), { recursive: true });
-writeFileSync(OUT, `${JSON.stringify(artifact, null, 2)}\n`);
+writeFileSync(OUT, `${JSON.stringify(repairWorkstreamContent(artifact), null, 2)}\n`);
 console.log(`Wrote ${OUT}`);
 console.log(`Counts: ${artifact.standardCount} standards, ${artifact.microTopicCount} microTopics, ${artifact.mappingCount} mappings, ${artifact.dependencySuggestionCount} dependencies, ${artifact.clusterCount} clusters, ${artifact.coverageGapCount} gaps.`);

@@ -39,15 +39,15 @@
   "files": {
     "clusters.json": {
       "bytes": 331065,
-      "sha256": "b128c676dd8546510f1cf827f887eaa8af6a94e7d1a8f586311f26bd94973209"
+      "sha256": "687e4c2a3dbc3ec26503929ef7cbbd9240da4372ab42a207e40a287e9a117fdd"
     },
     "clusters.seed.json": {
       "bytes": 70468,
       "sha256": "c9664dd578a5492d163dc258cd054d5c8eda501c35ac81844a3f34d1c6c5c1b5"
     },
     "curriculum-standards.json": {
-      "bytes": 1788414,
-      "sha256": "e042e3fbe03c68e6be349bf7f916ec114a5eecbd3e04f76c35ed20c9047a827f"
+      "bytes": 1813705,
+      "sha256": "fdcc0a6f4b19ab475a7f66dd4cd9713fd67e24b820ea6465900dee94cd7d4685"
     },
     "curriculum-standards.seed.json": {
       "bytes": 1085745,
@@ -62,48 +62,48 @@
       "sha256": "8a25e60bae09954d457f932dd152afc5e7541a261a280ceb4bbf13d3bbe85884"
     },
     "topics.json": {
-      "bytes": 4642230,
-      "sha256": "89986a9352b67d5812e6f1a5dac45d563e4d5a712036cd0cd2bdbe04a47282ba"
+      "bytes": 5182934,
+      "sha256": "aeda5c030ccbbc70531e5b15374423826758f623be1783b6f925514fad3e9176"
     },
     "topics.seed.json": {
       "bytes": 365755,
       "sha256": "0c982e39e36f7fa02945eab21a981043c61fef1765bfba9274bb55988e53043f"
     },
     "workstreams/arts-pe.json": {
-      "bytes": 643409,
-      "sha256": "748eb3d0dd642f9b812dce2ef7fb703070c237e123be2866dce6fc10166e0ec4"
+      "bytes": 927931,
+      "sha256": "5dbbb41e4ff244fa8b19a700f8d5a3cf97788dea6dce1b20c9175e080931a133"
     },
     "workstreams/english-efl.json": {
-      "bytes": 343224,
-      "sha256": "d39f918203be040fbb64d3d1fde846c82ced3a2d180377bcb1911318aa8824fa"
+      "bytes": 379173,
+      "sha256": "888f9baad986d13fb30d6c163b127925fe5d56dc90c879c17875e3c6d0e31865"
     },
     "workstreams/integrated.json": {
-      "bytes": 503827,
-      "sha256": "44fd14cce05e720d3c20a84d2135c06670dfd96c23f6e0451f402ca60ed0edb3"
+      "bytes": 500835,
+      "sha256": "bc9445d16da5a298ff8bd4d45145b45309ee4e40e78f733d29af5495e2c51d8c"
     },
     "workstreams/korean.json": {
-      "bytes": 1375866,
-      "sha256": "ce2c4dce3a86d28646a8cd20b459bd297d385aee674d86f16c9bf92a78d9cfce"
+      "bytes": 1412686,
+      "sha256": "52472f273b51fcb6730d72b85ce5d5d71654bb2163774b0849b9c5ec9146c9c4"
     },
     "workstreams/math.json": {
-      "bytes": 1205806,
-      "sha256": "a5a874a24000058e9bf7565be97112fbc7187c5e41fcd8f8c05e5301144507e9"
+      "bytes": 1327854,
+      "sha256": "9a772aac8b9d064f927657c8b25237b9d0a02dca9de9abfda731c5ae72ef2948"
     },
     "workstreams/moral.json": {
-      "bytes": 449576,
-      "sha256": "e4af2bdfc86105103aa84507b641447b048551c85bdd712bb7709bb0be607e29"
+      "bytes": 489634,
+      "sha256": "2aa631e732486b0b78b18eed1c2b9e0877d3dc973e8453ea62eb37ab8285d344"
     },
     "workstreams/practical-arts.json": {
-      "bytes": 233630,
-      "sha256": "58e7dd3cb4751babec8eb35d2e430db906e765e1120766635dbb47b341a5f5e9"
+      "bytes": 265879,
+      "sha256": "e2e6266d6bee31a29665b97a0517420e0aee90edbbd524606f37442440ebd4a1"
     },
     "workstreams/science.json": {
-      "bytes": 1160119,
-      "sha256": "ca31bf42e8aea2e90281ac8a20cf50ca64e07eecc12c3419e93dad146cc662ab"
+      "bytes": 1293126,
+      "sha256": "6081a538ede31ed327003897ac7e38551c27d3c12bbd6b5c1eb41127a64a6f3c"
     },
     "workstreams/social.json": {
-      "bytes": 681890,
-      "sha256": "4c33fe4edc8f8a7e2189cdc4a32c58aa2dae8b38f3e0a3fb9a8dcedc254839c2"
+      "bytes": 707739,
+      "sha256": "bca4dceba0cd8ea2cfda6d260196e4f99678081206598c43c48320588b9e7767"
     }
   },
   "sourcePosture": "Subject workstream artifacts preserve official-source-checked, public-doc-derived, and needs-official-code-check provenance at record level."

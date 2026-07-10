@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
 import { dirname, isAbsolute, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { contentQualityErrors } from './lib/kr-content-quality.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const KR_SCHEMA = resolve(ROOT, 'schema');
@@ -192,6 +193,7 @@ for (const topic of topicsFile.topics || []) {
 }
 
 check(standardsFile.microTopicCount === topicIds.size, `microTopicCount ${standardsFile.microTopicCount} != ${topicIds.size}`);
+for (const error of contentQualityErrors(topicsFile.topics || [])) errors.push(`content quality: ${error}`);
 
 const mappingPairs = new Set();
 for (const mapping of standardsFile.standardMappings || []) {
