@@ -17,7 +17,7 @@ const TYPES = new Set(['CONCEPTUAL', 'PROCEDURAL', 'REPRESENTATIONAL', 'LANGUAGE
 const REL = new Set(['introduces', 'supports', 'extends', 'assesses']);
 const STR = new Set(['hard', 'soft']);
 const VER = new Set(['official-source-checked', 'public-doc-derived', 'needs-official-code-check']);
-const KR_CODE = /^\[[246](국|수|과|사|영|도|실|바|슬|즐|건|미|음|체)[0-9]{2}-[0-9]{2}\]$/;
+const KR_CODE = /^\[[246][국수과사영도실바슬즐건미음체][0-9]{2}-[0-9]{2}\]$/;
 
 const errors = [];
 const check = (cond, msg) => {

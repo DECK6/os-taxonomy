@@ -10,6 +10,13 @@ const subject = 'English as a Foreign Language';
 const subjectKorean = '영어';
 const curriculumId = 'kr-2022-elem-english-efl';
 const sourceRefs = ['kr-ncic-2022-english-pdf', 'kr-ncic-inventory-api'];
+const englishPdfSha256 = '596d13897b002a4279a3e21f16396bdae7ac74988450f45fb348f87af943f92a';
+const englishPdfPageByBlock = {
+  '3-4:Understanding': 16,
+  '3-4:Expression': 18,
+  '5-6:Understanding': 21,
+  '5-6:Expression': 23
+};
 
 const sources = [
   {
@@ -42,12 +49,28 @@ const sources = [
     evidence: {
       fileName: '[별책14] 영어과 교육과정.pdf',
       pages: 306,
+      fileSizeBytes: 2313266,
+      sha256: englishPdfSha256,
       pdfCreationDate: '2022-12-19',
       ncicUploadDate: '2023-10-12 13:54:25',
       elementaryCodeBlocks: [
         'PDF extracted pages 14-25: [초등학교 3∼4학년] and [초등학교 5∼6학년] achievement standards',
         'Text extraction lines 379-388, 462-471, 564-573, 645-654 in local verification copy'
       ]
+    }
+  },
+  {
+    id: 'kr-ncic-2022-english-appendix4',
+    name: '교육부 고시 제2022-33호 [별책 14] [별표 4] 의사소통에 필요한 언어 형식',
+    url: 'https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003794&orgType=ogi4',
+    accessDate: '2026-07-10',
+    usage: 'Official source location for elementary recommended language forms. The workstream records the current item-level mapping gap and does not claim that broad vocabulary or expression topics cover the appendix.',
+    evidence: {
+      attachmentNo: '10003794',
+      sha256: englishPdfSha256,
+      pdfPages: [297, 306],
+      printedPages: [291, 300],
+      section: '[별표 4] 의사소통에 필요한 언어 형식'
     }
   },
   {
@@ -116,6 +139,14 @@ const standards = [
     sourceRefs,
     verificationStatus: 'official-source-checked',
     sourceBasis: 'Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.',
+    sourceLocator: {
+      sourceId: 'kr-ncic-2022-english-pdf',
+      attachmentNo: '10003794',
+      sha256: englishPdfSha256,
+      pdfPage: englishPdfPageByBlock[`${gradeBand}:${officialArea}`],
+      section: `초등학교 ${gradeBand}학년 ${officialAreaKorean}`,
+      code
+    },
     sourceEvidence: [
       `Official elementary ${gradeBand} ${officialAreaKorean} block in 교육부 고시 제2022-33호 [별책14].`,
       `NCIC attachment [별책14] 영어과 교육과정.pdf, subjectCode 3360, attachmentNo 10003794.`
@@ -136,23 +167,124 @@ const slugify = (text) => text
 const standardSlug = (code) => code.replace(/[\[\]]/g, '').toLowerCase();
 const areaByCode = (code) => code.includes('01-') ? 'understanding' : 'expression';
 
+function assessmentSkillFor(standard, domain, focus) {
+  if (domain === 'Interaction') return 'interaction';
+  if (domain === 'Media') return 'media';
+  if (domain === 'Strategies') return 'strategy';
+  if (domain === 'Culture & Intercultural') return 'culture';
+  if (domain === 'Alphabet & Phonics') return 'phonics';
+  if (domain === 'Vocabulary & Expressions') return 'vocabulary';
+  if (domain === 'Listening') return 'listening';
+  if (domain === 'Speaking') return 'speaking';
+  if (domain === 'Reading') return 'reading';
+  if (domain === 'Writing') return 'writing';
+  if (domain === 'Pronunciation') {
+    if (standard.officialArea === 'Expression') return 'speaking';
+    return /읽기|읽어|끊어/.test(focus) ? 'reading' : 'listening';
+  }
+  return standard.officialArea === 'Expression' ? 'speaking' : 'listening';
+}
+
+function eflAssessmentFor(skill, standard, focus) {
+  const productionLoad = standard.gradeBand === '3-4'
+    ? '낱말·어구 또는 한 문장'
+    : '두세 개의 간단한 문장';
+  const tasks = {
+    listening: {
+      evidence: [
+        `${focus}에 맞는 짧은 영어 입력을 두 번 듣고 그림·순서·핵심어 중 알맞은 답을 선택하거나 표시한다.`,
+        `다시 들은 영어의 목표 소리나 핵심어를 근거로 ${focus} 답을 확인하고 선택 이유를 말한다.`
+      ],
+      prompt: `${focus}용 그림·번호 선택지를 먼저 보여 주고 짧은 영어 입력을 두 번 들려준다. 학습자가 들은 소리·정보를 선택하고 영어 핵심어를 근거로 답을 확인하는지 기록한다.`
+    },
+    speaking: {
+      evidence: [
+        `교실 상황 카드와 말하기 틀을 활용해 ${focus}에 맞는 ${productionLoad}을 알아들을 수 있게 말한다.`,
+        `${focus} 말하기를 녹음하거나 짝에게 들려준 뒤 의미 전달, 목표 표현, 말의 리듬 중 한 항목을 점검해 다시 말한다.`
+      ],
+      prompt: `${focus}에 맞는 한국 교실 상황 카드와 필요한 낱말만 제공하고 ${productionLoad}으로 말하게 한다. 특정 억양 모방이 아니라 의미 전달, 목표 표현 사용, 다시 말하기 증거로 판정한다.`
+    },
+    phonics: {
+      evidence: [
+        `소리·글자 카드를 조작해 ${focus}의 음가와 철자 관계를 세 항목 이상 연결하고 소리 내어 확인한다.`,
+        `처음 보는 쉬운 낱말에서 ${focus} 규칙을 적용해 읽거나 쓰고, 틀린 항목은 소리 단위로 고쳐 본다.`
+      ],
+      prompt: `${focus}에 필요한 소리·글자 카드와 쉬운 낱말을 제시한다. 학습자가 음가와 철자를 연결하고 낯선 항목 하나에 적용해 읽거나 쓰며, 한국어식 발음 자체가 아니라 음철 대응 증거로 판정한다.`
+    },
+    vocabulary: {
+      evidence: [
+        `그림·실물·짧은 영어 맥락에서 ${focus}의 목표 낱말이나 표현을 뜻과 연결해 분류한다.`,
+        `분류한 낱말이나 표현을 ${productionLoad}에 넣어 말하거나 쓰고 그림 또는 행동으로 의미를 확인한다.`
+      ],
+      prompt: `${focus}에 맞는 그림·실물·짧은 영어 맥락을 제시해 목표 어휘·표현을 뜻과 연결하게 한다. 이어 ${productionLoad}에 사용하게 하며 한국어 번역만으로는 숙달로 판정하지 않는다.`
+    },
+    reading: {
+      evidence: [
+        `그림이 있는 짧은 영어 글에서 ${focus}에 필요한 글자·낱말·정보를 찾아 밑줄이나 번호로 표시한다.`,
+        `표시한 문자 단서와 문맥을 근거로 ${focus} 답을 고르고, 필요할 때 의미 단위로 다시 읽어 확인한다.`
+      ],
+      prompt: `${focus}에 맞는 짧은 영어 글과 그림을 제시한다. 학습자가 목표 글자·낱말·정보를 찾아 표시하고 문자 단서나 문맥으로 답을 확인하는지 보며, 소리 내어 읽기는 해당 초점일 때만 요구한다.`
+    },
+    writing: {
+      evidence: [
+        `낱말 은행이나 예시문을 참고해 ${focus}에 맞는 ${productionLoad}을 목적에 맞게 쓴다.`,
+        `쓴 결과에서 목표 어휘·철자·대소문자·문장 부호 중 ${focus}와 관련된 항목을 점검하고 한 번 고쳐 쓴다.`
+      ],
+      prompt: `${focus}에 맞는 그림·목적 카드와 수준별 낱말 은행 또는 예시문을 제공한다. 학습자가 ${productionLoad}을 쓰고 목표 표현과 해당 철자·대소문자·문장 부호를 점검해 수정하는지 확인한다.`
+    },
+    interaction: {
+      evidence: [
+        `짝과 서로 다른 정보 카드를 사용해 ${focus}에 필요한 질문과 응답을 주고받아 빠진 정보를 채운다.`,
+        `차례 지키기, 되묻기, 다시 말하기 중 한 가지 상호작용 전략을 사용해 ${focus} 대화를 끝까지 이어 간다.`
+      ],
+      prompt: `${focus}용 정보 차이 카드나 역할 카드를 짝에게 나누어 준다. 학습자가 영어로 질문·응답하고 차례를 지키며, 못 알아들었을 때 되묻거나 다시 말해 공동 과업을 완성하는지 관찰한다.`
+    },
+    media: {
+      evidence: [
+        `짧은 영상·그림책·디지털 카드에서 ${focus}에 필요한 영어 정보와 시각·음성 단서를 찾아 표시한다.`,
+        `찾은 매체 단서를 활용해 ${focus}의 의미를 ${productionLoad}으로 말하거나 쓰고 사용한 자료를 밝힌다.`
+      ],
+      prompt: `${focus}에 맞는 짧고 개인정보가 없는 매체 자료를 제시한다. 학습자가 영어 정보와 시각·음성 단서를 찾아 연결하고 ${productionLoad}으로 반응하며, 매체 효과 자체가 아니라 의미 이해·표현 증거를 남기는지 확인한다.`
+    },
+    strategy: {
+      evidence: [
+        `예측하기, 그림 단서 활용, 다시 듣기·읽기 중 ${focus}에 알맞은 전략을 선택하고 선택 이유를 말한다.`,
+        `선택한 전략을 적용하기 전후의 ${focus} 답을 비교해 무엇이 달라졌는지 기록하고 다음 전략을 정한다.`
+      ],
+      prompt: `${focus} 과업 전후에 사용할 전략을 고르게 하고 예측·단서 표시·다시 듣기 또는 읽기의 흔적을 남기게 한다. 정답뿐 아니라 전략 선택, 적용, 확인의 세 단계를 관찰한다.`
+    },
+    culture: {
+      evidence: [
+        `한국 교실이나 일상에서 출발해 ${focus} 자료 속 두 생활·문화 맥락의 공통점과 차이점을 각각 찾는다.`,
+        `한 문화를 기준으로 단정하지 않고 ${focus}의 인물·표현·관습을 존중하는 말로 반응하며 자료 근거를 제시한다.`
+      ],
+      prompt: `한국 교실의 익숙한 장면과 서로 다른 두 영어 사용 맥락을 담은 ${focus} 자료를 함께 제시한다. 학습자가 공통점·차이점을 자료에서 찾고 고정관념 없이 존중하는 표현으로 반응하는지 확인한다.`
+    }
+  };
+  return tasks[skill];
+}
+
 const microTopics = [];
 const standardMappings = [];
 
 for (const standard of standards) {
   standard.focuses.forEach((focus, index) => {
     const domain = standard.domainTags[Math.min(index, standard.domainTags.length - 1)];
+    const assessmentSkill = assessmentSkillFor(standard, domain, focus);
+    const assessment = eflAssessmentFor(assessmentSkill, standard, focus);
     const id = `kr.mt.english-efl.${standard.gradeBand}.${areaByCode(standard.code)}.${standardSlug(standard.code)}.${String(index + 1).padStart(2, '0')}.${slugify(focus)}`;
     const topic = {
       id,
       name: focus,
       title: focus,
       description: `${standard.gradeBand} 학년군 한국어 화자 EFL 학습자가 ${standard.summary}에 도달하도록 ${focus}을/를 분리해 연습하는 세부 주제입니다.`,
-      evidence: [
+      evidence: assessment.evidence,
+      provenanceEvidence: [
         `Mapped to verified official achievement standard ${standard.code} in the NCIC [별책14] English curriculum PDF.`,
         `Pedagogical strand ${domain} is derived from the official ${standard.officialAreaKorean} area plus the standard focus; this is EFL decomposition, not native ELA import.`
       ],
-      assessmentPrompt: `${focus}을/를 확인할 수 있는 짧은 듣기·말하기·읽기·쓰기 과업을 제시하고, 학생이 한국어 도움 없이 의미를 이해하거나 표현했는지 관찰 기록으로 판정한다.`,
+      assessmentPrompt: assessment.prompt,
+      assessmentSkill,
       type: typeCycle[index],
       subject,
       subjectKorean,
@@ -162,7 +294,8 @@ for (const standard of standards) {
       gradeBand: standard.gradeBand,
       standards: [standard.key],
       verificationStatus: 'official-source-checked',
-      sourceRefs
+      sourceRefs,
+      sourceLocator: { ...standard.sourceLocator }
     };
     microTopics.push(topic);
     standardMappings.push({
@@ -297,8 +430,27 @@ const coverageGaps = [
   },
   {
     id: 'gap-language-forms',
-    status: 'needs-follow-up',
-    note: 'The [별표 4] elementary recommended language forms should be separately mapped to vocabulary/expression micro-topics before integration.'
+    status: 'source-located-explicit-gap',
+    severity: 'review-needed',
+    note: 'The official [별표 4] source is located, but its elementary-marked language-form examples are not yet represented as item-level records. Existing vocabulary and expression topics are broad skill coverage only and must not be treated as proof of appendix coverage.',
+    sourceRefs: ['kr-ncic-2022-english-appendix4'],
+    sourceLocator: {
+      sourceId: 'kr-ncic-2022-english-appendix4',
+      attachmentNo: '10003794',
+      sha256: englishPdfSha256,
+      pdfPages: [297, 306],
+      printedPages: [291, 300],
+      section: '[별표 4] 의사소통에 필요한 언어 형식'
+    },
+    standardKeys: [
+      '[4영01-05]', '[4영02-04]', '[4영02-05]', '[4영02-06]', '[4영02-07]', '[4영02-08]',
+      '[6영01-03]', '[6영02-02]', '[6영02-04]', '[6영02-05]', '[6영02-06]', '[6영02-07]', '[6영02-08]'
+    ].map((code) => `${curriculumId}:${code}`),
+    broadSkillTopicCount: microTopics.filter((topic) =>
+      ['vocabulary', 'speaking', 'writing', 'interaction'].includes(topic.assessmentSkill)
+    ).length,
+    itemMappedLanguageFormCount: 0,
+    coverageStatus: 'broad-skill-topics-present-form-items-unmapped'
   },
   {
     id: 'gap-assessment-calibration',
@@ -325,7 +477,7 @@ const coverageGaps = [
 const artifact = {
   $schema: 'https://withmarble.com/taxonomy/schema/kr-english-efl-workstream.schema.json',
   dataset: 'Korean Marble Taxonomy English EFL workstream',
-  taxonomyVersion: 'kr-full-depth-v0.3-workstream',
+  taxonomyVersion: 'kr-full-depth-v0.4-workstream',
   locale: 'ko-KR',
   country: 'KR',
   subject,

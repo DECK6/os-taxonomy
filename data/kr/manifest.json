@@ -5,16 +5,16 @@
   "locale": "ko-KR",
   "country": "KR",
   "status": "integrated-workstream-candidate",
-  "verificationStatus": "needs-official-code-check",
+  "verificationStatus": "public-doc-derived",
   "counts": {
-    "sources": 21,
+    "sources": 24,
     "curricula": 11,
-    "standards": 641,
-    "topics": 2019,
-    "dependencies": 2081,
-    "clusters": 155,
-    "standardMappings": 2019,
-    "coverageGaps": 50,
+    "standards": 620,
+    "topics": 1956,
+    "dependencies": 1894,
+    "clusters": 153,
+    "standardMappings": 1956,
+    "coverageGaps": 43,
     "workstreams": 9
   },
   "targets": {
@@ -38,48 +38,48 @@
   ],
   "files": {
     "clusters.json": {
-      "bytes": 331065,
-      "sha256": "687e4c2a3dbc3ec26503929ef7cbbd9240da4372ab42a207e40a287e9a117fdd"
+      "bytes": 336090,
+      "sha256": "6f98f583fa1f9afa1ae4498e9e49cfa6ebbda845701ba161fdae0daaa1e03fdb"
     },
     "clusters.seed.json": {
       "bytes": 70468,
       "sha256": "c9664dd578a5492d163dc258cd054d5c8eda501c35ac81844a3f34d1c6c5c1b5"
     },
     "curriculum-standards.json": {
-      "bytes": 1813705,
-      "sha256": "fdcc0a6f4b19ab475a7f66dd4cd9713fd67e24b820ea6465900dee94cd7d4685"
+      "bytes": 1933604,
+      "sha256": "fd9bcbefff0f6f2ab98d8a4f1fc53b6aad40d86ccfb845caab8c54d644c251bd"
     },
     "curriculum-standards.seed.json": {
       "bytes": 1085745,
       "sha256": "90e514cd75bb79ebe4f0a5ef469533d6e543bb16d08a9cf867b1d2f044b3df84"
     },
     "dependencies.json": {
-      "bytes": 830469,
-      "sha256": "04c8d49d554294c69489093c6a6338a3c49d4a67acc419ada2b173856a3efcc8"
+      "bytes": 762706,
+      "sha256": "0ba8c76464913a8c7a139fa848856f203b2fb66b70531c6021fe33151f556dfb"
     },
     "dependencies.seed.json": {
       "bytes": 127512,
       "sha256": "8a25e60bae09954d457f932dd152afc5e7541a261a280ceb4bbf13d3bbe85884"
     },
     "topics.json": {
-      "bytes": 5182934,
-      "sha256": "aeda5c030ccbbc70531e5b15374423826758f623be1783b6f925514fad3e9176"
+      "bytes": 5367589,
+      "sha256": "bba627eaa8d10c3d20494f69fb7a22b345536f11178e6996556f25fcc66672e3"
     },
     "topics.seed.json": {
       "bytes": 365755,
       "sha256": "0c982e39e36f7fa02945eab21a981043c61fef1765bfba9274bb55988e53043f"
     },
     "workstreams/arts-pe.json": {
-      "bytes": 927931,
-      "sha256": "5dbbb41e4ff244fa8b19a700f8d5a3cf97788dea6dce1b20c9175e080931a133"
+      "bytes": 1164037,
+      "sha256": "b3ac08874a4a4dfc679c6fb90b2875708122e5fce1cd114ffed96e640b83d111"
     },
     "workstreams/english-efl.json": {
-      "bytes": 379173,
-      "sha256": "888f9baad986d13fb30d6c163b127925fe5d56dc90c879c17875e3c6d0e31865"
+      "bytes": 456054,
+      "sha256": "485ea71752c4c0642252f00b1bc8c4dc8c15b9784785bc5fc2ea26d6c5e7d602"
     },
     "workstreams/integrated.json": {
-      "bytes": 500835,
-      "sha256": "bc9445d16da5a298ff8bd4d45145b45309ee4e40e78f733d29af5495e2c51d8c"
+      "bytes": 670048,
+      "sha256": "630c42c4767a657b7b6e46b32b7d12a8d58da3840fada64e91f0328fe0697411"
     },
     "workstreams/korean.json": {
       "bytes": 1412686,
@@ -102,8 +102,8 @@
       "sha256": "6081a538ede31ed327003897ac7e38551c27d3c12bbd6b5c1eb41127a64a6f3c"
     },
     "workstreams/social.json": {
-      "bytes": 707739,
-      "sha256": "bca4dceba0cd8ea2cfda6d260196e4f99678081206598c43c48320588b9e7767"
+      "bytes": 594990,
+      "sha256": "fdf721f5abf1a257cf804ca9d4a669a25673dc5ab3aabcc4637222c6a976f06a"
     }
   },
   "sourcePosture": "Subject workstream artifacts preserve official-source-checked, public-doc-derived, and needs-official-code-check provenance at record level."

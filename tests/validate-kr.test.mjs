@@ -149,21 +149,20 @@ test('KR validation rejects placeholder-quality topic fields', () => {
 test('KR validation rejects unsupported official-source-checked status inflation', () => {
   const dataDir = fixture();
   const standardsFile = readJson(dataDir, 'curriculum-standards.json');
-  const standard = standardsFile.curricula
-    .flatMap((curriculum) => curriculum.standards)
-    .find(
-      (candidate) =>
-        candidate.verificationStatus !== 'official-source-checked' &&
-        !candidate.sourceLocator &&
-        !candidate.sourceSection &&
-        !candidate.evidence &&
-        !candidate.sourceEvidence &&
-        !candidate.verificationNotes &&
-        !candidate.verificationNote,
-    );
-  assert.ok(standard, 'expected an unverified standard without review evidence');
+  const standard = standardsFile.curricula.flatMap((curriculum) => curriculum.standards)[0];
+  assert.ok(standard, 'expected at least one standard to mutate');
   standard.verificationStatus = 'official-source-checked';
   standard.sourceBasis = 'Adversarial placeholder claims a review that has no supporting evidence.';
+  for (const field of [
+    'sourceLocator',
+    'sourceSection',
+    'evidence',
+    'sourceEvidence',
+    'verificationNotes',
+    'verificationNote',
+  ]) {
+    delete standard[field];
+  }
   writeJson(dataDir, 'curriculum-standards.json', standardsFile);
 
   assertRejected(runValidator(dataDir), /official-source-checked standard missing verification evidence/);
@@ -178,10 +177,10 @@ test('KR validation rejects malformed source URLs and missing repository-local s
 
   const missingDir = fixture();
   const missingStandards = readJson(missingDir, 'curriculum-standards.json');
-  missingStandards.sources.find((source) => source.id === 'kr-project-v03-social-seed').url =
-    'file:data/kr/does-not-exist.json';
+  const missingSource = missingStandards.sources.find((source) => !/^https?:\/\//i.test(source.url)) || missingStandards.sources[0];
+  missingSource.url = 'file:data/kr/does-not-exist.json';
   writeJson(missingDir, 'curriculum-standards.json', missingStandards);
-  assertRejected(runValidator(missingDir), /local source path missing kr-project-v03-social-seed/);
+  assertRejected(runValidator(missingDir), new RegExp(`local source path missing ${missingSource.id}`));
 });
 
 test('Korean josa resolver deterministically handles final consonants and legacy placeholders', () => {

@@ -143,7 +143,7 @@ function parentSummaryFor(cluster) {
     cluster.subjectKorean,
     cluster.gradeBand ? `${cluster.gradeBand}학년군` : null,
     cluster.domainKorean || cluster.domain,
-    cluster.unit || cluster.module || cluster.lifeQuestionKorean,
+    cluster.unit || cluster.module || cluster.lifeQuestionKorean || cluster.curriculumAreaKorean,
   ].filter(Boolean);
   const label = parts.join(' ');
   return `학부모는 이 묶음을 통해 ${label}에서 아이가 배우는 핵심 주제, 활동 증거, 평가 질문을 한눈에 확인할 수 있다.`;
