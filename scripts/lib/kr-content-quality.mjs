@@ -195,10 +195,28 @@ function artsPeFocus(standard) {
   return choices[index] || `${standard.domainKorean} 학습 초점 ${index + 1}`;
 }
 
+function hasReviewedOfficialLocator(standard) {
+  const locator = standard.sourceLocator;
+  return (
+    standard.verificationStatus === 'official-source-checked' &&
+    locator &&
+    typeof locator === 'object' &&
+    typeof locator.sourceId === 'string' &&
+    typeof locator.attachmentNo === 'string' &&
+    typeof locator.sha256 === 'string' &&
+    Number.isInteger(locator.pdfPage)
+  );
+}
+
 function repairArtsPeStandards(standards) {
   const focusByKey = new Map();
   for (const standard of standards) {
     if (!ARTS_PE_FOCUS[standard.subjectKorean]) continue;
+    // The legacy arts/PE workstream used synthetic code families and needed a
+    // conservative candidate rewrite.  Official-source reconciled records
+    // carry an item-level locator and must never be downgraded or rewritten by
+    // this compatibility repair.
+    if (hasReviewedOfficialLocator(standard)) continue;
     const focus = artsPeFocus(standard);
     if (!focus) continue;
     const stage = GRADE_STAGE[standard.gradeBand] || standard.gradeBand;
