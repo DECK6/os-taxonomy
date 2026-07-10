@@ -14,6 +14,6 @@
     "validate:kr": "node scripts/validate-kr.mjs"
   },
   "devDependencies": {
-    "ajv": "^8.17.1"
+    "ajv": "^8.20.0"
   }
 }
