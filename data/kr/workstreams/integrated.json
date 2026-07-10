@@ -13,20 +13,31 @@
   "textPolicy": {
     "officialStandardTextIncluded": false,
     "summaryPolicy": "Concise source-derived paraphrases only; no bulk verbatim curriculum text is included.",
-    "licensingStatus": "Public Korean national curriculum source metadata plus local generated workstream design.",
-    "licenseCaution": "Keep official curriculum text in external source references and preserve attribution to NCIC, the Ministry of Education, and the National Education Commission amendment."
+    "licensingStatus": "work-level-rights-unresolved",
+    "licenseCaution": "HOLD: no work-specific KOGL mark or commercial-use permission is recorded for the cited Korean curriculum PDFs. Preserve attribution and consult PROVENANCE.md before redistribution or commercial use."
   },
   "sources": [
     {
-      "id": "kr-ncic",
-      "name": "NCIC 국가교육과정정보센터",
-      "url": "https://ncic.re.kr/",
+      "id": "kr-moe-2022-33-annex15-pdf",
+      "name": "교육부 고시 제2022-33호 [별책 15] 바른 생활, 슬기로운 생활, 즐거운 생활 교육과정",
+      "sourceType": "official-pdf",
+      "publisher": "교육부",
+      "via": "NCIC 국가교육과정정보센터",
+      "url": "https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003571&orgType=ogi4",
       "accessDate": "2026-07-09",
-      "usage": "Official public national curriculum portal reference."
+      "usage": "Governing source for official achievement-standard code inventory and integrated-subjects framing.",
+      "attachmentName": "[별책15] 바른 생활, 슬기로운 생활, 즐거운 생활 교육과정.pdf",
+      "attachmentNo": "10003571",
+      "pairedHwpAttachmentNo": "10003572",
+      "sha256": "5fe191f258d11cc77741c57cfb16324b26d5db14649809cc694dcbcd4662adee",
+      "fileSizeBytes": 1152492,
+      "pdfPages": 54,
+      "subjectCode": "3363"
     },
     {
       "id": "kr-ncic-2022-elem-integrated-attachment",
       "name": "NCIC 2022 elementary integrated-subjects inventory row",
+      "sourceType": "official-inventory",
       "url": "https://ncic.re.kr/inv/org/list.do",
       "accessDate": "2026-07-09",
       "usage": "Official inventory path and attachment metadata for 2022.12 elementary 바른 생활, 슬기로운 생활, 즐거운 생활.",
@@ -40,38 +51,9 @@
       }
     },
     {
-      "id": "kr-moe-2022-33-annex15-pdf",
-      "name": "교육부 고시 제2022-33호 [별책 15] 바른 생활, 슬기로운 생활, 즐거운 생활 교육과정",
-      "publisher": "교육부",
-      "via": "NCIC 국가교육과정정보센터",
-      "url": "https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003571&orgType=ogi4",
-      "accessDate": "2026-07-09",
-      "usage": "Governing source for official achievement-standard code inventory and integrated-subjects framing.",
-      "attachmentName": "[별책15] 바른 생활, 슬기로운 생활, 즐거운 생활 교육과정.pdf",
-      "attachmentNo": "10003571",
-      "pairedHwpAttachmentNo": "10003572",
-      "sha256": "5fe191f258d11cc77741c57cfb16324b26d5db14649809cc694dcbcd4662adee",
-      "fileSizeBytes": 1152492,
-      "pdfPages": 54
-    },
-    {
-      "id": "kr-ncic-2026-elem-integrated-attachment",
-      "name": "NCIC 2026.01 elementary integrated-subjects inventory row",
-      "url": "https://ncic.re.kr/inv/org/list.do",
-      "accessDate": "2026-07-10",
-      "usage": "Official inventory path and attachment metadata for the current accessible 바른 생활, 슬기로운 생활, 건강한 생활, 즐거운 생활 amendment branch.",
-      "inventoryPath": "2022 개정 시기 > 초등학교(2026.01) > 바른 생활, 슬기로운 생활, 건강한 생활, 즐거운 생활",
-      "apiIdentifiers": {
-        "degreeCode": "1014",
-        "classCode": "1002",
-        "subjectCode": "3417",
-        "openYear": "2026",
-        "openMonth": "01"
-      }
-    },
-    {
       "id": "kr-ncic-2026-1-annex15-pdf",
       "name": "교육부 고시 제2022-33호 [별책 15] (국가교육위원회 고시 제2026-1호 일부개정 포함)",
+      "sourceType": "official-pdf",
       "publisher": "교육부·국가교육위원회",
       "via": "NCIC 국가교육과정정보센터",
       "url": "https://ncic.re.kr/inv/org/download.do?year=2026&seq=10004214&orgType=ogi4",
@@ -90,7 +72,24 @@
       "healthAchievementStandardPrintedPages": [
         39,
         47
-      ]
+      ],
+      "subjectCode": "3417"
+    },
+    {
+      "id": "kr-ncic-2026-elem-integrated-attachment",
+      "name": "NCIC 2026.01 elementary integrated-subjects inventory row",
+      "sourceType": "official-inventory",
+      "url": "https://ncic.re.kr/inv/org/list.do",
+      "accessDate": "2026-07-10",
+      "usage": "Official inventory path and attachment metadata for the current accessible 바른 생활, 슬기로운 생활, 건강한 생활, 즐거운 생활 amendment branch.",
+      "inventoryPath": "2022 개정 시기 > 초등학교(2026.01) > 바른 생활, 슬기로운 생활, 건강한 생활, 즐거운 생활",
+      "apiIdentifiers": {
+        "degreeCode": "1014",
+        "classCode": "1002",
+        "subjectCode": "3417",
+        "openYear": "2026",
+        "openMonth": "01"
+      }
     }
   ],
   "domains": [
@@ -169,7 +168,7 @@
     }
   ],
   "counts": {
-    "sources": 5,
+    "sources": 4,
     "standards": 57,
     "microTopics": 171,
     "standardMappings": 171,
@@ -177,7 +176,7 @@
     "clusters": 15,
     "coverageGaps": 4
   },
-  "sourceCount": 5,
+  "sourceCount": 4,
   "standardCount": 57,
   "microTopicCount": 171,
   "mappingCount": 171,

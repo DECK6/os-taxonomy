@@ -160,6 +160,7 @@ function sourceRecord(spec) {
   return {
     id: spec.sourceId,
     name: spec.title,
+    sourceType: 'official-pdf',
     publisher: '교육부',
     via: 'NCIC 국가교육과정정보센터',
     url: spec.url,

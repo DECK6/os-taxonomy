@@ -7,7 +7,7 @@
   "status": "integrated-workstream-candidate",
   "verificationStatus": "public-doc-derived",
   "counts": {
-    "sources": 24,
+    "sources": 17,
     "curricula": 11,
     "standards": 620,
     "topics": 1956,
@@ -23,7 +23,30 @@
   "graphPolicy": {
     "relation": "prerequisite",
     "acyclic": true,
-    "edgeSelection": "workstream-reviewed-only"
+    "edgeSelection": "workstream-reviewed-only",
+    "crossSubjectEdges": "none"
+  },
+  "coverageNotes": {
+    "social": {
+      "posture": "Korea-first official Annex 7 inventory; no imported US/UK social-studies defaults.",
+      "standards": 49,
+      "topics": 147
+    },
+    "englishEfl": {
+      "posture": "Korean-learner EFL with listening, speaking, phonics, vocabulary, reading, writing, interaction, media, strategy, and culture task families; not native ELA.",
+      "standards": 40,
+      "topics": 120
+    },
+    "artsAndPhysicalEducation": {
+      "posture": "Direct Annex 11-13 inventories for grades 3-6; grades 1-2 arts and movement remain in integrated subjects rather than synthetic standalone codes.",
+      "standards": 101,
+      "topics": 303
+    },
+    "amendedAnnex15": {
+      "posture": "Current accessible 2026 amendment retained with nine directly located 건강한 생활 standards.",
+      "standards": 9,
+      "topics": 27
+    }
   },
   "workstreams": [
     "arts-pe.json",
@@ -46,65 +69,69 @@
       "sha256": "c9664dd578a5492d163dc258cd054d5c8eda501c35ac81844a3f34d1c6c5c1b5"
     },
     "curriculum-standards.json": {
-      "bytes": 1933604,
-      "sha256": "fd9bcbefff0f6f2ab98d8a4f1fc53b6aad40d86ccfb845caab8c54d644c251bd"
+      "bytes": 1913012,
+      "sha256": "9b5f95c821c99017b9d0799657824e07d84487989246c3260c016685fca50423"
     },
     "curriculum-standards.seed.json": {
       "bytes": 1085745,
       "sha256": "90e514cd75bb79ebe4f0a5ef469533d6e543bb16d08a9cf867b1d2f044b3df84"
     },
     "dependencies.json": {
-      "bytes": 762706,
-      "sha256": "0ba8c76464913a8c7a139fa848856f203b2fb66b70531c6021fe33151f556dfb"
+      "bytes": 762739,
+      "sha256": "e09a6137bb70edf2a0b0928c05a4bd3f102c80845846ff13b10767ef4ceafe2c"
     },
     "dependencies.seed.json": {
       "bytes": 127512,
       "sha256": "8a25e60bae09954d457f932dd152afc5e7541a261a280ceb4bbf13d3bbe85884"
     },
     "topics.json": {
-      "bytes": 5367589,
-      "sha256": "bba627eaa8d10c3d20494f69fb7a22b345536f11178e6996556f25fcc66672e3"
+      "bytes": 5312125,
+      "sha256": "7d864256d2a304126fd17fdb22e03631f65890d9b3176b1ef0bd0cebe9dd97ad"
     },
     "topics.seed.json": {
       "bytes": 365755,
       "sha256": "0c982e39e36f7fa02945eab21a981043c61fef1765bfba9274bb55988e53043f"
     },
     "workstreams/arts-pe.json": {
-      "bytes": 1164037,
-      "sha256": "b3ac08874a4a4dfc679c6fb90b2875708122e5fce1cd114ffed96e640b83d111"
+      "bytes": 1164150,
+      "sha256": "008e2e0fcda2d60e0cdc07c92ba98fef7d1a5ab86b5cc932afef9e5dab831bd1"
     },
     "workstreams/english-efl.json": {
-      "bytes": 456054,
-      "sha256": "485ea71752c4c0642252f00b1bc8c4dc8c15b9784785bc5fc2ea26d6c5e7d602"
+      "bytes": 450520,
+      "sha256": "de00ead3e040e4d26c84e407b5256124599b169f4951f33411edb8fc0496f95e"
     },
     "workstreams/integrated.json": {
-      "bytes": 670048,
-      "sha256": "630c42c4767a657b7b6e46b32b7d12a8d58da3840fada64e91f0328fe0697411"
+      "bytes": 670001,
+      "sha256": "5b5430007241f179229715ff00945522185480bfad57ae03ae37e9bb7fca04e8"
     },
     "workstreams/korean.json": {
-      "bytes": 1412686,
-      "sha256": "52472f273b51fcb6730d72b85ce5d5d71654bb2163774b0849b9c5ec9146c9c4"
+      "bytes": 1413399,
+      "sha256": "3ac9275d6fba3cf85f7810859fd8c720d54eed54af7e32074abf1c4f721cf895"
     },
     "workstreams/math.json": {
-      "bytes": 1327854,
-      "sha256": "9a772aac8b9d064f927657c8b25237b9d0a02dca9de9abfda731c5ae72ef2948"
+      "bytes": 1321642,
+      "sha256": "8068e3ee34061b354d084ceef1ae829ca4c690dba1103e3b9b0e32579b951a73"
     },
     "workstreams/moral.json": {
-      "bytes": 489634,
-      "sha256": "2aa631e732486b0b78b18eed1c2b9e0877d3dc973e8453ea62eb37ab8285d344"
+      "bytes": 487437,
+      "sha256": "c9260ce2f7d62fd2b3fb8889ba331fb5b6a263f2f6a4f26bbc6283e987e71d34"
     },
     "workstreams/practical-arts.json": {
-      "bytes": 265879,
-      "sha256": "e2e6266d6bee31a29665b97a0517420e0aee90edbbd524606f37442440ebd4a1"
+      "bytes": 265659,
+      "sha256": "de49e3b1011a2dac5903a8effd1a1b07b7e79213703dc6338e1e3f2a4757f639"
     },
     "workstreams/science.json": {
-      "bytes": 1293126,
-      "sha256": "6081a538ede31ed327003897ac7e38551c27d3c12bbd6b5c1eb41127a64a6f3c"
+      "bytes": 1284563,
+      "sha256": "9ec1bbc58669ed752222bd8588c0e1aaa7a18a4c563df38a0f8c8be38a948972"
     },
     "workstreams/social.json": {
-      "bytes": 594990,
-      "sha256": "fdf721f5abf1a257cf804ca9d4a669a25673dc5ab3aabcc4637222c6a976f06a"
+      "bytes": 595031,
+      "sha256": "ca1831b217fd9767991166b2832efab611247f60d25699feaa614acc860367c7"
     }
   },
-  "sourcePosture": "Subject workstream artifacts preserve official-source-checked, public-doc-derived, and needs-official-code-check provenance at record level."
+  "sourcePosture": {
+    "recordSchema": "All integrated source records use id, name, url, accessDate, usage, and sourceType; stale portal aliases and dead notice URLs are excluded.",
+    "verification": "Official-inventory gates bind every curriculum to an exact standard count and direct official PDF source.",
+    "workLevelReuseStatus": "HOLD pending work-specific KOGL and commercial-use evidence; see PROVENANCE.md."
+  }
 }

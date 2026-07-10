@@ -5,6 +5,11 @@ import { existsSync, readFileSync } from 'node:fs';
 import { dirname, isAbsolute, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { contentQualityErrors } from './lib/kr-content-quality.mjs';
+import {
+  OFFICIAL_INVENTORY_GATES,
+  OFFICIAL_PDF_SOURCE_SNAPSHOTS,
+  STALE_KR_SOURCE_IDS,
+} from './lib/kr-source-provenance.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const KR_SCHEMA = resolve(ROOT, 'schema');
@@ -47,6 +52,15 @@ const hasVerificationEvidence = (record) =>
   meaningfulStringLeaves(record.sourceEvidence) > 0 ||
   meaningfulStringLeaves(record.verificationNotes) > 0 ||
   meaningfulStringLeaves(record.verificationNote) > 0;
+const hasItemLevelSourceLocator = (record) =>
+  JSON.stringify([
+    record.sourceLocator,
+    record.sourceSection,
+    record.evidence,
+    record.sourceEvidence,
+    record.verificationNotes,
+    record.verificationNote,
+  ]).includes(record.code);
 
 const standardsFile = load('curriculum-standards.json');
 const topicsFile = load('topics.json');
@@ -85,6 +99,8 @@ check(topicsFile.topicCount >= MIN_TOPICS, `KR topic target missed: ${topicsFile
 check(depsFile.graphPolicy?.relation === 'prerequisite', 'dependency graph relation must be prerequisite');
 check(depsFile.graphPolicy?.acyclic === true, 'dependency graph policy must require acyclic=true');
 check(depsFile.graphPolicy?.edgeSelection === 'workstream-reviewed-only', 'dependency graph must use workstream-reviewed-only edges');
+check(depsFile.graphPolicy?.crossSubjectEdges === 'none', 'dependency graph must declare crossSubjectEdges=none');
+check(manifest.counts?.sources === standardsFile.sourceCount, 'manifest source count mismatch');
 check(manifest.counts?.topics === topicsFile.topicCount, 'manifest topic count mismatch');
 check(manifest.counts?.dependencies === depsFile.edgeCount, 'manifest dependency count mismatch');
 check(manifest.counts?.clusters === clustersFile.clusterCount, 'manifest cluster count mismatch');
@@ -92,13 +108,19 @@ check(manifest.counts?.curricula === standardsFile.curriculumCount, 'manifest cu
 check(manifest.counts?.standards === standardsFile.standardCount, 'manifest standard count mismatch');
 
 const sourceIds = new Set();
+const sourcesById = new Map();
 for (const source of standardsFile.sources || []) {
   check(isNonEmptyString(source.id), 'source missing id');
   check(isNonEmptyString(source.name), `source ${source.id} missing name`);
   check(isNonEmptyString(source.url), `source ${source.id} missing url`);
+  check(isNonEmptyString(source.accessDate), `source ${source.id} missing accessDate`);
   check(isNonEmptyString(source.usage), `source ${source.id} missing usage`);
+  check(isNonEmptyString(source.sourceType), `source ${source.id} missing sourceType`);
+  check(!STALE_KR_SOURCE_IDS.has(source.id), `stale KR source alias remains ${source.id}`);
+  check(!/\/bbs\/eduNotice2022\//i.test(source.url || ''), `dead NCIC notice URL remains ${source.id}: ${source.url}`);
   if (sourceIds.has(source.id)) errors.push(`duplicate source id ${source.id}`);
   sourceIds.add(source.id);
+  sourcesById.set(source.id, source);
 
   if (!isNonEmptyString(source.url)) continue;
   if (/^https?:\/\//i.test(source.url)) {
@@ -126,9 +148,11 @@ for (const source of standardsFile.sources || []) {
 const standardKeys = new Set();
 const subjectByEnglish = new Map();
 const subjectByKorean = new Map();
+const curriculaById = new Map();
 let standardCount = 0;
 
 for (const curriculum of standardsFile.curricula || []) {
+  curriculaById.set(curriculum.id, curriculum);
   check(curriculum.id === curriculum.slug, `curriculum slug mismatch ${curriculum.id}`);
   check(curriculum.country === 'KR', `curriculum country mismatch ${curriculum.id}`);
   check(curriculum.textIncluded === false, `curriculum textIncluded false required ${curriculum.id}`);
@@ -158,7 +182,58 @@ for (const curriculum of standardsFile.curricula || []) {
 
 check(standardsFile.standardCount === standardCount, `standardCount ${standardsFile.standardCount} != ${standardCount}`);
 
+for (const [curriculumId, gate] of Object.entries(OFFICIAL_INVENTORY_GATES)) {
+  const curriculum = curriculaById.get(curriculumId);
+  check(Boolean(curriculum), `official inventory gate missing curriculum ${curriculumId}`);
+  if (!curriculum) continue;
+  check(
+    curriculum.standardCount === gate.standardCount,
+    `official inventory count mismatch ${curriculumId}: ${curriculum.standardCount} != ${gate.standardCount}`,
+  );
+  const inventoryDigest = createHash('sha256')
+    .update((curriculum.standards || []).map((standard) => standard.code).sort().join('\n'))
+    .digest('hex');
+  check(
+    inventoryDigest === gate.codeInventorySha256,
+    `official inventory code digest mismatch ${curriculumId}: ${inventoryDigest} != ${gate.codeInventorySha256}`,
+  );
+  for (const group of gate.sourceGroups) {
+    const source = sourcesById.get(group.sourceId);
+    check(Boolean(source), `official inventory source missing ${curriculumId}: ${group.sourceId}`);
+    if (source) {
+      check(source.sourceType === 'official-pdf', `official inventory source must be official-pdf ${group.sourceId}`);
+      check(/\/inv\/org\/download\.do/i.test(source.url), `official inventory source must use direct NCIC download ${group.sourceId}`);
+      check(isNonEmptyString(source.attachmentNo), `official inventory source missing attachmentNo ${group.sourceId}`);
+      for (const [field, expected] of Object.entries(OFFICIAL_PDF_SOURCE_SNAPSHOTS[group.sourceId] || {})) {
+        check(
+          source[field] === expected,
+          `official source fingerprint mismatch ${group.sourceId}.${field}: ${JSON.stringify(source[field])} != ${JSON.stringify(expected)}`,
+        );
+      }
+    }
+    const matchingStandards = (curriculum.standards || []).filter((standard) =>
+      group.matches ? group.matches(standard) : true,
+    );
+    check(
+      matchingStandards.length === group.standardCount,
+      `official source group count mismatch ${curriculumId}:${group.sourceId}: ${matchingStandards.length} != ${group.standardCount}`,
+    );
+    for (const standard of matchingStandards) {
+      check(
+        standard.verificationStatus === 'official-source-checked',
+        `official inventory standard status mismatch ${standard.key}`,
+      );
+      check(
+        standard.sourceRefs?.includes(group.sourceId),
+        `official inventory direct source missing ${standard.key}: ${group.sourceId}`,
+      );
+      check(hasItemLevelSourceLocator(standard), `official inventory source locator missing ${standard.key}`);
+    }
+  }
+}
+
 const topicIds = new Set();
+const topicsById = new Map();
 for (const topic of topicsFile.topics || []) {
   check(topic.id?.startsWith('kr.mt.'), `bad topic id ${topic.id}`);
   check(TYPES.has(topic.type), `bad topic type ${topic.id}: ${topic.type}`);
@@ -190,6 +265,7 @@ for (const topic of topicsFile.topics || []) {
   }
   if (topicIds.has(topic.id)) errors.push(`duplicate topic id ${topic.id}`);
   topicIds.add(topic.id);
+  topicsById.set(topic.id, topic);
 }
 
 check(standardsFile.microTopicCount === topicIds.size, `microTopicCount ${standardsFile.microTopicCount} != ${topicIds.size}`);
@@ -226,6 +302,12 @@ for (const dep of depsFile.dependencies || []) {
   check(dep.topicId !== dep.prerequisiteId, `self dependency ${dep.topicId}`);
   check(STR.has(dep.strength), `bad dependency strength ${dep.topicId}->${dep.prerequisiteId}`);
   check(isNonEmptyString(dep.reason), `dependency missing reason ${dep.topicId}->${dep.prerequisiteId}`);
+  const topicSubject = topicsById.get(dep.topicId)?.subjectKorean;
+  const prerequisiteSubject = topicsById.get(dep.prerequisiteId)?.subjectKorean;
+  check(
+    topicSubject === prerequisiteSubject,
+    `synthetic cross-subject dependency forbidden ${dep.topicId} (${topicSubject}) -> ${dep.prerequisiteId} (${prerequisiteSubject})`,
+  );
   const pair = `${dep.topicId}->${dep.prerequisiteId}`;
   if (dependencyPairs.has(pair)) errors.push(`duplicate dependency ${pair}`);
   dependencyPairs.add(pair);
@@ -320,6 +402,15 @@ for (const [name, meta] of Object.entries(manifest.files || {})) {
   check(bytes.length === meta.bytes, `manifest bytes mismatch ${name}`);
   check(hash === meta.sha256, `manifest checksum mismatch ${name}`);
 }
+
+check(manifest.coverageNotes?.social?.standards === 49, 'manifest Korea-first social coverage note mismatch');
+check(manifest.coverageNotes?.englishEfl?.standards === 40, 'manifest Korean EFL coverage note mismatch');
+check(manifest.coverageNotes?.artsAndPhysicalEducation?.standards === 101, 'manifest arts/PE coverage note mismatch');
+check(manifest.coverageNotes?.amendedAnnex15?.standards === 9, 'manifest amended Annex 15 coverage note mismatch');
+check(
+  manifest.sourcePosture?.workLevelReuseStatus?.startsWith('HOLD'),
+  'manifest must preserve the unresolved work-level KOGL/commercial-use HOLD',
+);
 
 if (errors.length) {
   console.error(`✗ ${errors.length} KR problem(s):`);

@@ -10,6 +10,11 @@ import {
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { repairTopicRecords, resolveKoreanText } from './lib/kr-content-quality.mjs';
+import {
+  normalizeKrSourceRecord,
+  normalizeKrSourceRefs,
+  STALE_KR_SOURCE_IDS,
+} from './lib/kr-source-provenance.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const KR_DATA = resolve(ROOT, 'data', 'kr');
@@ -58,21 +63,6 @@ function verificationMax(values) {
     if ((STATUS_RANK[value] ?? 2) > (STATUS_RANK[picked] ?? 2)) picked = value;
   }
   return picked;
-}
-
-function normalizeSource(source, workstreamFile) {
-  const normalized = clone(source);
-  normalized.name ||= normalized.title || normalized.id;
-  normalized.url ||= normalized.sourceUrl;
-  normalized.accessDate ||= normalized.retrievedAt;
-  normalized.usage ||=
-    normalized.evidenceUse ||
-    `Source metadata supplied by ${workstreamFile} for taxonomy provenance and verification.`;
-  delete normalized.title;
-  delete normalized.sourceUrl;
-  delete normalized.retrievedAt;
-  delete normalized.evidenceUse;
-  return normalized;
 }
 
 function codeSortKey(code = '') {
@@ -178,13 +168,15 @@ const coverageGaps = [];
 
 for (const { file, data } of workstreams) {
   for (const source of data.sources || []) {
-    if (!sourcesById.has(source.id)) sourcesById.set(source.id, normalizeSource(source, file));
+    if (STALE_KR_SOURCE_IDS.has(source.id)) continue;
+    if (!sourcesById.has(source.id)) sourcesById.set(source.id, normalizeKrSourceRecord(source, file));
   }
 
   for (const standard of data.standards || []) {
     const normalized = {
       ...clone(standard),
       key: standard.key || `${data.curriculumId}:${standard.code}`,
+      sourceRefs: normalizeKrSourceRefs(standard.sourceRefs),
       sourceTextIncluded: false,
       workstreamFile: file,
     };
@@ -213,10 +205,10 @@ for (const { file, data } of workstreams) {
       normalized.verificationStatus = verificationMax(topicStandards.map((standard) => standard.verificationStatus));
     }
     normalized.sourceRefs = [
-      ...new Set([
+      ...new Set(normalizeKrSourceRefs([
         ...(normalized.sourceRefs || []),
         ...topicStandards.flatMap((standard) => standard.sourceRefs || []),
-      ]),
+      ])),
     ].sort();
     normalized.generationBasis ||=
       normalized.sourceBasis ||
@@ -269,6 +261,7 @@ for (const { file, data } of workstreams) {
       subject: artifactSubject,
       subjectKorean: artifactSubjectKorean,
       ...body,
+      ...(body.sourceRefs ? { sourceRefs: normalizeKrSourceRefs(body.sourceRefs) } : {}),
     });
   }
 }
@@ -306,7 +299,7 @@ const curricula = [...standardByCurriculum.entries()]
       sourceIds: [...sourceIds].sort(),
       sourceUrls: sourceUrls(sourceIds, sourcesById),
       textIncluded: false,
-      license: 'Public Korean national curriculum documents; this dataset stores original summaries, provenance, and code anchors without verbatim standard text.',
+      license: 'Work-level KOGL and commercial-reuse permission are unresolved; see PROVENANCE.md. This dataset stores original summaries, provenance, and code anchors without verbatim standard text.',
       verificationStatus,
       sourceBasis: `Integrated from workstream artifacts for ${first.subjectKorean}; official text is not reproduced.`,
       standardCount: standards.length,
@@ -372,8 +365,8 @@ const curriculumStandards = {
   textPolicy: {
     standardTextIncluded: false,
     summaryPolicy: 'Original summaries, source-derived paraphrases, evidence notes, and assessment prompts only; no bulk verbatim curriculum text.',
-    licensingStatus: 'public-government-documents-with-provenance',
-    licenseCaution: 'Official Korean curriculum documents remain the governing source; candidate records with needs-official-code-check require source reconciliation before final release.',
+    licensingStatus: 'work-level-rights-unresolved',
+    licenseCaution: 'HOLD: no work-specific KOGL mark or commercial-use permission has been recorded for the cited Korean curriculum PDFs. See PROVENANCE.md before redistribution or commercial use.',
   },
   sourceCount: sources.length,
   sources,
@@ -408,6 +401,7 @@ const dependenciesFile = {
     relation: 'prerequisite',
     acyclic: true,
     edgeSelection: 'workstream-reviewed-only',
+    crossSubjectEdges: 'none',
   },
   dependencies,
 };
@@ -467,10 +461,36 @@ writeJson(resolve(KR_DATA, 'manifest.json'), {
     topicsAtLeast: MIN_TOPICS,
   },
   graphPolicy: dependenciesFile.graphPolicy,
+  coverageNotes: {
+    social: {
+      posture: 'Korea-first official Annex 7 inventory; no imported US/UK social-studies defaults.',
+      standards: standardByCurriculum.get('kr-2022-elem-social-studies')?.length || 0,
+      topics: topics.filter((topic) => topic.subjectKorean === '사회').length,
+    },
+    englishEfl: {
+      posture: 'Korean-learner EFL with listening, speaking, phonics, vocabulary, reading, writing, interaction, media, strategy, and culture task families; not native ELA.',
+      standards: standardByCurriculum.get('kr-2022-elem-english-efl')?.length || 0,
+      topics: topics.filter((topic) => topic.subjectKorean === '영어').length,
+    },
+    artsAndPhysicalEducation: {
+      posture: 'Direct Annex 11-13 inventories for grades 3-6; grades 1-2 arts and movement remain in integrated subjects rather than synthetic standalone codes.',
+      standards: ['kr-2022-elem-art', 'kr-2022-elem-music', 'kr-2022-elem-physical-education']
+        .reduce((count, id) => count + (standardByCurriculum.get(id)?.length || 0), 0),
+      topics: topics.filter((topic) => ['미술', '음악', '체육'].includes(topic.subjectKorean)).length,
+    },
+    amendedAnnex15: {
+      posture: 'Current accessible 2026 amendment retained with nine directly located 건강한 생활 standards.',
+      standards: [...standardByKey.values()].filter((standard) => standard.code.startsWith('[2건')).length,
+      topics: topics.filter((topic) => topic.domainKorean === '건강한 생활').length,
+    },
+  },
   workstreams: workstreamFiles,
   files,
-  sourcePosture:
-    'Subject workstream artifacts preserve official-source-checked, public-doc-derived, and needs-official-code-check provenance at record level.',
+  sourcePosture: {
+    recordSchema: 'All integrated source records use id, name, url, accessDate, usage, and sourceType; stale portal aliases and dead notice URLs are excluded.',
+    verification: 'Official-inventory gates bind every curriculum to an exact standard count and direct official PDF source.',
+    workLevelReuseStatus: 'HOLD pending work-specific KOGL and commercial-use evidence; see PROVENANCE.md.',
+  },
 });
 
 console.log(

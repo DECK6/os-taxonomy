@@ -1,11 +1,12 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { cpSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdtempSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import test from 'node:test';
 import { attachJosa, resolveKoreanText } from '../scripts/lib/kr-content-quality.mjs';
+import { STALE_KR_SOURCE_IDS } from '../scripts/lib/kr-source-provenance.mjs';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const KR_DATA = resolve(ROOT, 'data', 'kr');
@@ -56,6 +57,17 @@ test('KR validation accepts the canonical generated data', () => {
   assert.equal(baseline.status, 0, baseline.stderr || baseline.stdout);
 });
 
+test('KR workstream source records contain no stale source aliases', () => {
+  const workstreamDir = resolve(KR_DATA, 'workstreams');
+  for (const file of readdirSync(workstreamDir).filter((name) => name.endsWith('.json'))) {
+    const contents = readFileSync(resolve(workstreamDir, file), 'utf8');
+    for (const sourceId of STALE_KR_SOURCE_IDS) {
+      assert.equal(contents.includes(`"${sourceId}"`), false, `${file} still contains ${sourceId}`);
+    }
+    assert.equal(/\/bbs\/eduNotice2022\//.test(contents), false, `${file} still contains a stale NCIC notice route`);
+  }
+});
+
 test('KR dependency validation accepts the canonical DAG and rejects a reciprocal cycle', () => {
   const dataDir = fixture();
   const dependencyFile = readJson(dataDir, 'dependencies.json');
@@ -88,6 +100,19 @@ test('KR validation executes Draft 2020-12 schemas and rejects sourceUrl aliases
   writeJson(dataDir, 'curriculum-standards.json', standardsFile);
 
   assertRejected(runValidator(dataDir), /JSON Schema curriculum-standards\.json.*required property.*url/, /source .* missing url/);
+});
+
+test('KR validation rejects source records without the normalized sourceType field', () => {
+  const dataDir = fixture();
+  const standardsFile = readJson(dataDir, 'curriculum-standards.json');
+  delete standardsFile.sources[0].sourceType;
+  writeJson(dataDir, 'curriculum-standards.json', standardsFile);
+
+  assertRejected(
+    runValidator(dataDir),
+    /JSON Schema curriculum-standards\.json.*required property.*sourceType/,
+    /source .* missing sourceType/,
+  );
 });
 
 test('KR validation rejects an incomplete standard-to-topic mapping', () => {
@@ -168,12 +193,72 @@ test('KR validation rejects unsupported official-source-checked status inflation
   assertRejected(runValidator(dataDir), /official-source-checked standard missing verification evidence/);
 });
 
+test('KR official-inventory gates reject direct-source and status drift', () => {
+  const dataDir = fixture();
+  const standardsFile = readJson(dataDir, 'curriculum-standards.json');
+  const social = standardsFile.curricula.find((curriculum) => curriculum.id === 'kr-2022-elem-social-studies');
+  const standard = social.standards[0];
+  standard.verificationStatus = 'public-doc-derived';
+  standard.sourceRefs = ['kr-repo-mapping-method'];
+  writeJson(dataDir, 'curriculum-standards.json', standardsFile);
+
+  assertRejected(
+    runValidator(dataDir),
+    /official inventory standard status mismatch/,
+    /official inventory direct source missing/,
+  );
+});
+
+test('KR official-inventory gates reject code-inventory, source-fingerprint, and item-locator drift', () => {
+  const dataDir = fixture();
+  const standardsFile = readJson(dataDir, 'curriculum-standards.json');
+  const social = standardsFile.curricula.find((curriculum) => curriculum.id === 'kr-2022-elem-social-studies');
+  const standard = social.standards[0];
+  standard.code = '[4사99-99]';
+  delete standard.sourceLocator;
+  standard.sourceEvidence = [];
+  standard.sourceSection = '사회과 위치 정보를 제거한 회귀 픽스처';
+  const socialSource = standardsFile.sources.find((source) => source.id === 'kr-ncic-2022-social-pdf');
+  socialSource.sha256 = '0'.repeat(64);
+  writeJson(dataDir, 'curriculum-standards.json', standardsFile);
+
+  assertRejected(
+    runValidator(dataDir),
+    /official inventory code digest mismatch kr-2022-elem-social-studies/,
+    /official source fingerprint mismatch kr-ncic-2022-social-pdf\.sha256/,
+    /official inventory source locator missing/,
+  );
+});
+
+test('KR validation rejects stale aliases and dead NCIC notice URLs', () => {
+  const aliasDir = fixture();
+  const aliasStandards = readJson(aliasDir, 'curriculum-standards.json');
+  aliasStandards.sources.push({
+    id: 'kr-ncic-inventory-api',
+    name: 'Adversarial stale alias',
+    url: 'https://ncic.re.kr/inv/org/list.do',
+    accessDate: '2026-07-10',
+    usage: 'Adversarial source alias fixture.',
+    sourceType: 'official-inventory',
+  });
+  aliasStandards.sourceCount = aliasStandards.sources.length;
+  writeJson(aliasDir, 'curriculum-standards.json', aliasStandards);
+  assertRejected(runValidator(aliasDir), /stale KR source alias remains kr-ncic-inventory-api/);
+
+  const noticeDir = fixture();
+  const noticeStandards = readJson(noticeDir, 'curriculum-standards.json');
+  noticeStandards.sources[0].url = 'https://ncic.re.kr/bbs/eduNotice2022/view/1864.do';
+  writeJson(noticeDir, 'curriculum-standards.json', noticeStandards);
+  assertRejected(runValidator(noticeDir), /dead NCIC notice URL remains/);
+});
+
 test('KR validation rejects malformed source URLs and missing repository-local sources', () => {
   const malformedDir = fixture();
   const malformedStandards = readJson(malformedDir, 'curriculum-standards.json');
-  malformedStandards.sources.find((source) => source.id === 'kr-ncic').url = 'not a valid URL';
+  const malformedSource = malformedStandards.sources.find((source) => /^https?:\/\//i.test(source.url));
+  malformedSource.url = 'not a valid URL';
   writeJson(malformedDir, 'curriculum-standards.json', malformedStandards);
-  assertRejected(runValidator(malformedDir), /source URL\/path invalid kr-ncic/);
+  assertRejected(runValidator(malformedDir), new RegExp(`source URL\\/path invalid ${malformedSource.id}`));
 
   const missingDir = fixture();
   const missingStandards = readJson(missingDir, 'curriculum-standards.json');
@@ -181,6 +266,18 @@ test('KR validation rejects malformed source URLs and missing repository-local s
   missingSource.url = 'file:data/kr/does-not-exist.json';
   writeJson(missingDir, 'curriculum-standards.json', missingStandards);
   assertRejected(runValidator(missingDir), new RegExp(`local source path missing ${missingSource.id}`));
+});
+
+test('KR validation enforces the explicit no-cross-subject-edge policy', () => {
+  const dataDir = fixture();
+  const topicsFile = readJson(dataDir, 'topics.json');
+  const dependencyFile = readJson(dataDir, 'dependencies.json');
+  const dependency = dependencyFile.dependencies[0];
+  const topicSubject = topicsFile.topics.find((topic) => topic.id === dependency.topicId).subjectKorean;
+  dependency.prerequisiteId = topicsFile.topics.find((topic) => topic.subjectKorean !== topicSubject).id;
+  writeJson(dataDir, 'dependencies.json', dependencyFile);
+
+  assertRejected(runValidator(dataDir), /synthetic cross-subject dependency forbidden/);
 });
 
 test('Korean josa resolver deterministically handles final consonants and legacy placeholders', () => {

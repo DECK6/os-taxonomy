@@ -15,31 +15,10 @@
   "textPolicy": {
     "standardTextIncluded": false,
     "summaryPolicy": "Standard summaries, topic descriptions, and assessment prompts are source-derived paraphrases and decomposition labels; full official achievement-standard sentences are not reproduced.",
-    "licensingStatus": "public-government-curriculum-source-with-reuse-caution",
-    "licenseCaution": "NCIC displays public-reuse/copyright policy language; keep official source text out of generated taxonomy records unless the repository later confirms redistribution terms."
+    "licensingStatus": "work-level-rights-unresolved",
+    "licenseCaution": "HOLD: no work-specific KOGL mark or commercial-use permission is recorded for the cited Korean curriculum PDFs. Preserve attribution and consult PROVENANCE.md before redistribution or commercial use."
   },
   "sources": [
-    {
-      "id": "kr-ncic",
-      "name": "NCIC 국가교육과정정보센터",
-      "url": "https://ncic.re.kr/",
-      "accessDate": "2026-07-09",
-      "usage": "Official public national curriculum portal used as the governing source location for Korean national curriculum records."
-    },
-    {
-      "id": "kr-ncic-inventory",
-      "name": "NCIC 우리나라 교육과정 원문 인벤토리",
-      "url": "https://ncic.re.kr/inv/org/list.do",
-      "accessDate": "2026-07-09",
-      "usage": "Official inventory route verified through the NCIC tree: 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311."
-    },
-    {
-      "id": "kr-ncic-2022-notices",
-      "name": "NCIC 2022 개정 교육과정 공지사항",
-      "url": "https://ncic.re.kr/bbs/eduNotice2022/list.do",
-      "accessDate": "2026-07-09",
-      "usage": "Publication context for 2022 revised curriculum original uploads and public notice route."
-    },
     {
       "id": "kr-ncic-moral-pdf-2022",
       "name": "교육부 고시 제2022-33호 [별책6] 도덕과 교육과정.pdf",
@@ -57,7 +36,16 @@
         "ncicClassCode": "1002",
         "ncicOpenYear": "2022",
         "ncicOpenMonth": "12"
-      }
+      },
+      "attachmentNo": "10003738",
+      "attachmentName": "[별책6] 도덕과 교육과정.pdf",
+      "fileSizeBytes": 1412105,
+      "pdfPages": 92,
+      "subjectCode": "3311",
+      "sourceType": "official-pdf",
+      "publisher": "교육부",
+      "via": "NCIC 국가교육과정정보센터",
+      "sha256": "0682710d786a0be26efdfbd835195e4871c71bc7c3c11f71427c7087c07a850e"
     }
   ],
   "counts": {
@@ -104,7 +92,14 @@
       "타인과의 관계": 30,
       "사회·공동체와의 관계": 35,
       "자연과의 관계": 20
-    }
+    },
+    "sources": 1,
+    "standards": 24,
+    "microTopics": 120,
+    "standardMappings": 120,
+    "dependencySuggestions": 164,
+    "clusters": 12,
+    "coverageGaps": 7
   },
   "verificationSummary": {
     "officialPdfDownloaded": true,
@@ -145,9 +140,6 @@
       "summary": "3-4학년군 자신과의 관계 영역에서 자기감정과 자기존중을 바탕으로 자기 이해를 탐구하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -166,7 +158,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자신과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -192,9 +184,6 @@
       "summary": "3-4학년군 자신과의 관계 영역에서 정직의 의미와 모범 사례를 살펴보고 바른 행동을 선택하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -213,7 +202,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자신과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -239,9 +228,6 @@
       "summary": "3-4학년군 자신과의 관계 영역에서 성실한 생활과 시간 관리를 계획하고 꾸준한 자기 관리를 실천하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -260,7 +246,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자신과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -286,9 +272,6 @@
       "summary": "3-4학년군 자신과의 관계 영역에서 다른 사람의 관점을 받아들이고 도덕규범을 자기 행동 기준으로 삼기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -307,7 +290,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자신과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -333,9 +316,6 @@
       "summary": "5-6학년군 자신과의 관계 영역에서 자주적인 삶을 이해하고 생활계획을 세워 주체적으로 실천하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -354,7 +334,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자신과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -380,9 +360,6 @@
       "summary": "5-6학년군 자신과의 관계 영역에서 생활 습관을 성찰하고 개선 계획을 세워 실행하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -401,7 +378,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자신과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -427,9 +404,6 @@
       "summary": "5-6학년군 자신과의 관계 영역에서 희망과 적성을 선택할 때 도덕적 고려를 함께 탐색하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -448,7 +422,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자신과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -474,9 +448,6 @@
       "summary": "3-4학년군 타인과의 관계 영역에서 효와 우애를 이해하고 가족 행복을 위한 역할을 탐색하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -495,7 +466,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 타인과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -521,9 +492,6 @@
       "summary": "3-4학년군 타인과의 관계 영역에서 친구 관계에서 배려의 의미를 이해하고 일상에서 배려 행동을 실천하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -542,7 +510,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 타인과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -568,9 +536,6 @@
       "summary": "3-4학년군 타인과의 관계 영역에서 공감이 필요한 상황을 살피고 도덕적 상상력으로 알맞게 반응하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -589,7 +554,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 타인과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -615,9 +580,6 @@
       "summary": "5-6학년군 타인과의 관계 영역에서 봉사의 의미와 중요성을 이해하고 타인의 상황에 맞는 도움을 실천하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -636,7 +598,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 타인과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -662,9 +624,6 @@
       "summary": "5-6학년군 타인과의 관계 영역에서 편견의 발생 이유를 탐색하고 다양성 존중으로 관계 문제를 해결하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -683,7 +642,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 타인과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -709,9 +668,6 @@
       "summary": "5-6학년군 타인과의 관계 영역에서 인간과 인공지능 로봇의 관계를 도덕적으로 이해하고 바람직한 관계 형성을 탐색하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -730,7 +686,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 타인과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -756,9 +712,6 @@
       "summary": "3-4학년군 사회·공동체와의 관계 영역에서 불공정 사례를 탐구하고 일상에서 공정의 가치를 실천하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -777,7 +730,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 사회·공동체와의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -803,9 +756,6 @@
       "summary": "3-4학년군 사회·공동체와의 관계 영역에서 디지털 사회의 문제를 살피고 정보통신 윤리 해결 방안을 탐구하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -824,7 +774,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 사회·공동체와의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -850,9 +800,6 @@
       "summary": "3-4학년군 사회·공동체와의 관계 영역에서 통일의 필요성을 이해하고 통일 감수성과 바람직한 방향을 모색하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -871,7 +818,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 사회·공동체와의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -897,9 +844,6 @@
       "summary": "5-6학년군 사회·공동체와의 관계 영역에서 인권 사례를 통해 인권 감수성을 기르고 실천 의지를 형성하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -918,7 +862,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 사회·공동체와의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -944,9 +888,6 @@
       "summary": "5-6학년군 사회·공동체와의 관계 영역에서 정의와 공동체 규칙의 중요성을 이해하고 공정한 규칙을 설계하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -965,7 +906,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 사회·공동체와의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -991,9 +932,6 @@
       "summary": "5-6학년군 사회·공동체와의 관계 영역에서 통일 과정과 이후 사회 상황을 예상하고 바람직한 통합 방향을 탐구하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1012,7 +950,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 사회·공동체와의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -1038,9 +976,6 @@
       "summary": "5-6학년군 사회·공동체와의 관계 영역에서 다른 나라 사람들이 처한 상황을 이해하고 세계 문제 해결 방안을 탐구하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1059,7 +994,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 사회·공동체와의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -1085,9 +1020,6 @@
       "summary": "3-4학년군 자연과의 관계 영역에서 생명 경시 사례를 조사하고 생명의 소중함을 이해하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1106,7 +1038,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자연과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -1132,9 +1064,6 @@
       "summary": "3-4학년군 자연과의 관계 영역에서 인간과 자연의 공생 이유를 이해하고 구체적인 실천 계획을 세우기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1153,7 +1082,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자연과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -1179,9 +1108,6 @@
       "summary": "5-6학년군 자연과의 관계 영역에서 지구 환경 위기 상황을 이해하고 일상에서 극복 방안을 실천하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1200,7 +1126,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자연과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."
@@ -1226,9 +1152,6 @@
       "summary": "5-6학년군 자연과의 관계 영역에서 지속가능한 삶과 미래 세대 책임을 탐구하고 자연 다양성 보전을 실천하기를 다루는 공식 초등 도덕 성취기준이다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
-        "kr-ncic-2022-notices",
         "kr-ncic-moral-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1247,7 +1170,7 @@
           "basis": "The PDF organizes moral education around the relationship domain 자연과의 관계; this artifact uses that domain as the governing frame."
         },
         {
-          "sourceId": "kr-ncic-inventory",
+          "sourceId": "kr-ncic-moral-pdf-2022",
           "locator": "NCIC tree 2022 개정 시기 > 초등학교(2022.12) > 도덕, subjectCode 3311",
           "evidenceType": "official-inventory-route",
           "basis": "NCIC attachment metadata identifies the official moral education PDF used for this extraction."

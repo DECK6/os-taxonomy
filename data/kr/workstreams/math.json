@@ -15,31 +15,10 @@
   "textPolicy": {
     "standardTextIncluded": false,
     "summaryPolicy": "Topic and standard summaries are source-derived paraphrases and decomposition labels; full official achievement-standard sentences are not reproduced.",
-    "licensingStatus": "public-government-curriculum-source-with-reuse-caution",
-    "licenseCaution": "NCIC displays public-reuse/copyright policy language; keep official source text out of generated taxonomy records unless the repository later confirms redistribution terms."
+    "licensingStatus": "work-level-rights-unresolved",
+    "licenseCaution": "HOLD: no work-specific KOGL mark or commercial-use permission is recorded for the cited Korean curriculum PDFs. Preserve attribution and consult PROVENANCE.md before redistribution or commercial use."
   },
   "sources": [
-    {
-      "id": "kr-ncic",
-      "name": "NCIC 국가교육과정정보센터",
-      "url": "https://ncic.re.kr/",
-      "accessDate": "2026-07-09",
-      "usage": "Official public national curriculum portal; confirms 2022 revised curriculum inventory and elementary math achievement-standard inventory availability."
-    },
-    {
-      "id": "kr-ncic-inventory",
-      "name": "NCIC 우리나라 교육과정 원문 인벤토리",
-      "url": "https://ncic.re.kr/inv/org/list.do",
-      "accessDate": "2026-07-09",
-      "usage": "Inventory API used to locate 2022 revised period, elementary school, subjectCode 2511 math, and official PDF attachment metadata."
-    },
-    {
-      "id": "kr-ncic-2022-notices",
-      "name": "NCIC 2022 개정 교육과정 공지사항",
-      "url": "https://ncic.re.kr/bbs/eduNotice2022/list.do",
-      "accessDate": "2026-07-09",
-      "usage": "Publication context for 2022 revised curriculum original uploads."
-    },
     {
       "id": "kr-ncic-math-pdf-2022",
       "name": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정.pdf",
@@ -52,7 +31,16 @@
         "fileRenm": "20221222102408052.pdf",
         "fileSizeBytes": 1938993,
         "pdfPages": 263
-      }
+      },
+      "attachmentNo": "10003559",
+      "attachmentName": "[별책8] 수학과 교육과정.pdf",
+      "fileSizeBytes": 1938993,
+      "pdfPages": 263,
+      "subjectCode": "2511",
+      "sourceType": "official-pdf",
+      "publisher": "교육부",
+      "via": "NCIC 국가교육과정정보센터",
+      "sha256": "ba7c7c63ad31ba0fd32e5eb8148d696dd73288acce111495c593298112f8f840"
     }
   ],
   "counts": {
@@ -92,7 +80,14 @@
       "CONCEPTUAL": 121,
       "REPRESENTATIONAL": 121,
       "PROCEDURAL": 121
-    }
+    },
+    "sources": 1,
+    "standards": 121,
+    "microTopics": 363,
+    "standardMappings": 363,
+    "dependencySuggestions": 359,
+    "clusters": 19,
+    "coverageGaps": 5
   },
   "verificationSummary": {
     "officialPdfDownloaded": true,
@@ -124,8 +119,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '네 자리 이하의 수' 소주제에 배치된 공식 성취기준 [2수01-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -154,8 +147,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '네 자리 이하의 수' 소주제에 배치된 공식 성취기준 [2수01-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -184,8 +175,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '네 자리 이하의 수' 소주제에 배치된 공식 성취기준 [2수01-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -214,8 +203,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '네 자리 이하의 수' 소주제에 배치된 공식 성취기준 [2수01-04]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -244,8 +231,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '두 자리 수 범위의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [2수01-05]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -274,8 +259,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '두 자리 수 범위의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [2수01-06]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -304,8 +287,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '두 자리 수 범위의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [2수01-07]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -334,8 +315,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '두 자리 수 범위의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [2수01-08]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -364,8 +343,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '두 자리 수 범위의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [2수01-09]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -394,8 +371,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '한 자리 수의 곱셈' 소주제에 배치된 공식 성취기준 [2수01-10]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -424,8 +399,6 @@
       "summary": "1-2학년군 수와 연산 영역의 '한 자리 수의 곱셈' 소주제에 배치된 공식 성취기준 [2수01-11]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -454,8 +427,6 @@
       "summary": "1-2학년군 변화와 관계 영역의 '규칙 찾기' 소주제에 배치된 공식 성취기준 [2수02-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -484,8 +455,6 @@
       "summary": "1-2학년군 변화와 관계 영역의 '규칙 찾기' 소주제에 배치된 공식 성취기준 [2수02-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -514,8 +483,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '입체도형의 모양' 소주제에 배치된 공식 성취기준 [2수03-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -544,8 +511,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '입체도형의 모양' 소주제에 배치된 공식 성취기준 [2수03-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -574,8 +539,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '평면도형과 그 구성 요소' 소주제에 배치된 공식 성취기준 [2수03-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -604,8 +567,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '평면도형과 그 구성 요소' 소주제에 배치된 공식 성취기준 [2수03-04]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -634,8 +595,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '평면도형과 그 구성 요소' 소주제에 배치된 공식 성취기준 [2수03-05]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -664,8 +623,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '양의 비교' 소주제에 배치된 공식 성취기준 [2수03-06]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -694,8 +651,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '시각과 시간' 소주제에 배치된 공식 성취기준 [2수03-07]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -724,8 +679,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '시각과 시간' 소주제에 배치된 공식 성취기준 [2수03-08]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -754,8 +707,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '시각과 시간' 소주제에 배치된 공식 성취기준 [2수03-09]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -784,8 +735,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '길이' 소주제에 배치된 공식 성취기준 [2수03-10]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -814,8 +763,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '길이' 소주제에 배치된 공식 성취기준 [2수03-11]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -844,8 +791,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '길이' 소주제에 배치된 공식 성취기준 [2수03-12]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -874,8 +819,6 @@
       "summary": "1-2학년군 도형과 측정 영역의 '길이' 소주제에 배치된 공식 성취기준 [2수03-13]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -904,8 +847,6 @@
       "summary": "1-2학년군 자료와 가능성 영역의 '자료의 정리' 소주제에 배치된 공식 성취기준 [2수04-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -934,8 +875,6 @@
       "summary": "1-2학년군 자료와 가능성 영역의 '자료의 정리' 소주제에 배치된 공식 성취기준 [2수04-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -964,8 +903,6 @@
       "summary": "1-2학년군 자료와 가능성 영역의 '자료의 정리' 소주제에 배치된 공식 성취기준 [2수04-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -994,8 +931,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '다섯 자리 이상의 수' 소주제에 배치된 공식 성취기준 [4수01-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1024,8 +959,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '다섯 자리 이상의 수' 소주제에 배치된 공식 성취기준 [4수01-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1054,8 +987,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '세 자리 수의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [4수01-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1084,8 +1015,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '세 자리 수 범위의 곱셈' 소주제에 배치된 공식 성취기준 [4수01-04]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1114,8 +1043,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '세 자리 수 범위의 나눗셈' 소주제에 배치된 공식 성취기준 [4수01-05]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1144,8 +1071,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '세 자리 수 범위의 나눗셈' 소주제에 배치된 공식 성취기준 [4수01-06]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1174,8 +1099,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '세 자리 수 범위의 나눗셈' 소주제에 배치된 공식 성취기준 [4수01-07]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1204,8 +1127,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '자연수의 어림셈' 소주제에 배치된 공식 성취기준 [4수01-08]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1234,8 +1155,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '분수' 소주제에 배치된 공식 성취기준 [4수01-09]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1264,8 +1183,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '분수' 소주제에 배치된 공식 성취기준 [4수01-10]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1294,8 +1211,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '분수' 소주제에 배치된 공식 성취기준 [4수01-11]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1324,8 +1239,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '소수' 소주제에 배치된 공식 성취기준 [4수01-12]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1354,8 +1267,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '소수' 소주제에 배치된 공식 성취기준 [4수01-13]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1384,8 +1295,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '소수' 소주제에 배치된 공식 성취기준 [4수01-14]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1414,8 +1323,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '분수의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [4수01-15]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1444,8 +1351,6 @@
       "summary": "3-4학년군 수와 연산 영역의 '소수의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [4수01-16]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1474,8 +1379,6 @@
       "summary": "3-4학년군 변화와 관계 영역의 '규칙을 수나 식으로 나타내기' 소주제에 배치된 공식 성취기준 [4수02-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1504,8 +1407,6 @@
       "summary": "3-4학년군 변화와 관계 영역의 '규칙을 수나 식으로 나타내기' 소주제에 배치된 공식 성취기준 [4수02-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1534,8 +1435,6 @@
       "summary": "3-4학년군 변화와 관계 영역의 '등호와 동치 관계' 소주제에 배치된 공식 성취기준 [4수02-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1564,8 +1463,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '도형의 기초' 소주제에 배치된 공식 성취기준 [4수03-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1594,8 +1491,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '도형의 기초' 소주제에 배치된 공식 성취기준 [4수03-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1624,8 +1519,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '도형의 기초' 소주제에 배치된 공식 성취기준 [4수03-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1654,8 +1547,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '평면도형의 이동' 소주제에 배치된 공식 성취기준 [4수03-04]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1684,8 +1575,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '평면도형의 이동' 소주제에 배치된 공식 성취기준 [4수03-05]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1714,8 +1603,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '원의 구성 요소' 소주제에 배치된 공식 성취기준 [4수03-06]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1744,8 +1631,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '원의 구성 요소' 소주제에 배치된 공식 성취기준 [4수03-07]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1774,8 +1659,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '여러 가지 삼각형' 소주제에 배치된 공식 성취기준 [4수03-08]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1804,8 +1687,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '여러 가지 삼각형' 소주제에 배치된 공식 성취기준 [4수03-09]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1834,8 +1715,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '여러 가지 사각형' 소주제에 배치된 공식 성취기준 [4수03-10]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1864,8 +1743,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '다각형' 소주제에 배치된 공식 성취기준 [4수03-11]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1894,8 +1771,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '다각형' 소주제에 배치된 공식 성취기준 [4수03-12]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1924,8 +1799,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '시각과 시간' 소주제에 배치된 공식 성취기준 [4수03-13]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1954,8 +1827,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '시각과 시간' 소주제에 배치된 공식 성취기준 [4수03-14]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -1984,8 +1855,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '길이' 소주제에 배치된 공식 성취기준 [4수03-15]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2014,8 +1883,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '길이' 소주제에 배치된 공식 성취기준 [4수03-16]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2044,8 +1911,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '들이' 소주제에 배치된 공식 성취기준 [4수03-17]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2074,8 +1939,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '들이' 소주제에 배치된 공식 성취기준 [4수03-18]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2104,8 +1967,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '들이' 소주제에 배치된 공식 성취기준 [4수03-19]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2134,8 +1995,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '무게' 소주제에 배치된 공식 성취기준 [4수03-20]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2164,8 +2023,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '무게' 소주제에 배치된 공식 성취기준 [4수03-21]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2194,8 +2051,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '무게' 소주제에 배치된 공식 성취기준 [4수03-22]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2224,8 +2079,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '무게' 소주제에 배치된 공식 성취기준 [4수03-23]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2254,8 +2107,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '각도' 소주제에 배치된 공식 성취기준 [4수03-24]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2284,8 +2135,6 @@
       "summary": "3-4학년군 도형과 측정 영역의 '각도' 소주제에 배치된 공식 성취기준 [4수03-25]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2314,8 +2163,6 @@
       "summary": "3-4학년군 자료와 가능성 영역의 '자료의 수집과 정리' 소주제에 배치된 공식 성취기준 [4수04-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2344,8 +2191,6 @@
       "summary": "3-4학년군 자료와 가능성 영역의 '자료의 수집과 정리' 소주제에 배치된 공식 성취기준 [4수04-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2374,8 +2219,6 @@
       "summary": "3-4학년군 자료와 가능성 영역의 '자료의 수집과 정리' 소주제에 배치된 공식 성취기준 [4수04-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2404,8 +2247,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '자연수의 혼합 계산' 소주제에 배치된 공식 성취기준 [6수01-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2434,8 +2275,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '수의 범위와 올림, 버림, 반올림' 소주제에 배치된 공식 성취기준 [6수01-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2464,8 +2303,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '수의 범위와 올림, 버림, 반올림' 소주제에 배치된 공식 성취기준 [6수01-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2494,8 +2331,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '약수와 배수' 소주제에 배치된 공식 성취기준 [6수01-04]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2524,8 +2359,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '약수와 배수' 소주제에 배치된 공식 성취기준 [6수01-05]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2554,8 +2387,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '분수의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [6수01-06]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2584,8 +2415,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '분수의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [6수01-07]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2614,8 +2443,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '분수의 덧셈과 뺄셈' 소주제에 배치된 공식 성취기준 [6수01-08]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2644,8 +2471,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '분수의 곱셈과 나눗셈' 소주제에 배치된 공식 성취기준 [6수01-09]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2674,8 +2499,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '분수의 곱셈과 나눗셈' 소주제에 배치된 공식 성취기준 [6수01-10]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2704,8 +2527,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '분수의 곱셈과 나눗셈' 소주제에 배치된 공식 성취기준 [6수01-11]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2734,8 +2555,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '분수와 소수의 관계' 소주제에 배치된 공식 성취기준 [6수01-12]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2764,8 +2583,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '소수의 곱셈과 나눗셈' 소주제에 배치된 공식 성취기준 [6수01-13]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2794,8 +2611,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '소수의 곱셈과 나눗셈' 소주제에 배치된 공식 성취기준 [6수01-14]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2824,8 +2639,6 @@
       "summary": "5-6학년군 수와 연산 영역의 '소수의 곱셈과 나눗셈' 소주제에 배치된 공식 성취기준 [6수01-15]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2854,8 +2667,6 @@
       "summary": "5-6학년군 변화와 관계 영역의 '대응 관계' 소주제에 배치된 공식 성취기준 [6수02-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2884,8 +2695,6 @@
       "summary": "5-6학년군 변화와 관계 영역의 '비와 비율' 소주제에 배치된 공식 성취기준 [6수02-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2914,8 +2723,6 @@
       "summary": "5-6학년군 변화와 관계 영역의 '비와 비율' 소주제에 배치된 공식 성취기준 [6수02-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2944,8 +2751,6 @@
       "summary": "5-6학년군 변화와 관계 영역의 '비례식과 비례배분' 소주제에 배치된 공식 성취기준 [6수02-04]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -2974,8 +2779,6 @@
       "summary": "5-6학년군 변화와 관계 영역의 '비례식과 비례배분' 소주제에 배치된 공식 성취기준 [6수02-05]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3004,8 +2807,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '합동과 대칭' 소주제에 배치된 공식 성취기준 [6수03-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3034,8 +2835,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '합동과 대칭' 소주제에 배치된 공식 성취기준 [6수03-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3064,8 +2863,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '직육면체와 정육면체' 소주제에 배치된 공식 성취기준 [6수03-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3094,8 +2891,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '직육면체와 정육면체' 소주제에 배치된 공식 성취기준 [6수03-04]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3124,8 +2919,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '각기둥과 각뿔' 소주제에 배치된 공식 성취기준 [6수03-05]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3154,8 +2947,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '각기둥과 각뿔' 소주제에 배치된 공식 성취기준 [6수03-06]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3184,8 +2975,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '원기둥, 원뿔, 구' 소주제에 배치된 공식 성취기준 [6수03-07]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3214,8 +3003,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '원기둥, 원뿔, 구' 소주제에 배치된 공식 성취기준 [6수03-08]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3244,8 +3031,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '입체도형의 공간 감각' 소주제에 배치된 공식 성취기준 [6수03-09]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3274,8 +3059,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '입체도형의 공간 감각' 소주제에 배치된 공식 성취기준 [6수03-10]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3304,8 +3087,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '다각형의 둘레와 넓이' 소주제에 배치된 공식 성취기준 [6수03-11]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3334,8 +3115,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '다각형의 둘레와 넓이' 소주제에 배치된 공식 성취기준 [6수03-12]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3364,8 +3143,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '다각형의 둘레와 넓이' 소주제에 배치된 공식 성취기준 [6수03-13]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3394,8 +3171,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '다각형의 둘레와 넓이' 소주제에 배치된 공식 성취기준 [6수03-14]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3424,8 +3199,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '원주율과 원의 넓이' 소주제에 배치된 공식 성취기준 [6수03-15]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3454,8 +3227,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '원주율과 원의 넓이' 소주제에 배치된 공식 성취기준 [6수03-16]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3484,8 +3255,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '입체도형의 겉넓이와 부피' 소주제에 배치된 공식 성취기준 [6수03-17]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3514,8 +3283,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '입체도형의 겉넓이와 부피' 소주제에 배치된 공식 성취기준 [6수03-18]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3544,8 +3311,6 @@
       "summary": "5-6학년군 도형과 측정 영역의 '입체도형의 겉넓이와 부피' 소주제에 배치된 공식 성취기준 [6수03-19]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3574,8 +3339,6 @@
       "summary": "5-6학년군 자료와 가능성 영역의 '자료의 수집과 정리' 소주제에 배치된 공식 성취기준 [6수04-01]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3604,8 +3367,6 @@
       "summary": "5-6학년군 자료와 가능성 영역의 '자료의 수집과 정리' 소주제에 배치된 공식 성취기준 [6수04-02]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3634,8 +3395,6 @@
       "summary": "5-6학년군 자료와 가능성 영역의 '자료의 수집과 정리' 소주제에 배치된 공식 성취기준 [6수04-03]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3664,8 +3423,6 @@
       "summary": "5-6학년군 자료와 가능성 영역의 '가능성' 소주제에 배치된 공식 성취기준 [6수04-04]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3694,8 +3451,6 @@
       "summary": "5-6학년군 자료와 가능성 영역의 '가능성' 소주제에 배치된 공식 성취기준 [6수04-05]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",
@@ -3724,8 +3479,6 @@
       "summary": "5-6학년군 자료와 가능성 영역의 '가능성' 소주제에 배치된 공식 성취기준 [6수04-06]이다. 표준 본문은 재수록하지 않고 코드, 위치, 분해 근거만 기록했다.",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic",
-        "kr-ncic-inventory",
         "kr-ncic-math-pdf-2022"
       ],
       "verificationStatus": "official-source-checked",

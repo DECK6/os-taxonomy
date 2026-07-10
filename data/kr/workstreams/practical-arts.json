@@ -6,7 +6,8 @@
   "textPolicy": {
     "sourceTextIncluded": false,
     "summaryPolicy": "Official code and domain structure are verified from the public NCIC PDF; standard and topic descriptions are concise paraphrases/original decomposition text.",
-    "licenseCaution": "NCIC notice marks public reuse under KOGL type 2; keep attribution and avoid bulk verbatim source text in generated datasets."
+    "licenseCaution": "HOLD: no work-specific KOGL mark or commercial-use permission is recorded for the cited Korean curriculum PDFs. Preserve attribution and consult PROVENANCE.md before redistribution or commercial use.",
+    "licensingStatus": "work-level-rights-unresolved"
   },
   "subject": {
     "id": "kr-2022-elem-practical-arts",
@@ -25,7 +26,7 @@
   },
   "sourcePosture": "Governing frame is the official NCIC 2022.12 elementary 실과(기술·가정)/정보 PDF. 2026.01 amendment notice was checked and recorded as a follow-up gap for integration.",
   "counts": {
-    "sources": 4,
+    "sources": 2,
     "standards": 39,
     "microTopics": 78,
     "standardMappings": 78,
@@ -35,26 +36,23 @@
   },
   "sources": [
     {
-      "id": "kr-ncic-2022-notice-543",
-      "type": "official-inventory",
-      "name": "NCIC 2022 개정 교육과정 공식 원문 인벤토리",
-      "url": "https://ncic.re.kr/inv/org/list.do",
+      "id": "kr-ncic-2026-1-annex15-pdf",
+      "name": "NCIC 2026 일부개정 포함 초등 통합교과 별책 15",
+      "url": "https://ncic.re.kr/inv/org/download.do?year=2026&seq=10004214&orgType=ogi4",
       "accessDate": "2026-07-10",
-      "usage": "Current official route replacing the stale notice detail URL; used to locate 2022 curriculum originals and attachment metadata.",
-      "linkStatus": "replacement-route-confirmed",
-      "replacesUrl": "https://ncic.re.kr/bbs/eduNotice2022/view/543.do?searchword=&searchkey=&page=1"
-    },
-    {
-      "id": "kr-ncic-domestic-inventory",
-      "type": "official-inventory",
-      "name": "NCIC 우리나라 교육과정 원문 및 해설서 inventory",
-      "url": "https://ncic.re.kr/inv/org/list.do",
-      "accessDate": "2026-07-09",
-      "usage": "Official inventory path used to identify 2022 elementary subject branch and attachment metadata."
+      "usage": "Current official amendment artifact replacing the stale notice detail URL; it confirms the 2026 elementary amendment posture but does not establish a 실과/정보 amendment.",
+      "attachmentNo": "10004214",
+      "attachmentName": "바른 생활, 슬기로운 생활, 건강한 생활, 즐거운 생활 교육과정.pdf",
+      "fileSizeBytes": 1449216,
+      "pdfPages": 90,
+      "subjectCode": "3417",
+      "sourceType": "official-pdf",
+      "publisher": "교육부·국가교육위원회",
+      "via": "NCIC 국가교육과정정보센터",
+      "sha256": "39954a4b5605b0ee691bd1a13e8207568ecb9079c97cdd6bf4ef490a7b7a41c6"
     },
     {
       "id": "kr-ncic-practical-arts-pdf-2022",
-      "type": "official-pdf",
       "name": "[별책10] 실과(기술가정)정보과 교육과정.pdf",
       "url": "https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003781&orgType=ogi4",
       "accessDate": "2026-07-09",
@@ -67,17 +65,15 @@
         "producer": "Hancom PDF 1.3.0.542",
         "fileSizeBytes": 2956125
       },
-      "usage": "Governing source for verified elementary 실과 achievement-standard codes, domain order, and content structure."
-    },
-    {
-      "id": "kr-ncic-2026-amendment-notice-1864",
-      "type": "official-pdf",
-      "name": "NCIC 2026 일부개정 포함 초등 통합교과 별책 15",
-      "url": "https://ncic.re.kr/inv/org/download.do?year=2026&seq=10004214&orgType=ogi4",
-      "accessDate": "2026-07-10",
-      "usage": "Current official amendment artifact replacing the stale notice detail URL; it confirms the 2026 elementary amendment posture but does not establish a 실과/정보 amendment.",
-      "linkStatus": "replacement-route-confirmed",
-      "replacesUrl": "https://ncic.re.kr/bbs/eduNotice2022/view/1864.do?searchword=&searchkey=&page=1"
+      "usage": "Governing source for verified elementary 실과 achievement-standard codes, domain order, and content structure.",
+      "attachmentName": "[별책10] 실과(기술·가정)/정보과 교육과정.pdf",
+      "fileSizeBytes": 2956125,
+      "pdfPages": 222,
+      "subjectCode": "3396",
+      "sourceType": "official-pdf",
+      "publisher": "교육부",
+      "via": "NCIC 국가교육과정정보센터",
+      "sha256": "842077c76b311f23d57e6e749a8e4ffbb3d59d37628c1646531301022cc36bfd"
     }
   ],
   "standards": [
@@ -4727,8 +4723,7 @@
       "description": "NCIC 2026.01 elementary amendment branch was checked, but the exposed elementary subject list contained 총론 and integrated-life subjects only; no 실과/정보 subject attachment was exposed during this pass.",
       "impact": "Artifact is grounded in the 2022.12 official 실과/정보 PDF. Integration should re-check whether a later amendment affects 실과 before promoting to final canonical seed.",
       "sourceRefs": [
-        "kr-ncic-2026-amendment-notice-1864",
-        "kr-ncic-domestic-inventory"
+        "kr-ncic-2026-1-annex15-pdf"
       ]
     },
     {

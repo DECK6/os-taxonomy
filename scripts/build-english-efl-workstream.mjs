@@ -9,7 +9,7 @@ const OUT = resolve(ROOT, 'data', 'kr', 'workstreams', 'english-efl.json');
 const subject = 'English as a Foreign Language';
 const subjectKorean = '영어';
 const curriculumId = 'kr-2022-elem-english-efl';
-const sourceRefs = ['kr-ncic-2022-english-pdf', 'kr-ncic-inventory-api'];
+const sourceRefs = ['kr-ncic-2022-english-pdf'];
 const englishPdfSha256 = '596d13897b002a4279a3e21f16396bdae7ac74988450f45fb348f87af943f92a';
 const englishPdfPageByBlock = {
   '3-4:Understanding': 16,
@@ -20,32 +20,21 @@ const englishPdfPageByBlock = {
 
 const sources = [
   {
-    id: 'kr-ncic-inventory-api',
-    name: 'NCIC 2022 revised curriculum inventory and attachment metadata',
-    url: 'https://ncic.re.kr/inv/org/list.do',
-    accessDate: '2026-07-09',
-    usage: 'Official public inventory used to verify 2022 elementary English subjectCode 3360 and attachment metadata for [별책14] 영어과 교육과정.pdf.',
-    evidence: {
-      endpoint: 'POST https://ncic.re.kr/api/inv/invFileList.do',
-      parameters: {
-        orgType: 'ogi4',
-        degreeCode: '1014',
-        classCode: '1002',
-        openYear: '2022',
-        openMonth: '12',
-        subjectCode: '3360',
-        type: 'dwn'
-      },
-      pdfAttachmentNo: '10003794',
-      hwpAttachmentNo: '10003795'
-    }
-  },
-  {
     id: 'kr-ncic-2022-english-pdf',
     name: '교육부 고시 제2022-33호 [별책 14] 영어과 교육과정',
+    sourceType: 'official-pdf',
+    publisher: '교육부',
+    via: 'NCIC 국가교육과정정보센터',
     url: 'https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003794&orgType=ogi4',
     accessDate: '2026-07-09',
     usage: 'Governing official source for elementary English achievement-standard codes and Korean EFL framing.',
+    subjectCode: '3360',
+    attachmentName: '[별책14] 영어과 교육과정.pdf',
+    attachmentNo: '10003794',
+    pairedHwpAttachmentNo: '10003795',
+    sha256: englishPdfSha256,
+    fileSizeBytes: 2313266,
+    pdfPages: 306,
     evidence: {
       fileName: '[별책14] 영어과 교육과정.pdf',
       pages: 306,
@@ -62,6 +51,7 @@ const sources = [
   {
     id: 'kr-ncic-2022-english-appendix4',
     name: '교육부 고시 제2022-33호 [별책 14] [별표 4] 의사소통에 필요한 언어 형식',
+    sourceType: 'official-pdf',
     url: 'https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003794&orgType=ogi4',
     accessDate: '2026-07-10',
     usage: 'Official source location for elementary recommended language forms. The workstream records the current item-level mapping gap and does not claim that broad vocabulary or expression topics cover the appendix.',
@@ -76,6 +66,7 @@ const sources = [
   {
     id: 'kr-repo-mapping-method',
     name: 'Repository Korean curriculum mapping method',
+    sourceType: 'repository-document',
     url: 'docs/kr-curriculum-mapping-method.md',
     accessDate: '2026-07-09',
     usage: 'Local project rules for KR EFL, provenance, micro-topic decomposition, evidence, assessment prompts, and dependency graph staging.'

@@ -604,15 +604,9 @@ const artifact = {
   },
   sources: [
     {
-      id: 'kr-ncic',
-      name: 'NCIC 국가교육과정정보센터',
-      url: 'https://ncic.re.kr/',
-      accessDate: '2026-07-09',
-      usage: 'Official public national curriculum portal reference.'
-    },
-    {
       id: 'kr-ncic-2022-elem-integrated-attachment',
       name: 'NCIC 2022 elementary integrated-subjects inventory row',
+      sourceType: 'official-inventory',
       url: 'https://ncic.re.kr/inv/org/list.do',
       accessDate: '2026-07-09',
       usage: 'Official inventory path and attachment metadata for 2022.12 elementary 바른 생활, 슬기로운 생활, 즐거운 생활.',
@@ -628,6 +622,7 @@ const artifact = {
     {
       id: 'kr-moe-2022-33-annex15-pdf',
       name: '교육부 고시 제2022-33호 [별책 15] 바른 생활, 슬기로운 생활, 즐거운 생활 교육과정',
+      sourceType: 'official-pdf',
       publisher: '교육부',
       via: 'NCIC 국가교육과정정보센터',
       url: 'https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003571&orgType=ogi4',
@@ -643,6 +638,7 @@ const artifact = {
     {
       id: 'kr-ncic-2026-elem-integrated-attachment',
       name: 'NCIC 2026.01 elementary integrated-subjects inventory row',
+      sourceType: 'official-inventory',
       url: 'https://ncic.re.kr/inv/org/list.do',
       accessDate: '2026-07-10',
       usage: 'Official inventory path and attachment metadata for the current accessible 바른 생활, 슬기로운 생활, 건강한 생활, 즐거운 생활 amendment branch.',
@@ -658,6 +654,7 @@ const artifact = {
     {
       id: 'kr-ncic-2026-1-annex15-pdf',
       name: '교육부 고시 제2022-33호 [별책 15] (국가교육위원회 고시 제2026-1호 일부개정 포함)',
+      sourceType: 'official-pdf',
       publisher: '교육부·국가교육위원회',
       via: 'NCIC 국가교육과정정보센터',
       url: 'https://ncic.re.kr/inv/org/download.do?year=2026&seq=10004214&orgType=ogi4',

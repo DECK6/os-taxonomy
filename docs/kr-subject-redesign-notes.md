@@ -38,12 +38,12 @@ The integrated subjects for grades 1–2 are structurally important. They bridge
 
 ## Full-Depth Integration Status
 
-The full-depth integration now merges all subject workstreams into repository-level KR files. Current coverage is 11 curricula, 641 achievement-standard anchors, 2019 micro-topics, 2722 dependencies, and 155 clusters. See `docs/kr-full-depth-integration-report.md` for exact subject counts and remaining gaps.
+The full-depth integration now merges all subject workstreams into repository-level KR files. Current coverage is 11 curricula, 620 achievement-standard anchors, 1956 micro-topics, 1894 workstream-authored dependencies, and 153 clusters. Every curriculum is bound to an exact reviewed code-inventory digest and a direct official PDF source. See `docs/kr-full-depth-integration-report.md` for exact subject counts and remaining gaps.
 
 ## Remaining Review
 
-Most v0.2 records are representative anchors with `needs-official-code-check`. A full pass must verify every code, expand every subject, and then build prerequisite edges.
+The 620 current code anchors are `official-source-checked` against reviewed attachment inventories and item-level locators. The repository-authored summaries, topics, evidence criteria, prompts, and prerequisite edges still require subject-expert and classroom review. Work-level KOGL/commercial-use permission is unresolved, so provenance remains on HOLD even where code identity is verified.
 
 ## 미술 / 음악 / 체육
 
-The v0.3 candidate seed adds arts and physical education as first-class Korean elementary subjects. These are broad generated anchors that need official code verification, but they prevent the Korean taxonomy from collapsing into only academic core subjects.
+Art, music, and physical education are first-class curricula for grades 3–6, rebuilt from the exact elementary inventories in Annexes 13, 12, and 11. The earlier standalone grade 1–2 synthetic code families were removed; grades 1–2 arts and movement foundations stay under integrated-subject learning rather than invented `[2미]`, `[2음]`, or `[2체]` anchors.

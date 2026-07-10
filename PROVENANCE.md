@@ -11,6 +11,14 @@ For encumbered sources we ship only the **standard code** (e.g. `1-ESS1-1`) and 
 
 ## Per-source terms
 
+### 🔴 `kr-2022-elem-*` — Korean 2022 revised elementary curriculum — **codes and repository-authored summaries only; reuse HOLD**
+- **Official source identity:** Ministry of Education notices and subject annexes distributed through the [National Curriculum Information Center (NCIC)](https://ncic.re.kr/). The current integrated-subject source also identifies the National Education Commission Notice 2026-1 amendment.
+- **Sources represented:** the elementary subject PDFs for Korean, mathematics, science, social studies, English, moral education, practical arts/informatics, physical education, music, and art, plus the base and amended Annex 15 integrated-subject PDFs. `data/kr/curriculum-standards.json` records each governing attachment URL, attachment number, access date, SHA-256, byte size, page count, and source use.
+- **We ship:** achievement-standard codes, source locators, and repository-authored summaries, learning topics, evidence criteria, and prompts. We do **not** reproduce the official achievement-standard wording in bulk.
+- **Attribution to preserve:** identify the applicable Ministry of Education notice/annex (and the National Education Commission amendment where applicable), name NCIC as the distribution source, and retain the direct source URL and access date recorded with the dataset.
+- **Rights status — HOLD:** the [NCIC copyright policy](https://ncic.re.kr/mbr/policy.do) requires users to confirm the mark and conditions attached to the individual work. This repository has not recorded a work-specific KOGL mark, commercial-use permission, or other permission evidence for these PDFs. The phrase `public-government-documents-with-provenance` is a provenance posture, **not** a license grant.
+- **Commercial/general redistribution:** not cleared by this repository. Do not assume that the package-level ODbL/CC BY-SA license covers Korean source-derived records. Confirm the applicable work-level terms or obtain permission before redistribution or commercial use. This HOLD records an unresolved rights question; it is not a legal opinion.
+
 ### 🟢 `uk-nc-2013` — The National Curriculum in England (KS1–2) — **full text**
 - **Publisher / rights:** UK Department for Education. © Crown copyright.
 - **License:** [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/). Permits commercial use, adaptation, and redistribution. **No share-alike.**

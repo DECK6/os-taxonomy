@@ -13,11 +13,12 @@
     "edgeCount": { "type": "integer", "minimum": 1 },
     "graphPolicy": {
       "type": "object",
-      "required": ["relation", "acyclic", "edgeSelection"],
+      "required": ["relation", "acyclic", "edgeSelection", "crossSubjectEdges"],
       "properties": {
         "relation": { "const": "prerequisite" },
         "acyclic": { "const": true },
-        "edgeSelection": { "const": "workstream-reviewed-only" }
+        "edgeSelection": { "const": "workstream-reviewed-only" },
+        "crossSubjectEdges": { "const": "none" }
       },
       "additionalProperties": false
     },

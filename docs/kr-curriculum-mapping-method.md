@@ -15,10 +15,11 @@ Each standard anchor should include:
 - `domain` / `domainKorean`.
 - `summary`: concise original summary or source-derived paraphrase.
 - `sourceRefs`: official public source references.
+- Every source record must use `id`, `name`, `url`, `accessDate`, `usage`, and `sourceType`. A governing PDF record must retain its reviewed subject code, attachment number, SHA-256, byte size, and page count.
 - `verificationStatus`: `official-source-checked`, `public-doc-derived`, or `needs-official-code-check`.
 - `sourceBasis`: one-sentence explanation of how the anchor was derived.
 
-Use `needs-official-code-check` when the subject/domain shape is reliable but exact code verification is pending.
+Use `official-source-checked` only when the code belongs to the reviewed official attachment inventory, the record cites that direct PDF, and item-level locator evidence identifies the code. Use `needs-official-code-check` when the subject/domain shape is reliable but exact code verification is pending. Neither status grants reuse rights.
 
 ## Subject-specific Rules
 
@@ -100,6 +101,7 @@ Model grades 1–2 integrated subjects as first-school-life anchors:
 - 바른 생활: habits, routines, safe participation.
 - 슬기로운 생활: inquiry into self, school, community, seasons.
 - 즐거운 생활: expression, play, cooperation, arts-integrated experience.
+- 건강한 생활: use only the nine current `[2건..]` codes and locations in the accessible 2026 amended Annex 15; do not backfill invented health codes into the base document.
 
 ## Mapping Rules
 
@@ -118,8 +120,9 @@ Model grades 1–2 integrated subjects as first-school-life anchors:
 3. Create or update standards with provenance and verification status.
 4. Decompose each standard into teachable micro-topics.
 5. Review Korean subject fit; reject imported English/US/UK assumptions.
-6. Run `npm run validate:kr` and update `data/kr/manifest.json`.
-7. Run `npm run validate` to protect the upstream dataset path.
+6. Keep dependency edges within a subject unless a separately reviewed policy explicitly replaces `crossSubjectEdges: "none"`; the integration builder must not synthesize cross-subject edges.
+7. Run `npm run validate:kr` and update `data/kr/manifest.json`.
+8. Run `npm run validate` to protect the upstream dataset path.
 
 ## Full-Depth v0.4 Integration
 
@@ -131,10 +134,10 @@ Subject workstream artifacts under `data/kr/workstreams/*.json` are merged by `n
 - `data/kr/clusters.json`
 - `data/kr/manifest.json`
 
-The integrated files preserve record-level provenance and verification status. Workstream-authored dependency suggestions are kept first, then the integration builder adds deterministic within-standard and cluster progression edges only when both endpoints resolve.
+The integrated files preserve record-level provenance and verification status. The integration builder publishes only workstream-authored dependency suggestions whose endpoints resolve. It does not add deterministic padding or synthetic cross-subject edges.
 
 ## Expanded v0.3 Seed Validation
 
 The v0.3 validator checks `curriculum-standards.seed.json`, `topics.seed.json`, `dependencies.seed.json`, `clusters.seed.json`, and `manifest.json` together. It verifies counts, standard keys, topic references, dependency endpoints, cluster topic lists, provenance fields, and SHA-256 checksums.
 
-The current `npm run validate:kr` target validates the v0.4 full-depth files and still protects the old seed artifacts through manifest checksums.
+The current `npm run validate:kr` target validates the v0.4 full-depth files against Draft 2020-12 schemas; exact curriculum counts and code-inventory digests; direct PDF identities and fingerprints; per-standard status, source reference, and locator gates; DAG and no-cross-subject-edge rules; content-quality checks; and manifest checksums. The manifest also protects the historical seed and workstream artifacts. Live URL reachability remains a separate `npm run check:kr:links` check.

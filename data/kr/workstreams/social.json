@@ -17,13 +17,14 @@
   "textPolicy": {
     "officialStandardTextIncluded": false,
     "summaryPolicy": "Repository-authored non-quoting summaries only.",
-    "licensingStatus": "Public government source metadata with locally authored taxonomy design.",
-    "licenseCaution": "Keep source ids, attachment numbers, hashes, and page locators when integrating; do not treat generated topic language as official curriculum wording."
+    "licensingStatus": "work-level-rights-unresolved",
+    "licenseCaution": "HOLD: no work-specific KOGL mark or commercial-use permission is recorded for the cited Korean curriculum PDFs. Preserve attribution and consult PROVENANCE.md before redistribution or commercial use."
   },
   "sources": [
     {
       "id": "kr-ncic-2022-social-pdf",
       "name": "교육부 고시 제2022-33호 [별책 7] 사회과 교육과정",
+      "sourceType": "official-pdf",
       "publisher": "교육부",
       "via": "NCIC 국가교육과정정보센터",
       "url": "https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003800&orgType=ogi4",

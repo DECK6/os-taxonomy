@@ -14,11 +14,11 @@
   "textPolicy": {
     "standardTextIncluded": false,
     "topicTextPolicy": "Topic titles, summaries, evidence, and assessment prompts are newly authored source-derived paraphrases.",
-    "licensingStatus": "Official curriculum source cited through NCIC; do not bulk-copy official standard text into merged data without project license review.",
-    "licenseCaution": "Keep sourceRefs and evidence locators when integrating."
+    "licensingStatus": "work-level-rights-unresolved",
+    "licenseCaution": "HOLD: no work-specific KOGL mark or commercial-use permission is recorded for the cited Korean curriculum PDFs. Preserve attribution and consult PROVENANCE.md before redistribution or commercial use."
   },
   "counts": {
-    "sources": 4,
+    "sources": 3,
     "standards": 40,
     "microTopics": 120,
     "standardMappings": 120,
@@ -28,48 +28,9 @@
   },
   "sources": [
     {
-      "id": "kr-ncic-inventory-api",
-      "name": "NCIC 2022 revised curriculum inventory and attachment metadata",
-      "url": "https://ncic.re.kr/inv/org/list.do",
-      "accessDate": "2026-07-09",
-      "usage": "Official public inventory used to verify 2022 elementary English subjectCode 3360 and attachment metadata for [별책14] 영어과 교육과정.pdf.",
-      "evidence": {
-        "endpoint": "POST https://ncic.re.kr/api/inv/invFileList.do",
-        "parameters": {
-          "orgType": "ogi4",
-          "degreeCode": "1014",
-          "classCode": "1002",
-          "openYear": "2022",
-          "openMonth": "12",
-          "subjectCode": "3360",
-          "type": "dwn"
-        },
-        "pdfAttachmentNo": "10003794",
-        "hwpAttachmentNo": "10003795"
-      }
-    },
-    {
-      "id": "kr-ncic-2022-english-pdf",
-      "name": "교육부 고시 제2022-33호 [별책 14] 영어과 교육과정",
-      "url": "https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003794&orgType=ogi4",
-      "accessDate": "2026-07-09",
-      "usage": "Governing official source for elementary English achievement-standard codes and Korean EFL framing.",
-      "evidence": {
-        "fileName": "[별책14] 영어과 교육과정.pdf",
-        "pages": 306,
-        "fileSizeBytes": 2313266,
-        "sha256": "596d13897b002a4279a3e21f16396bdae7ac74988450f45fb348f87af943f92a",
-        "pdfCreationDate": "2022-12-19",
-        "ncicUploadDate": "2023-10-12 13:54:25",
-        "elementaryCodeBlocks": [
-          "PDF extracted pages 14-25: [초등학교 3∼4학년] and [초등학교 5∼6학년] achievement standards",
-          "Text extraction lines 379-388, 462-471, 564-573, 645-654 in local verification copy"
-        ]
-      }
-    },
-    {
       "id": "kr-ncic-2022-english-appendix4",
       "name": "교육부 고시 제2022-33호 [별책 14] [별표 4] 의사소통에 필요한 언어 형식",
+      "sourceType": "official-pdf",
       "url": "https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003794&orgType=ogi4",
       "accessDate": "2026-07-10",
       "usage": "Official source location for elementary recommended language forms. The workstream records the current item-level mapping gap and does not claim that broad vocabulary or expression topics cover the appendix.",
@@ -88,8 +49,38 @@
       }
     },
     {
+      "id": "kr-ncic-2022-english-pdf",
+      "name": "교육부 고시 제2022-33호 [별책 14] 영어과 교육과정",
+      "sourceType": "official-pdf",
+      "publisher": "교육부",
+      "via": "NCIC 국가교육과정정보센터",
+      "url": "https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003794&orgType=ogi4",
+      "accessDate": "2026-07-09",
+      "usage": "Governing official source for elementary English achievement-standard codes and Korean EFL framing.",
+      "subjectCode": "3360",
+      "attachmentName": "[별책14] 영어과 교육과정.pdf",
+      "attachmentNo": "10003794",
+      "pairedHwpAttachmentNo": "10003795",
+      "sha256": "596d13897b002a4279a3e21f16396bdae7ac74988450f45fb348f87af943f92a",
+      "fileSizeBytes": 2313266,
+      "pdfPages": 306,
+      "evidence": {
+        "fileName": "[별책14] 영어과 교육과정.pdf",
+        "pages": 306,
+        "fileSizeBytes": 2313266,
+        "sha256": "596d13897b002a4279a3e21f16396bdae7ac74988450f45fb348f87af943f92a",
+        "pdfCreationDate": "2022-12-19",
+        "ncicUploadDate": "2023-10-12 13:54:25",
+        "elementaryCodeBlocks": [
+          "PDF extracted pages 14-25: [초등학교 3∼4학년] and [초등학교 5∼6학년] achievement standards",
+          "Text extraction lines 379-388, 462-471, 564-573, 645-654 in local verification copy"
+        ]
+      }
+    },
+    {
       "id": "kr-repo-mapping-method",
       "name": "Repository Korean curriculum mapping method",
+      "sourceType": "repository-document",
       "url": "docs/kr-curriculum-mapping-method.md",
       "accessDate": "2026-07-09",
       "usage": "Local project rules for KR EFL, provenance, micro-topic decomposition, evidence, assessment prompts, and dependency graph staging."
@@ -111,8 +102,7 @@
       "summary": "알파벳과 쉬운 단어의 소리를 듣고 구별하는 초입 듣기 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -144,8 +134,7 @@
       "summary": "알파벳 대소문자를 식별하여 읽는 초기 문자 인식 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -177,8 +166,7 @@
       "summary": "쉬운 단어ㆍ어구ㆍ문장에서 강세, 리듬, 억양을 듣고 알아차리는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -210,8 +198,7 @@
       "summary": "소리와 철자의 관계를 바탕으로 쉬운 단어ㆍ어구ㆍ문장을 소리 내어 읽는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -244,8 +231,7 @@
       "summary": "쉬운 단어ㆍ어구ㆍ문장의 의미를 이해하는 기초 의미 파악 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -277,8 +263,7 @@
       "summary": "자기 주변 주제의 담화에서 주요 정보를 파악하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -311,8 +296,7 @@
       "summary": "담화나 문장을 듣거나 읽을 때 단서를 활용하는 기초 이해 전략 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -345,8 +329,7 @@
       "summary": "다양한 매체의 쉬운 담화나 문장을 흥미를 가지고 듣거나 읽는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -378,8 +361,7 @@
       "summary": "시, 노래, 이야기를 공감하며 듣는 정서ㆍ문학 감상 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -412,8 +394,7 @@
       "summary": "자기 주변 주제나 문화 자료를 존중의 태도로 듣거나 읽는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -445,8 +426,7 @@
       "summary": "쉬운 단어ㆍ어구ㆍ문장을 강세, 리듬, 억양에 맞게 따라 말하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -478,8 +458,7 @@
       "summary": "알파벳 대소문자를 구별하여 쓰는 초기 쓰기 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -511,8 +490,7 @@
       "summary": "소리와 철자의 관계를 바탕으로 쉬운 단어를 쓰는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -544,8 +522,7 @@
       "summary": "실물ㆍ그림ㆍ동작을 보고 쉬운 문장으로 말하거나 단어ㆍ어구를 쓰는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -578,8 +555,7 @@
       "summary": "자신과 주변 사람ㆍ사물을 쉬운 문장으로 소개하거나 묘사하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -611,8 +587,7 @@
       "summary": "행동 지시를 쉬운 문장으로 말하거나 보고 쓰는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -644,8 +619,7 @@
       "summary": "자신의 감정을 쉬운 문장으로 말하거나 보고 쓰는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -677,8 +651,7 @@
       "summary": "자기 주변 주제 담화의 주요 정보를 묻거나 답하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -711,8 +684,7 @@
       "summary": "매체나 전략을 활용하여 창의적으로 의미를 표현하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -745,8 +717,7 @@
       "summary": "의사소통 활동에 흥미와 자신감을 가지고 예절을 지키며 참여하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -778,8 +749,7 @@
       "summary": "간단한 단어ㆍ어구ㆍ문장에서 강세, 리듬, 억양을 식별하는 심화 듣기 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -811,8 +781,7 @@
       "summary": "간단한 단어ㆍ어구ㆍ문장을 강세, 리듬, 억양에 맞게 소리 내어 읽는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -845,8 +814,7 @@
       "summary": "간단한 단어ㆍ어구ㆍ문장의 의미를 이해하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -878,8 +846,7 @@
       "summary": "일상생활 주제 담화나 글의 세부 정보를 파악하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -911,8 +878,7 @@
       "summary": "일상생활 주제 담화나 글의 중심 내용을 파악하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -944,8 +910,7 @@
       "summary": "일상생활 주제 담화나 글에서 일이나 사건의 순서를 파악하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -978,8 +943,7 @@
       "summary": "일상생활 주제의 담화나 글을 이해하기 위해 전략을 활용하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1012,8 +976,7 @@
       "summary": "다양한 매체의 담화나 글을 흥미와 자신감을 가지고 듣거나 읽는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1046,8 +1009,7 @@
       "summary": "시, 노래, 이야기를 공감하며 듣거나 읽는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1080,8 +1042,7 @@
       "summary": "일상생활 주제나 문화 자료를 포용의 태도로 듣거나 읽는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1113,8 +1074,7 @@
       "summary": "간단한 단어ㆍ어구ㆍ문장을 강세, 리듬, 억양에 맞게 말하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1146,8 +1106,7 @@
       "summary": "실물ㆍ그림ㆍ동작을 보고 간단한 단어ㆍ어구ㆍ문장으로 말하거나 쓰는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1179,8 +1138,7 @@
       "summary": "알파벳 대소문자와 문장 부호를 문장에서 바르게 사용하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1213,8 +1171,7 @@
       "summary": "주변 사람이나 사물을 간단한 문장으로 소개하거나 묘사하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1246,8 +1203,7 @@
       "summary": "주변 장소ㆍ위치ㆍ행동 순서ㆍ방법을 간단한 문장으로 설명하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1279,8 +1235,7 @@
       "summary": "감정ㆍ의견ㆍ경험ㆍ계획을 간단한 문장으로 표현하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1313,8 +1268,7 @@
       "summary": "일상생활 주제 담화나 글의 세부 정보를 간단한 문장으로 묻거나 답하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1345,8 +1299,7 @@
       "summary": "예시문을 참고하여 목적에 맞는 간단한 글을 쓰는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1379,8 +1332,7 @@
       "summary": "매체와 전략을 활용하여 창의적으로 의미를 생성하고 표현하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1413,8 +1365,7 @@
       "summary": "의사소통 활동에 흥미와 자신감을 가지고 협력적으로 참여하는 표준",
       "sourceTextIncluded": false,
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "verificationStatus": "official-source-checked",
       "sourceBasis": "Code and grade-band placement verified against the official NCIC [별책14] English curriculum PDF; summary is a source-derived paraphrase, not copied standard text.",
@@ -1460,8 +1411,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1500,8 +1450,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1540,8 +1489,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1580,8 +1528,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1620,8 +1567,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1660,8 +1606,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1700,8 +1645,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1740,8 +1684,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1780,8 +1723,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1820,8 +1762,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1860,8 +1801,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1900,8 +1840,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1940,8 +1879,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -1980,8 +1918,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2020,8 +1957,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2060,8 +1996,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2100,8 +2035,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2140,8 +2074,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2180,8 +2113,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2220,8 +2152,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2260,8 +2191,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2300,8 +2230,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2340,8 +2269,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2380,8 +2308,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2420,8 +2347,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2460,8 +2386,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2500,8 +2425,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2540,8 +2464,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2580,8 +2503,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2620,8 +2542,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2660,8 +2581,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2700,8 +2620,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2740,8 +2659,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2780,8 +2698,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2820,8 +2737,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2860,8 +2776,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2900,8 +2815,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2940,8 +2854,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -2980,8 +2893,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3020,8 +2932,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3060,8 +2971,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3100,8 +3010,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3140,8 +3049,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3181,8 +3089,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3221,8 +3128,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3261,8 +3167,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3301,8 +3206,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3341,8 +3245,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3381,8 +3284,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3422,8 +3324,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3462,8 +3363,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3502,8 +3402,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3543,8 +3442,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3584,8 +3482,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3624,8 +3521,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3665,8 +3561,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3705,8 +3600,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3745,8 +3639,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3785,8 +3678,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3825,8 +3717,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3865,8 +3756,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3905,8 +3795,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3945,8 +3834,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -3985,8 +3873,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4025,8 +3912,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4065,8 +3951,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4105,8 +3990,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4145,8 +4029,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4185,8 +4068,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4225,8 +4107,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4265,8 +4146,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4305,8 +4185,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4345,8 +4224,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4385,8 +4263,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4425,8 +4302,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4465,8 +4341,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4505,8 +4380,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4545,8 +4419,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4585,8 +4458,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4625,8 +4497,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4665,8 +4536,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4705,8 +4575,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4745,8 +4614,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4785,8 +4653,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4825,8 +4692,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4865,8 +4731,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4905,8 +4770,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4945,8 +4809,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -4985,8 +4848,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5025,8 +4887,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5065,8 +4926,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5105,8 +4965,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5145,8 +5004,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5185,8 +5043,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5225,8 +5082,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5265,8 +5121,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5305,8 +5160,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5345,8 +5199,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5385,8 +5238,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5425,8 +5277,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5465,8 +5316,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5505,8 +5355,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5545,8 +5394,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5585,8 +5433,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5625,8 +5472,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5665,8 +5511,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5705,8 +5550,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5745,8 +5589,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5785,8 +5628,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5826,8 +5668,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5866,8 +5707,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5906,8 +5746,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5946,8 +5785,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -5986,8 +5824,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -6026,8 +5863,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -6066,8 +5902,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -6106,8 +5941,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -6146,8 +5980,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -6187,8 +6020,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
@@ -6227,8 +6059,7 @@
       ],
       "verificationStatus": "official-source-checked",
       "sourceRefs": [
-        "kr-ncic-2022-english-pdf",
-        "kr-ncic-inventory-api"
+        "kr-ncic-2022-english-pdf"
       ],
       "sourceLocator": {
         "sourceId": "kr-ncic-2022-english-pdf",
