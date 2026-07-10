@@ -5,12 +5,11 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const KR_DATA = resolve(ROOT, 'data', 'kr');
+const KR_DATA = process.env.KR_DATA_DIR ? resolve(process.env.KR_DATA_DIR) : resolve(ROOT, 'data', 'kr');
 const load = (name) => JSON.parse(readFileSync(resolve(KR_DATA, name), 'utf8'));
 const bytesOf = (name) => readFileSync(resolve(KR_DATA, name));
 
 const MIN_TOPICS = 1500;
-const MIN_DEPENDENCIES = 2500;
 const TYPES = new Set(['CONCEPTUAL', 'PROCEDURAL', 'REPRESENTATIONAL', 'LANGUAGE', 'META']);
 const REL = new Set(['introduces', 'supports', 'extends', 'assesses']);
 const STR = new Set(['hard', 'soft']);
@@ -43,7 +42,9 @@ check(topicsFile.topicCount === topicsFile.topics?.length, 'topicCount mismatch'
 check(depsFile.edgeCount === depsFile.dependencies?.length, 'edgeCount mismatch');
 check(clustersFile.clusterCount === clustersFile.clusters?.length, 'clusterCount mismatch');
 check(topicsFile.topicCount >= MIN_TOPICS, `KR topic target missed: ${topicsFile.topicCount} < ${MIN_TOPICS}`);
-check(depsFile.edgeCount >= MIN_DEPENDENCIES, `KR dependency target missed: ${depsFile.edgeCount} < ${MIN_DEPENDENCIES}`);
+check(depsFile.graphPolicy?.relation === 'prerequisite', 'dependency graph relation must be prerequisite');
+check(depsFile.graphPolicy?.acyclic === true, 'dependency graph policy must require acyclic=true');
+check(depsFile.graphPolicy?.edgeSelection === 'workstream-reviewed-only', 'dependency graph must use workstream-reviewed-only edges');
 check(manifest.counts?.topics === topicsFile.topicCount, 'manifest topic count mismatch');
 check(manifest.counts?.dependencies === depsFile.edgeCount, 'manifest dependency count mismatch');
 check(manifest.counts?.clusters === clustersFile.clusterCount, 'manifest cluster count mismatch');
@@ -130,6 +131,64 @@ for (const dep of depsFile.dependencies || []) {
   if (dependencyPairs.has(pair)) errors.push(`duplicate dependency ${pair}`);
   dependencyPairs.add(pair);
 }
+
+const reciprocalPairs = [];
+for (const pair of dependencyPairs) {
+  const [topicId, prerequisiteId] = pair.split('->');
+  const reverse = `${prerequisiteId}->${topicId}`;
+  if (dependencyPairs.has(reverse) && pair.localeCompare(reverse) < 0) reciprocalPairs.push([topicId, prerequisiteId]);
+}
+check(
+  reciprocalPairs.length === 0,
+  `dependency graph has ${reciprocalPairs.length} reciprocal dependency pair(s)${reciprocalPairs[0] ? `; example ${reciprocalPairs[0].join(' <-> ')}` : ''}`,
+);
+
+const adjacency = new Map([...topicIds].map((id) => [id, []]));
+for (const dep of depsFile.dependencies || []) {
+  if (adjacency.has(dep.topicId) && adjacency.has(dep.prerequisiteId) && dep.topicId !== dep.prerequisiteId) {
+    adjacency.get(dep.topicId).push(dep.prerequisiteId);
+  }
+}
+
+let nextIndex = 0;
+const indices = new Map();
+const lowLinks = new Map();
+const stack = [];
+const onStack = new Set();
+const cyclicSccs = [];
+
+function visitScc(topicId) {
+  indices.set(topicId, nextIndex);
+  lowLinks.set(topicId, nextIndex);
+  nextIndex += 1;
+  stack.push(topicId);
+  onStack.add(topicId);
+
+  for (const prerequisiteId of adjacency.get(topicId) || []) {
+    if (!indices.has(prerequisiteId)) {
+      visitScc(prerequisiteId);
+      lowLinks.set(topicId, Math.min(lowLinks.get(topicId), lowLinks.get(prerequisiteId)));
+    } else if (onStack.has(prerequisiteId)) {
+      lowLinks.set(topicId, Math.min(lowLinks.get(topicId), indices.get(prerequisiteId)));
+    }
+  }
+
+  if (lowLinks.get(topicId) !== indices.get(topicId)) return;
+  const component = [];
+  let member;
+  do {
+    member = stack.pop();
+    onStack.delete(member);
+    component.push(member);
+  } while (member !== topicId);
+  if (component.length > 1) cyclicSccs.push(component.sort());
+}
+
+for (const topicId of topicIds) if (!indices.has(topicId)) visitScc(topicId);
+check(
+  cyclicSccs.length === 0,
+  `dependency graph must be a DAG; found ${cyclicSccs.length} cyclic prerequisite SCC(s)${cyclicSccs[0] ? `; example ${cyclicSccs[0].join(' -> ')}` : ''}`,
+);
 
 for (const cluster of clustersFile.clusters || []) {
   check(subjectByEnglish.get(cluster.subject) === cluster.subjectKorean, `cluster subject mismatch ${cluster.id}`);

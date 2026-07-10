@@ -17,7 +17,6 @@ const VERSION = 'kr-full-depth-v0.4';
 const CREATED_AT = '2026-07-09';
 const GENERATED_AT = '2026-07-09T00:00:00+09:00';
 const MIN_TOPICS = 1500;
-const MIN_DEPENDENCIES = 2500;
 
 const SUBJECT_ORDER = [
   '국어',
@@ -319,61 +318,6 @@ for (const { file, data } of workstreams) {
   }
 }
 
-const topicsByStandard = new Map();
-for (const topic of topics) {
-  for (const standardKey of topic.standards || []) {
-    if (!topicsByStandard.has(standardKey)) topicsByStandard.set(standardKey, []);
-    topicsByStandard.get(standardKey).push(topic);
-  }
-}
-
-for (const [standardKey, standardTopics] of topicsByStandard) {
-  standardTopics.sort(compareTopic);
-  const code = standardKey.split(':').at(-1);
-  for (let i = 1; i < standardTopics.length; i += 1) {
-    addDependency(
-      standardTopics[i].id,
-      standardTopics[i - 1].id,
-      'hard',
-      `${code} 성취기준 안에서 앞선 세부 주제의 개념·표현 경험이 다음 세부 주제 수행을 지지한다.`,
-      'generated-within-standard-order',
-      'integration-builder',
-    );
-  }
-}
-
-for (const cluster of clusters) {
-  const clusterTopics = cluster.topics.filter((id) => topicById.has(id));
-  for (let i = 1; i < clusterTopics.length; i += 1) {
-    addDependency(
-      clusterTopics[i],
-      clusterTopics[i - 1],
-      'soft',
-      `${cluster.name} 클러스터 안에서 앞선 주제가 후속 주제의 학습 맥락을 제공한다.`,
-      'generated-cluster-adjacency',
-      'integration-builder',
-    );
-  }
-}
-
-for (const span of [2, 3, 4]) {
-  for (const cluster of clusters) {
-    if (dependencies.length >= MIN_DEPENDENCIES) break;
-    const clusterTopics = cluster.topics.filter((id) => topicById.has(id));
-    for (let i = span; i < clusterTopics.length; i += 1) {
-      if (dependencies.length >= MIN_DEPENDENCIES) break;
-      addDependency(
-        clusterTopics[i],
-        clusterTopics[i - span],
-        'soft',
-        `${cluster.name} 클러스터에서 ${span}단계 앞선 주제가 누적 연습과 전이의 배경 지식을 제공한다.`,
-        `generated-cluster-span-${span}`,
-        'integration-builder',
-      );
-    }
-  }
-}
-
 const sources = [...sourcesById.values()].sort((a, b) => a.id.localeCompare(b.id));
 const aggregateVerification = verificationMax([
   ...curricula.map((curriculum) => curriculum.verificationStatus),
@@ -427,7 +371,11 @@ const dependenciesFile = {
   locale: 'ko-KR',
   country: 'KR',
   edgeCount: dependencies.length,
-  minimumTarget: MIN_DEPENDENCIES,
+  graphPolicy: {
+    relation: 'prerequisite',
+    acyclic: true,
+    edgeSelection: 'workstream-reviewed-only',
+  },
   dependencies,
 };
 
@@ -442,9 +390,6 @@ const clustersFile = {
 };
 
 if (topics.length < MIN_TOPICS) throw new Error(`KR topic target missed: ${topics.length} < ${MIN_TOPICS}`);
-if (dependencies.length < MIN_DEPENDENCIES) {
-  throw new Error(`KR dependency target missed: ${dependencies.length} < ${MIN_DEPENDENCIES}`);
-}
 
 writeJson(resolve(KR_DATA, 'curriculum-standards.json'), curriculumStandards);
 writeJson(resolve(KR_DATA, 'topics.json'), topicsFile);
@@ -482,8 +427,8 @@ writeJson(resolve(KR_DATA, 'manifest.json'), {
   },
   targets: {
     topicsAtLeast: MIN_TOPICS,
-    dependenciesAtLeast: MIN_DEPENDENCIES,
   },
+  graphPolicy: dependenciesFile.graphPolicy,
   workstreams: workstreamFiles,
   files,
   sourcePosture:

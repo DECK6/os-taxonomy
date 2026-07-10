@@ -11,15 +11,19 @@
     "curricula": 11,
     "standards": 641,
     "topics": 2019,
-    "dependencies": 2723,
+    "dependencies": 2081,
     "clusters": 155,
     "standardMappings": 2019,
     "coverageGaps": 50,
     "workstreams": 9
   },
   "targets": {
-    "topicsAtLeast": 1500,
-    "dependenciesAtLeast": 2500
+    "topicsAtLeast": 1500
+  },
+  "graphPolicy": {
+    "relation": "prerequisite",
+    "acyclic": true,
+    "edgeSelection": "workstream-reviewed-only"
   },
   "workstreams": [
     "arts-pe.json",
@@ -50,8 +54,8 @@
       "sha256": "90e514cd75bb79ebe4f0a5ef469533d6e543bb16d08a9cf867b1d2f044b3df84"
     },
     "dependencies.json": {
-      "bytes": 1105177,
-      "sha256": "5866730f4302bbd52ab7e24948d69aab338ed36d300d9fb0116a45fe340a7655"
+      "bytes": 830469,
+      "sha256": "04c8d49d554294c69489093c6a6338a3c49d4a67acc419ada2b173856a3efcc8"
     },
     "dependencies.seed.json": {
       "bytes": 127512,

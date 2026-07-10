@@ -8,6 +8,7 @@
   "homepage": "https://withmarble.com",
   "scripts": {
     "build:kr": "node scripts/build-kr-full-depth.mjs",
+    "test:kr": "node --test tests/validate-kr.test.mjs",
     "validate": "node scripts/validate.mjs",
     "validate:kr": "node scripts/validate-kr.mjs"
   }

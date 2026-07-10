@@ -3,15 +3,24 @@
   "$id": "https://withmarble.com/taxonomy/schema/kr-dependencies.schema.json",
   "title": "Korean Marble Taxonomy — full-depth dependencies",
   "type": "object",
-  "required": ["version", "edgeCount", "dependencies"],
+  "required": ["version", "edgeCount", "graphPolicy", "dependencies"],
   "properties": {
     "$schema": { "type": "string" },
     "version": { "type": "string" },
     "taxonomyVersion": { "type": "string" },
     "locale": { "const": "ko-KR" },
     "country": { "const": "KR" },
-    "edgeCount": { "type": "integer", "minimum": 2500 },
-    "minimumTarget": { "type": "integer", "minimum": 2500 },
+    "edgeCount": { "type": "integer", "minimum": 1 },
+    "graphPolicy": {
+      "type": "object",
+      "required": ["relation", "acyclic", "edgeSelection"],
+      "properties": {
+        "relation": { "const": "prerequisite" },
+        "acyclic": { "const": true },
+        "edgeSelection": { "const": "workstream-reviewed-only" }
+      },
+      "additionalProperties": false
+    },
     "dependencies": {
       "type": "array",
       "items": {
