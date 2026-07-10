@@ -25,14 +25,14 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["topicId", "prerequisiteId", "strength", "reason"],
+        "required": ["topicId", "prerequisiteId", "strength", "reason", "basis", "source"],
         "properties": {
           "topicId": { "type": "string", "pattern": "^kr\\.mt\\." },
           "prerequisiteId": { "type": "string", "pattern": "^kr\\.mt\\." },
           "strength": { "enum": ["hard", "soft"] },
-          "reason": { "type": "string", "minLength": 1 },
-          "basis": { "type": ["string", "null"] },
-          "source": { "type": ["string", "null"] }
+          "reason": { "type": "string", "minLength": 8 },
+          "basis": { "type": "string", "minLength": 1 },
+          "source": { "type": "string", "minLength": 1 }
         },
         "additionalProperties": false
       }

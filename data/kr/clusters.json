@@ -5,6 +5,11 @@
   "locale": "ko-KR",
   "country": "KR",
   "clusterCount": 155,
+  "coveragePolicy": {
+    "membership": "at-least-one",
+    "minimumMembership": 1,
+    "allowMultiple": true
+  },
   "clusters": [
     {
       "id": "kr.cluster.arts-pe.미술.appreciation.1-2",

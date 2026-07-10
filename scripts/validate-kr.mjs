@@ -1,10 +1,12 @@
 #!/usr/bin/env node
+import Ajv2020 from 'ajv/dist/2020.js';
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { existsSync, readFileSync } from 'node:fs';
+import { dirname, isAbsolute, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const KR_SCHEMA = resolve(ROOT, 'schema');
 const KR_DATA = process.env.KR_DATA_DIR ? resolve(process.env.KR_DATA_DIR) : resolve(ROOT, 'data', 'kr');
 const load = (name) => JSON.parse(readFileSync(resolve(KR_DATA, name), 'utf8'));
 const bytesOf = (name) => readFileSync(resolve(KR_DATA, name));
@@ -14,23 +16,60 @@ const TYPES = new Set(['CONCEPTUAL', 'PROCEDURAL', 'REPRESENTATIONAL', 'LANGUAGE
 const REL = new Set(['introduces', 'supports', 'extends', 'assesses']);
 const STR = new Set(['hard', 'soft']);
 const VER = new Set(['official-source-checked', 'public-doc-derived', 'needs-official-code-check']);
-const KR_CODE = /^\[[246](국|수|과|사|영|도|실|바|슬|즐|미|음|체)[0-9]{2}-[0-9]{2}\]$/;
+const KR_CODE = /^\[[246](국|수|과|사|영|도|실|바|슬|즐|건|미|음|체)[0-9]{2}-[0-9]{2}\]$/;
 
 const errors = [];
 const check = (cond, msg) => {
   if (!cond) errors.push(msg);
 };
 const isNonEmptyString = (value) => typeof value === 'string' && value.trim().length > 0;
+const isMeaningfulString = (value) =>
+  typeof value === 'string' &&
+  value.trim().length >= 8 &&
+  !/^(?:x|todo|tbd|n\/?a|none|null|-+)$/i.test(value.trim());
+const meaningfulStringLeaves = (value) => {
+  if (typeof value === 'string') return isMeaningfulString(value) ? 1 : 0;
+  if (Array.isArray(value)) return value.reduce((count, item) => count + meaningfulStringLeaves(item), 0);
+  if (value && typeof value === 'object') {
+    return Object.values(value).reduce((count, item) => count + meaningfulStringLeaves(item), 0);
+  }
+  return 0;
+};
 const hasEvidence = (value) =>
   Array.isArray(value) &&
   value.length > 0 &&
-  value.every((item) => isNonEmptyString(item) || (item && typeof item === 'object' && Object.keys(item).length > 0));
+  value.every((item) => meaningfulStringLeaves(item) > 0);
+const hasVerificationEvidence = (record) =>
+  meaningfulStringLeaves(record.sourceLocator) > 0 ||
+  meaningfulStringLeaves(record.sourceSection) > 0 ||
+  meaningfulStringLeaves(record.evidence) > 0 ||
+  meaningfulStringLeaves(record.sourceEvidence) > 0 ||
+  meaningfulStringLeaves(record.verificationNotes) > 0 ||
+  meaningfulStringLeaves(record.verificationNote) > 0;
 
 const standardsFile = load('curriculum-standards.json');
 const topicsFile = load('topics.json');
 const depsFile = load('dependencies.json');
 const clustersFile = load('clusters.json');
 const manifest = load('manifest.json');
+
+const ajv = new Ajv2020({ allErrors: true, strict: false, validateFormats: false });
+for (const [dataName, schemaName, data] of [
+  ['curriculum-standards.json', 'kr-curriculum-standards.schema.json', standardsFile],
+  ['topics.json', 'kr-topics.schema.json', topicsFile],
+  ['dependencies.json', 'kr-dependencies.schema.json', depsFile],
+  ['clusters.json', 'kr-clusters.schema.json', clustersFile],
+]) {
+  const schema = JSON.parse(readFileSync(resolve(KR_SCHEMA, schemaName), 'utf8'));
+  const validateSchema = ajv.compile(schema);
+  if (!validateSchema(data)) {
+    for (const error of validateSchema.errors || []) {
+      errors.push(
+        `JSON Schema ${dataName}${error.instancePath || '/'} ${error.message}${error.params ? ` (${JSON.stringify(error.params)})` : ''}`,
+      );
+    }
+  }
+}
 
 check(standardsFile.locale === 'ko-KR', 'curriculum-standards locale must be ko-KR');
 check(standardsFile.country === 'KR', 'curriculum-standards country must be KR');
@@ -51,7 +90,38 @@ check(manifest.counts?.clusters === clustersFile.clusterCount, 'manifest cluster
 check(manifest.counts?.curricula === standardsFile.curriculumCount, 'manifest curriculum count mismatch');
 check(manifest.counts?.standards === standardsFile.standardCount, 'manifest standard count mismatch');
 
-const sourceIds = new Set((standardsFile.sources || []).map((source) => source.id));
+const sourceIds = new Set();
+for (const source of standardsFile.sources || []) {
+  check(isNonEmptyString(source.id), 'source missing id');
+  check(isNonEmptyString(source.name), `source ${source.id} missing name`);
+  check(isNonEmptyString(source.url), `source ${source.id} missing url`);
+  check(isNonEmptyString(source.usage), `source ${source.id} missing usage`);
+  if (sourceIds.has(source.id)) errors.push(`duplicate source id ${source.id}`);
+  sourceIds.add(source.id);
+
+  if (!isNonEmptyString(source.url)) continue;
+  if (/^https?:\/\//i.test(source.url)) {
+    try {
+      const parsed = new URL(source.url);
+      check(['http:', 'https:'].includes(parsed.protocol) && Boolean(parsed.hostname), `source URL invalid ${source.id}: ${source.url}`);
+    } catch {
+      errors.push(`source URL invalid ${source.id}: ${source.url}`);
+    }
+  } else {
+    const localRef = source.url.startsWith('file:') ? source.url.slice('file:'.length) : source.url;
+    const localPath = resolve(ROOT, localRef);
+    const repoRelativePath = relative(ROOT, localPath);
+    check(
+      !isAbsolute(localRef) &&
+        !/^[a-z][a-z0-9+.-]*:/i.test(localRef) &&
+        !/\s/.test(localRef) &&
+        repoRelativePath !== '..' &&
+        !repoRelativePath.startsWith(`..${process.platform === 'win32' ? '\\' : '/'}`),
+      `source URL/path invalid ${source.id}: ${source.url}`,
+    );
+    check(existsSync(localPath), `local source path missing ${source.id}: ${source.url}`);
+  }
+}
 const standardKeys = new Set();
 const subjectByEnglish = new Map();
 const subjectByKorean = new Map();
@@ -75,7 +145,11 @@ for (const curriculum of standardsFile.curricula || []) {
     check(VER.has(standard.verificationStatus), `bad standard verification ${standard.key}`);
     check(isNonEmptyString(standard.sourceBasis), `missing sourceBasis ${standard.key}`);
     check(isNonEmptyString(standard.summary), `missing summary ${standard.key}`);
+    check(Array.isArray(standard.sourceRefs) && standard.sourceRefs.length > 0, `missing sourceRefs ${standard.key}`);
     for (const ref of standard.sourceRefs || []) check(sourceIds.has(ref), `unknown sourceRef ${ref}`);
+    if (standard.verificationStatus === 'official-source-checked') {
+      check(hasVerificationEvidence(standard), `official-source-checked standard missing verification evidence ${standard.key}`);
+    }
     if (standardKeys.has(standard.key)) errors.push(`duplicate standard key ${standard.key}`);
     standardKeys.add(standard.key);
   }
@@ -90,12 +164,22 @@ for (const topic of topicsFile.topics || []) {
   check(isNonEmptyString(topic.subject), `topic missing subject ${topic.id}`);
   check(subjectByEnglish.get(topic.subject) === topic.subjectKorean, `topic subject mismatch ${topic.id}`);
   check(isNonEmptyString(topic.name) || isNonEmptyString(topic.title), `topic missing name/title ${topic.id}`);
-  check(isNonEmptyString(topic.description), `topic missing description ${topic.id}`);
+  check(isMeaningfulString(topic.description), `topic description is empty or placeholder-quality ${topic.id}`);
   check(hasEvidence(topic.evidence), `topic missing evidence ${topic.id}`);
-  check(isNonEmptyString(topic.assessmentPrompt), `topic missing assessmentPrompt ${topic.id}`);
+  check(isMeaningfulString(topic.assessmentPrompt), `topic assessmentPrompt is empty or placeholder-quality ${topic.id}`);
   check(!topic.assessmentPrompt?.includes('{{'), `topic prompt still has template token ${topic.id}`);
   check(Array.isArray(topic.standards) && topic.standards.length > 0, `topic missing standards ${topic.id}`);
   for (const key of topic.standards || []) check(standardKeys.has(key), `topic ${topic.id} unknown standard ${key}`);
+  check(Number.isInteger(topic.ageRangeStart), `topic missing integer ageRangeStart ${topic.id}`);
+  check(Number.isInteger(topic.ageRangeEnd), `topic missing integer ageRangeEnd ${topic.id}`);
+  check(topic.ageRangeStart <= topic.ageRangeEnd, `topic age range reversed ${topic.id}: ${topic.ageRangeStart}-${topic.ageRangeEnd}`);
+  check(VER.has(topic.verificationStatus), `bad or missing topic verificationStatus ${topic.id}`);
+  check(isMeaningfulString(topic.generationBasis), `topic missing generationBasis ${topic.id}`);
+  check(Array.isArray(topic.sourceRefs) && topic.sourceRefs.length > 0, `topic missing sourceRefs ${topic.id}`);
+  for (const ref of topic.sourceRefs || []) check(sourceIds.has(ref), `topic ${topic.id} unknown sourceRef ${ref}`);
+  if (topic.verificationStatus === 'official-source-checked') {
+    check(hasVerificationEvidence(topic), `official-source-checked topic missing verification evidence ${topic.id}`);
+  }
   if (topic.subjectKorean === '영어') {
     check(topic.subject === 'English as a Foreign Language', `English topic must be EFL, not ELA: ${topic.id}`);
   }
@@ -115,10 +199,23 @@ for (const mapping of standardsFile.standardMappings || []) {
   check(topicIds.has(mapping.microTopicId), `mapping unknown topic ${mapping.microTopicId}`);
   check(REL.has(mapping.relationship), `bad mapping relationship ${mapping.standardKey}->${mapping.microTopicId}`);
   const pair = `${mapping.standardKey}->${mapping.microTopicId}`;
+  const mappedTopic = (topicsFile.topics || []).find((topic) => topic.id === mapping.microTopicId);
+  check(mappedTopic?.standards?.includes(mapping.standardKey), `mapping is not declared by topic ${pair}`);
   if (mappingPairs.has(pair)) errors.push(`duplicate mapping ${pair}`);
   mappingPairs.add(pair);
 }
 check(standardsFile.mappingCount === mappingPairs.size, `mappingCount ${standardsFile.mappingCount} != ${mappingPairs.size}`);
+for (const topic of topicsFile.topics || []) {
+  for (const standardKey of topic.standards || []) {
+    check(mappingPairs.has(`${standardKey}->${topic.id}`), `topic missing standard mapping ${standardKey}->${topic.id}`);
+  }
+}
+for (const standardKey of standardKeys) {
+  check(
+    [...mappingPairs].some((pair) => pair.startsWith(`${standardKey}->`)),
+    `standard has no mapped topics ${standardKey}`,
+  );
+}
 
 const dependencyPairs = new Set();
 for (const dep of depsFile.dependencies || []) {
@@ -190,12 +287,29 @@ check(
   `dependency graph must be a DAG; found ${cyclicSccs.length} cyclic prerequisite SCC(s)${cyclicSccs[0] ? `; example ${cyclicSccs[0].join(' -> ')}` : ''}`,
 );
 
+check(clustersFile.coveragePolicy?.membership === 'at-least-one', 'cluster coverage policy must be at-least-one');
+check(clustersFile.coveragePolicy?.minimumMembership === 1, 'cluster coverage policy minimumMembership must be 1');
+const clusterMemberships = new Map([...topicIds].map((id) => [id, []]));
 for (const cluster of clustersFile.clusters || []) {
   check(subjectByEnglish.get(cluster.subject) === cluster.subjectKorean, `cluster subject mismatch ${cluster.id}`);
   check(cluster.topicCount === cluster.topics?.length, `cluster topicCount mismatch ${cluster.id}`);
   check(isNonEmptyString(cluster.summary), `cluster missing summary ${cluster.id}`);
   check(isNonEmptyString(cluster.parentSummary), `cluster missing parentSummary ${cluster.id}`);
-  for (const id of cluster.topics || []) check(topicIds.has(id), `cluster unknown topic ${id}`);
+  const clusterTopicIds = new Set();
+  for (const id of cluster.topics || []) {
+    check(topicIds.has(id), `cluster unknown topic ${id}`);
+    if (clusterTopicIds.has(id)) errors.push(`cluster duplicate topic ${cluster.id}: ${id}`);
+    clusterTopicIds.add(id);
+    if (clusterMemberships.has(id)) clusterMemberships.get(id).push(cluster.id);
+    const topic = (topicsFile.topics || []).find((candidate) => candidate.id === id);
+    check(topic?.subject === cluster.subject, `cluster/topic subject mismatch ${cluster.id}: ${id}`);
+  }
+}
+for (const [topicId, memberships] of clusterMemberships) {
+  check(memberships.length >= 1, `topic missing cluster membership ${topicId}`);
+  if (clustersFile.coveragePolicy?.allowMultiple === false) {
+    check(memberships.length === 1, `topic has multiple cluster memberships under single-membership policy ${topicId}`);
+  }
 }
 
 for (const [name, meta] of Object.entries(manifest.files || {})) {

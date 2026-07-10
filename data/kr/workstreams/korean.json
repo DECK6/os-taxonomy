@@ -31,20 +31,21 @@
   "sources": [
     {
       "id": "kr-moe-2022-33-annex5-pdf",
-      "title": "교육부 고시 제2022-33호 [별책 5] 국어과 교육과정",
+      "name": "교육부 고시 제2022-33호 [별책 5] 국어과 교육과정",
       "publisher": "교육부",
       "via": "NCIC 국가교육과정정보센터",
       "attachmentName": "[별책5] 국어과 교육과정.pdf",
       "attachmentNo": "10003553",
-      "sourceUrl": "https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003553&orgType=ogi4",
-      "retrievedAt": "2026-07-09",
+      "url": "https://ncic.re.kr/inv/org/download.do?year=2022&seq=10003553&orgType=ogi4",
+      "accessDate": "2026-07-09",
+      "usage": "Governing official source for the elementary Korean achievement-standard code inventory and source locators.",
       "sha256": "5c30ae42a973a8f912bae156b160cd16d56636b3a64af84c3bdc378c9b482544"
     },
     {
       "id": "kr-ncic-2022-elem-korean-attachment",
-      "title": "NCIC 원문 및 해설서 inventory row for 2022 elementary Korean Language",
+      "name": "NCIC 원문 및 해설서 inventory row for 2022 elementary Korean Language",
       "publisher": "NCIC 국가교육과정정보센터",
-      "sourceUrl": "https://ncic.re.kr/inv/org/list.do",
+      "url": "https://ncic.re.kr/inv/org/list.do",
       "inventoryPath": "2022 개정 시기 > 초등학교(2022.12) > 국어",
       "apiIdentifiers": {
         "degreeCode": "1014",
@@ -53,7 +54,8 @@
         "openYear": "2022",
         "openMonth": "12"
       },
-      "retrievedAt": "2026-07-09"
+      "accessDate": "2026-07-09",
+      "usage": "Official inventory route and attachment metadata for the 2022 elementary Korean curriculum."
     }
   ],
   "domains": [

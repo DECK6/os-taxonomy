@@ -3,7 +3,7 @@
   "$id": "https://withmarble.com/taxonomy/schema/kr-clusters.schema.json",
   "title": "Korean Marble Taxonomy — full-depth clusters",
   "type": "object",
-  "required": ["version", "clusterCount", "clusters"],
+  "required": ["version", "clusterCount", "coveragePolicy", "clusters"],
   "properties": {
     "$schema": { "type": "string" },
     "version": { "type": "string" },
@@ -11,6 +11,16 @@
     "locale": { "const": "ko-KR" },
     "country": { "const": "KR" },
     "clusterCount": { "type": "integer", "minimum": 1 },
+    "coveragePolicy": {
+      "type": "object",
+      "required": ["membership", "minimumMembership", "allowMultiple"],
+      "properties": {
+        "membership": { "const": "at-least-one" },
+        "minimumMembership": { "const": 1 },
+        "allowMultiple": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
     "clusters": {
       "type": "array",
       "items": {
@@ -28,7 +38,7 @@
           "summary": { "type": "string", "minLength": 1 },
           "parentSummary": { "type": "string", "minLength": 1 },
           "topicCount": { "type": "integer", "minimum": 1 },
-          "topics": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "topics": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } },
           "workstreamFile": { "type": "string" }
         },
         "additionalProperties": true

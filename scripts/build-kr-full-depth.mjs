@@ -59,6 +59,21 @@ function verificationMax(values) {
   return picked;
 }
 
+function normalizeSource(source, workstreamFile) {
+  const normalized = clone(source);
+  normalized.name ||= normalized.title || normalized.id;
+  normalized.url ||= normalized.sourceUrl;
+  normalized.accessDate ||= normalized.retrievedAt;
+  normalized.usage ||=
+    normalized.evidenceUse ||
+    `Source metadata supplied by ${workstreamFile} for taxonomy provenance and verification.`;
+  delete normalized.title;
+  delete normalized.sourceUrl;
+  delete normalized.retrievedAt;
+  delete normalized.evidenceUse;
+  return normalized;
+}
+
 function codeSortKey(code = '') {
   const match = code.match(/^\[([246])([가-힣]+)(\d{2})-(\d{2})\]$/);
   if (!match) return [99, code, 99, 99];
@@ -162,7 +177,7 @@ const coverageGaps = [];
 
 for (const { file, data } of workstreams) {
   for (const source of data.sources || []) {
-    if (!sourcesById.has(source.id)) sourcesById.set(source.id, clone(source));
+    if (!sourcesById.has(source.id)) sourcesById.set(source.id, normalizeSource(source, file));
   }
 
   for (const standard of data.standards || []) {
@@ -187,12 +202,25 @@ for (const { file, data } of workstreams) {
       name: topic.name || topic.title || topic.titleKorean || topic.titleEnglish || topic.summary || topic.id,
       title: topic.title || topic.name || topic.titleKorean || topic.titleEnglish || topic.summary || topic.id,
       description: topic.description || topic.summary || topic.name || topic.title || topic.id,
-      evidence: [],
+      evidence: clone(Array.isArray(topic.evidence) ? topic.evidence : []),
       assessmentPrompt: normalizePrompt(topic),
       sourceTextIncluded: false,
       workstreamFile: file,
     };
-    if (!normalized.ageRangeStart || !normalized.ageRangeEnd) {
+    const topicStandards = (normalized.standards || []).map((key) => standardByKey.get(key)).filter(Boolean);
+    if (!STATUS_RANK.hasOwnProperty(normalized.verificationStatus)) {
+      normalized.verificationStatus = verificationMax(topicStandards.map((standard) => standard.verificationStatus));
+    }
+    normalized.sourceRefs = [
+      ...new Set([
+        ...(normalized.sourceRefs || []),
+        ...topicStandards.flatMap((standard) => standard.sourceRefs || []),
+      ]),
+    ].sort();
+    normalized.generationBasis ||=
+      normalized.sourceBasis ||
+      `${normalized.standards?.[0] || '연결 성취기준'}에서 ${file} workstream의 검토 가능한 주제·증거·평가 필드를 통합했다.`;
+    if (normalized.ageRangeStart == null || normalized.ageRangeEnd == null) {
       const ages = AGE_BY_GRADE_BAND[normalized.gradeBand];
       if (ages) {
         normalized.ageRangeStart ??= ages[0];
@@ -386,6 +414,11 @@ const clustersFile = {
   locale: 'ko-KR',
   country: 'KR',
   clusterCount: clusters.length,
+  coveragePolicy: {
+    membership: 'at-least-one',
+    minimumMembership: 1,
+    allowMultiple: true,
+  },
   clusters,
 };
 

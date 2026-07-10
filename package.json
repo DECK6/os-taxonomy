@@ -8,8 +8,12 @@
   "homepage": "https://withmarble.com",
   "scripts": {
     "build:kr": "node scripts/build-kr-full-depth.mjs",
+    "check:kr:links": "node scripts/check-kr-source-links.mjs",
     "test:kr": "node --test tests/validate-kr.test.mjs",
     "validate": "node scripts/validate.mjs",
     "validate:kr": "node scripts/validate-kr.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1"
   }
 }

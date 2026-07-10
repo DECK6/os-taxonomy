@@ -38,16 +38,16 @@
   ],
   "files": {
     "clusters.json": {
-      "bytes": 330950,
-      "sha256": "be9637c7e4f0b1e4942958c70db744e83d389daa387b8218ed3943d1214a538e"
+      "bytes": 331065,
+      "sha256": "b128c676dd8546510f1cf827f887eaa8af6a94e7d1a8f586311f26bd94973209"
     },
     "clusters.seed.json": {
       "bytes": 70468,
       "sha256": "c9664dd578a5492d163dc258cd054d5c8eda501c35ac81844a3f34d1c6c5c1b5"
     },
     "curriculum-standards.json": {
-      "bytes": 1787789,
-      "sha256": "cef106afa6e0efbb7c9a4462a989460827c1828837897adc36ce2ef976c468f4"
+      "bytes": 1788414,
+      "sha256": "e042e3fbe03c68e6be349bf7f916ec114a5eecbd3e04f76c35ed20c9047a827f"
     },
     "curriculum-standards.seed.json": {
       "bytes": 1085745,
@@ -62,8 +62,8 @@
       "sha256": "8a25e60bae09954d457f932dd152afc5e7541a261a280ceb4bbf13d3bbe85884"
     },
     "topics.json": {
-      "bytes": 3843730,
-      "sha256": "c38b3e7fa86d61cd56d9275786e7132d984da5f3580d7c5c555f876a49eaabfe"
+      "bytes": 4642230,
+      "sha256": "89986a9352b67d5812e6f1a5dac45d563e4d5a712036cd0cd2bdbe04a47282ba"
     },
     "topics.seed.json": {
       "bytes": 365755,
@@ -82,8 +82,8 @@
       "sha256": "44fd14cce05e720d3c20a84d2135c06670dfd96c23f6e0451f402ca60ed0edb3"
     },
     "workstreams/korean.json": {
-      "bytes": 1375645,
-      "sha256": "e9a6dd595eaa36f916f9bd9bb14425c1dfdf6c806d76b98fce12465b90409bae"
+      "bytes": 1375866,
+      "sha256": "ce2c4dce3a86d28646a8cd20b459bd297d385aee674d86f16c9bf92a78d9cfce"
     },
     "workstreams/math.json": {
       "bytes": 1205806,
@@ -94,8 +94,8 @@
       "sha256": "e4af2bdfc86105103aa84507b641447b048551c85bdd712bb7709bb0be607e29"
     },
     "workstreams/practical-arts.json": {
-      "bytes": 233364,
-      "sha256": "72d19c03466018a604441dd5fabb24d49dbb9ee0a7698d6a3fbc849a2defb6d8"
+      "bytes": 233630,
+      "sha256": "58e7dd3cb4751babec8eb35d2e430db906e765e1120766635dbb47b341a5f5e9"
     },
     "workstreams/science.json": {
       "bytes": 1160119,
